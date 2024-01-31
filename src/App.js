@@ -1,23 +1,53 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import axios from 'axios';
+
+
 
 function App() {
+  const [characters, setCharacters] = useState([])
+
+  useEffect(() => {
+    axios.get('https://api-blue-archive.vercel.app/api/characters?page=1&perPage=120').then((res) => {
+      const adjusted = res.data.data.map(character => {
+        return {...character, clicked: false}
+      })
+      setCharacters(adjusted)
+    })
+    console.log(characters)
+  }, [])
+
+  const handleClick = (id) => {
+    setCharacters(prevCharacters => {
+      const updatedCharacters = prevCharacters.map(character => {
+        if (id == character._id) {
+          return {...character, clicked: !character.clicked}
+        } else {
+          return character
+        }
+      })
+      console.log(updatedCharacters)
+      return updatedCharacters
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='characters-container'>
+      {characters.map(character=> {
+        return(
+          <div>
+          <button 
+          className={character.clicked ? 'character-button' : 'character-button-unclicked'} 
+          onClick={() => {handleClick(character._id)}}
+          >
+          <img src={character.photoUrl} width={'120vw'}/>
+          </button>
+          <p>{character.name}</p>
+          </div>
+        )
+      })}
+      </div>
     </div>
   );
 }
