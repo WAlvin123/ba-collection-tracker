@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-
+import newCharacters from './resources/characters';
 
 
 function App() {
@@ -10,23 +10,21 @@ function App() {
   useEffect(() => {
     axios.get('https://api-blue-archive.vercel.app/api/characters?page=1&perPage=120').then((res) => {
       const adjusted = res.data.data.map(character => {
-        return {...character, clicked: false}
+        return { ...character, clicked: false }
       })
-      setCharacters(adjusted)
+      setCharacters([...adjusted, ...newCharacters])
     })
-    console.log(characters)
   }, [])
 
   const handleClick = (id) => {
     setCharacters(prevCharacters => {
       const updatedCharacters = prevCharacters.map(character => {
         if (id == character._id) {
-          return {...character, clicked: !character.clicked}
+          return { ...character, clicked: !character.clicked }
         } else {
           return character
         }
       })
-      console.log(updatedCharacters)
       return updatedCharacters
     })
   }
@@ -34,19 +32,19 @@ function App() {
   return (
     <div className="App">
       <div className='characters-container'>
-      {characters.map(character=> {
-        return(
-          <div>
-          <button 
-          className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'} 
-          onClick={() => {handleClick(character._id)}}
-          >
-          <img src={character.photoUrl} width={'120vw'}/>
-          </button>
-          <p className='character-name'>{character.name}</p>
-          </div>
-        )
-      })}
+        {characters.map(character => {
+          return (
+            <div>
+              <button
+                className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
+                onClick={() => { handleClick(character._id) }}
+              >
+                <img src={character.photoUrl} width={'120vw'} />
+              </button>
+              <p className='character-name'>{character.name}</p>
+            </div>
+          )
+        })}
       </div>
       <p>API: https://api-blue-archive.vercel.app/</p>
     </div>

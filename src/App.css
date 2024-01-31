@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #48d7ff;
-  height:108vw;
+  height:fit-content;
 }
 
 .App-link {
@@ -11,7 +11,7 @@
 .characters-container {
   display: grid;
   padding-top: 2vw;
-  grid-template-columns: repeat(11, 1fr); /* Repeat 1fr 11 times*/
+  grid-template-columns: repeat(15, 1fr); /* Repeat 1fr 11 times*/
 }
 
 .character-button-unclicked {
