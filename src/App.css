@@ -1,16 +1,7 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #48d7ff;
+  height:108vw;
 }
 
 .App-link {
@@ -23,13 +14,21 @@
   grid-template-columns: repeat(11, 1fr); /* Repeat 1fr 11 times*/
 }
 
-.character-button {
+.character-button-unclicked {
 border: none;
 background-color: transparent;
+padding: 2%;
 cursor: pointer;
 }
 
-.character-button-unclicked {
+.character-button-clicked {
   border: none;
-  background-color: gray;
+  background-color:rgb(246, 122, 255);
+  padding: 2%;
+  cursor:pointer;
+}
+
+.character-name {
+  color: white;
+  font-size: large;
 }

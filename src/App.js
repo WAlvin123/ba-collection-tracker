@@ -38,16 +38,17 @@ function App() {
         return(
           <div>
           <button 
-          className={character.clicked ? 'character-button' : 'character-button-unclicked'} 
+          className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'} 
           onClick={() => {handleClick(character._id)}}
           >
           <img src={character.photoUrl} width={'120vw'}/>
           </button>
-          <p>{character.name}</p>
+          <p className='character-name'>{character.name}</p>
           </div>
         )
       })}
       </div>
+      <p>API: https://api-blue-archive.vercel.app/</p>
     </div>
   );
 }
