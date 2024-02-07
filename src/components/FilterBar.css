@@ -1,0 +1,74 @@
+.school-filter-container {
+  padding-top: 1%;
+}
+
+.school-filter-button-clicked {
+  border: none;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.school-filter-button-unclicked {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.school-filter-button-unclicked:hover {
+  background-color: lightgray;
+}
+
+.explosive-clicked {
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.explosive-unclicked {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.piercing-clicked {
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  color: goldenrod;
+}
+
+.piercing-unclicked {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: goldenrod;
+}
+
+.mystic-clicked {
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  color: rgb(40, 147, 214);
+}
+
+.mystic-unclicked {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: rgb(40, 147, 214);
+}
+
+.sonic-clicked {
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  color: purple;
+}
+
+.sonic-unclicked {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: purple;}

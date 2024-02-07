@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-  background-color: #48d7ff;
-  height:fit-content;
+  color:rgb(0, 0, 0);
+  min-height:fit-content;
 }
 
 .App-link {
@@ -11,7 +11,11 @@
 .characters-container {
   display: grid;
   padding-top: 2vw;
-  grid-template-columns: repeat(15, 1fr); /* Repeat 1fr 11 times*/
+  grid-template-columns: repeat(2, 1fr); 
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(15, 1fr); 
+  }
 }
 
 .character-button-unclicked {
@@ -19,6 +23,10 @@ border: none;
 background-color: transparent;
 padding: 2%;
 cursor: pointer;
+}
+
+.character-button-unclicked:hover {
+  opacity: 0.75;
 }
 
 .character-button-clicked {
@@ -31,4 +39,8 @@ cursor: pointer;
 .character-name {
   color: white;
   font-size: large;
+}
+
+body {
+  background-color:rgb(98, 177, 219);
 }
