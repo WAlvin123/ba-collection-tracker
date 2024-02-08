@@ -1,0 +1,86 @@
+import axios from "axios"
+import { useState, useEffect } from "react"
+
+export const Search = () => {
+  useEffect(() => {
+    const storedCharacters = localStorage.getItem('characters')
+    if (storedCharacters) {
+      setCharacters(JSON.parse(storedCharacters))
+    } else {
+      console.log('How are you here?')
+    }
+  }, [])
+
+  const [characters, setCharacters] = useState([])
+  const [filteredCharacters, setFilteredCharacters] = useState([])
+  const [userInput, setUserInput] = useState('')
+
+  const onSearch = (name) => {
+    setFilteredCharacters(characters.filter(character => character.name.toLowerCase().includes(name)))
+    setUserInput('')
+  }
+
+  const handleClick = (id) => {
+    setFilteredCharacters(prevCharacters => {
+      const updatedCharacters = prevCharacters.map(character => {
+        if (id == character._id) {
+          return { ...character, clicked: !character.clicked }
+        } else {
+          return character
+        }
+      })
+      return updatedCharacters
+    })
+    setCharacters(prevCharacters => {
+      const updatedCharacters = prevCharacters.map(character => {
+        if (id == character._id) {
+          return { ...character, clicked: !character.clicked }
+        } else {
+          return character
+        }
+      })
+      localStorage.setItem('characters', JSON.stringify(updatedCharacters))
+      return updatedCharacters
+    })
+  }
+
+  return (
+    <div>
+      <input
+        value={userInput}
+        onChange={(event) => {
+          setUserInput(event.target.value)
+          console.log(userInput)
+        }}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            onSearch(userInput.toLowerCase())
+          }
+        }}
+      />
+      <button
+        onClick={() => {
+          onSearch(userInput.toLowerCase())
+        }}
+      >
+        Search
+      </button>
+      <div className="characters-container">
+        {(
+          filteredCharacters.map(character => {
+            return (
+              <div>
+                <button
+                  className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
+                  onClick={() => { handleClick(character._id) }}
+                >
+                  <img src={character.photoUrl} width={'120vw'} />
+                </button>
+                <p className='character-name'>{character.name}</p>
+              </div>
+            )
+          }))}
+      </div>
+    </div>
+  )
+}

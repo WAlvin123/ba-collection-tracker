@@ -18,18 +18,43 @@
   background-color: lightgray;
 }
 
+.owned-filter-button-clicked {
+  border: none;
+  background-color: lightgray;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.owned-filter-button-unclicked {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.owned-filter-button-unclicked:hover {
+  background-color: lightgray;
+}
+
 .explosive-clicked {
   background-color: lightgray;
   border: none;
   cursor: pointer;
   color: red;
+  font-size: 20px;
+  
+}
+
+.explosive-unclicked:hover {
+  background-color: lightgray;
 }
 
 .explosive-unclicked {
   background-color: white;
   border: none;
   cursor: pointer;
-  color: red;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
 }
 
 .piercing-clicked {
@@ -37,6 +62,11 @@
   border: none;
   cursor: pointer;
   color: goldenrod;
+  font-size: 20px;
+}
+
+.piercing-unclicked:hover {
+  background-color: lightgray;
 }
 
 .piercing-unclicked {
@@ -44,6 +74,7 @@
   border: none;
   cursor: pointer;
   color: goldenrod;
+  font-size: 20px;
 }
 
 .mystic-clicked {
@@ -51,6 +82,11 @@
   border: none;
   cursor: pointer;
   color: rgb(40, 147, 214);
+  font-size: 20px;
+}
+
+.mystic-unclicked:hover {
+  background-color: lightgray;
 }
 
 .mystic-unclicked {
@@ -58,17 +94,26 @@
   border: none;
   cursor: pointer;
   color: rgb(40, 147, 214);
+  font-size: 20px;
 }
+
 
 .sonic-clicked {
   background-color: lightgray;
   border: none;
   cursor: pointer;
   color: purple;
+  font-size: 20px;
+}
+
+.sonic-unclicked:hover {
+  background-color: lightgray;
 }
 
 .sonic-unclicked {
   background-color: white;
   border: none;
   cursor: pointer;
-  color: purple;}
+  color: purple;
+  font-size: 20px;
+}
