@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FilterBar } from '../FilterBar';
 import newCharacters from '../../resources/characters';
+import './Collection.css'
 
 export const Collection = () => {
   const [characters, setCharacters] = useState([])
@@ -322,7 +323,6 @@ export const Collection = () => {
   }
 
   const handlePulled = () => {
-    if (notOwnedFilter == true) {
       setNotOwnedFilter(false)
       if (dmgFilter == false && schoolFilter == false && ownedFilter == false) { // ownedFilter only
         setShowAll(false)
@@ -366,58 +366,11 @@ export const Collection = () => {
         setOwnedFilter(false)
         setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
         setShowAll(true)
-      }
-    } else {
-      setNotOwnedFilter(false)
-      if (dmgFilter == false && schoolFilter == false && ownedFilter == false) { // ownedFilter only
-        setShowAll(false)
-        setOwnedFilter(true)
-        const updatedCharacters = characters.filter(character => character.clicked == true)
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters)
-      } else if (schoolFilter == true && ownedFilter == false && dmgFilter == false) { //  school + owned filter
-        setOwnedFilter(true)
-        const updatedCharacters = characters.filter(character => schools.includes(character.school) && character.clicked == true)
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters)
-      } else if (schoolFilter == true && ownedFilter == true && dmgFilter == false) { // disabling owned filter (school)
-        const updatedCharacters = characters.filter(character => schools.includes(character.school))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked == true))
-        setOwnedFilter(false)
-      } else if (dmgFilter == true && schoolFilter == false && ownedFilter == false) { // dmg + ownedfilter
-        const updatedCharacters = characters.filter(character => dmgTypes.includes(character.damageType) && character.clicked == true)
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked == true))
-        setOwnedFilter(true)
-      } else if (dmgFilter == true && schoolFilter == false && ownedFilter == true) { // disabling owned filter (damage)
-        const updatedCharacters = characters.filter(character => dmgTypes.includes(character.damageType))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked == true))
-        setOwnedFilter(false)
-      }
-      else if (dmgFilter == true && schoolFilter == true && ownedFilter == false) { // all 3 filters
-        const updatedCharacters = characters.filter(character => character.clicked === true && dmgTypes.includes(character.damageType) && schools.includes(character.school))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters)
-        setOwnedFilter(true)
-      } else if (dmgFilter == true && schoolFilter == true && ownedFilter == true) { // disabling owned filter (damage + school)
-        const updatedCharacters = characters.filter(character => dmgTypes.includes(character.damageType) && schools.includes(character.school))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked == true))
-        setOwnedFilter(false)
-      }
-      else if (ownedFilter == true && schoolFilter == false && dmgFilter == false) {
-        setOwnedFilter(false)
-        setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
-        setShowAll(true)
-      }
     }
   }
 
 
   const handleNotPulled = () => {
-    if (ownedFilter == true) {
       setOwnedFilter(false)
       if (dmgFilter == false && schoolFilter == false && notOwnedFilter == false) { // ownedFilter only
         setShowAll(false)
@@ -469,60 +422,7 @@ export const Collection = () => {
         setNotOwnedFilter(false)
         setShowAll(true)
         setOwnedCharacters(characters.filter(character => character.clicked === true))
-      }
-    } else {
-      if (dmgFilter == false && schoolFilter == false && notOwnedFilter == false) { // ownedFilter only
-        setShowAll(false)
-        setNotOwnedFilter(true)
-        setFilteredCharacters(characters.filter(character => character.clicked == false))
-        setOwnedCharacters([])
-      } else if (schoolFilter == true && notOwnedFilter == false && dmgFilter == false) { //  school + owned filter
-        setNotOwnedFilter(true)
-        setFilteredCharacters(characters.filter(character => {
-          if (schools.includes(character.school) && character.clicked == false) {
-            return true
-          } else return false
-        }))
-        setOwnedCharacters([])
-      } else if (schoolFilter == true && notOwnedFilter == true && dmgFilter == false) { // disabling owned filter (school)
-        const updatedCharacters = characters.filter(character => schools.includes(character.school))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked == true))
-        setNotOwnedFilter(false)
-      } else if (dmgFilter == true && schoolFilter == false && notOwnedFilter == false) { // dmg + ownedfilter
-        setFilteredCharacters(characters.filter(character => {
-          if (character.clicked === false && dmgTypes.includes(character.damageType)) {
-            return true
-          } else return false
-        }))
-        setOwnedCharacters([])
-        setNotOwnedFilter(true)
-      } else if (dmgFilter == true && schoolFilter == false && notOwnedFilter == true) { // disabling owned filter (damage)
-        const updatedCharacters = characters.filter(character => dmgTypes.includes(character.damageType))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked === true))
-        setNotOwnedFilter(false)
-      }
-      else if (dmgFilter == true && schoolFilter == true && notOwnedFilter == false) { // all 3 filters
-        setFilteredCharacters(characters.filter(character => {
-          if (character.clicked === false && dmgTypes.includes(character.damageType) && schools.includes(character.school)) {
-            return true
-          } else return false
-        }))
-        setOwnedCharacters([])
-        setNotOwnedFilter(true)
-      } else if (dmgFilter == true && schoolFilter == true && notOwnedFilter == true) { // disabling owned filter (damage + school)
-        const updatedCharacters = characters.filter(character => dmgTypes.includes(character.damageType) && schools.includes(character.school))
-        setFilteredCharacters(updatedCharacters)
-        setOwnedCharacters(updatedCharacters.filter(character => character.clicked === true))
-        setNotOwnedFilter(false)
-      }
-      else if (notOwnedFilter == true && schoolFilter == false && dmgFilter == false) {
-        setNotOwnedFilter(false)
-        setShowAll(true)
-        setOwnedCharacters(characters.filter(character => character.clicked === true))
-      }
-    }
+    } 
   }
 
 
@@ -699,7 +599,7 @@ export const Collection = () => {
   }
 
   return (
-    <div className="App">
+    <div className="Collection">
       <FilterBar
         handleFilterBySchool={handleFilterBySchool}
         setShowAll={handleShowAll}

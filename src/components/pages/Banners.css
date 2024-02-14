@@ -1,0 +1,26 @@
+.Banners {
+  padding-top: 90px;
+}
+
+.centered-container {
+  display:flex;
+  justify-content: center;
+}
+
+.banner-table-row {
+  background-color: white;
+  color: rgb(68, 129, 195);
+  font-size: x-large;
+}
+
+.banner-table-header {
+  background-color: white;
+  font-size: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: rgb(68, 129, 195);
+}
+
+.banner-table {
+  width: 100vw;
+}

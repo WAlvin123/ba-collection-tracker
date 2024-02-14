@@ -129,7 +129,7 @@ const newCharacters = [
   },
   {
     _id: '6ub56b57v',
-    name: 'Toki (Bunny)',
+    name: 'Toki (Bunny Girl)',
     school: 'Millennium',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/8/83/Toki_%28Bunny_Girl%29.png',
     damageType: 'Explosive',
@@ -233,7 +233,7 @@ const newCharacters = [
   },
   {
     _id: 'bn6785uy9b87n695y',
-    name: 'Kotori (Cheer Squad)',
+    name: 'Kotori (Cheerleader)',
     school: 'Millennium',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/8/89/Kotori_%28Cheerleader%29.png',
     damageType: 'Explosive',
@@ -241,7 +241,7 @@ const newCharacters = [
   },
   {
     _id: '453y68hn97nb879456',
-    name: 'Haruna (Tracksuit)',
+    name: 'Haruna (Sportswear)',
     school: 'Gehenna',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/a/af/Haruna_%28Sportswear%29.png',
     damageType: 'Sonic',
@@ -273,7 +273,7 @@ const newCharacters = [
   },
   {
     _id: '980675hum789nh56u',
-    name: 'Mikoto',
+    name: 'Misaka Mikoto',
     school: 'Collab',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/7/76/Misaka_Mikoto.png',
     damageType: 'Penetration',
@@ -281,7 +281,7 @@ const newCharacters = [
   },
   {
     _id: '35g496m980456gemj',
-    name: 'Misaki',
+    name: 'Shokuhou Miksaki',
     school: 'Collab',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/6/66/Shokuhou_Misaki.png',
     damageType: 'Explosive',
@@ -414,6 +414,13 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/d/da/Shigure.png',
     damageType: 'Explosive',
     clicked: false
+  }, {
+    id: 'ghngngngnccbtrbrath465y',
+    name: 'Momiji',
+    school: 'Red Winter',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/53/Momiji.png',
+    damageType: 'Sonic',
+    clicked: 'false'
   }
 ]
 

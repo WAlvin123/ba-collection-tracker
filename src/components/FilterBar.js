@@ -165,7 +165,7 @@ export const FilterBar = ({ handleFilterBySchool, handlePulled, handleNotPulled,
             }}
           >Not Owned</button>
           <button
-            style={{ border: 'none', background: 'transparent', color: 'white', cursor: 'pointer' }}
+            className='school-filter-button-unclicked'
             onClick={() => {
               setShowAll(true)
               setButtonStates(
@@ -183,7 +183,6 @@ export const FilterBar = ({ handleFilterBySchool, handlePulled, handleNotPulled,
                   b11State: false
                 }
               )
-
             }}
           >Show all</button>
         </div>

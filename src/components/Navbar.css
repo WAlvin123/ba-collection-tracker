@@ -1,11 +1,14 @@
 .navbar {
   background-color: rgb(52, 52, 52);
   padding-top: 0.3vw;
-  padding-left:3%;
-  padding-right:20%;
+  padding-left: 3%;
+  padding-right: 20%;
   padding-bottom: 0.1vw;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
+  height:80px;
+  width: 90vw;
+  position: fixed;
 }
 
 .text {
@@ -16,30 +19,56 @@
 }
 
 .text-2 {
-  color:rgb(68, 129, 195);
+  color: rgb(68, 129, 195);
   font-style: italic;
   font-family: sans-serif;
   font-size: 35px;
 }
 
-.search {
-  color:white;
+.navbar-button {
+  color: white;
   font-family: sans-serif;
   font-size: 30px;
   height: fit-content;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-style: italic;
 }
 
 
-.search:hover {
-  color:rgb(68, 129, 195);
+.navbar-button:hover {
+  color: rgb(68, 129, 195);
   font-family: sans-serif;
   font-size: 30px;
   height: fit-content;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-style: italic;
 }
 
+.search-button {
+  color: rgb(68, 129, 195);
+  font-family: sans-serif;
+  font-size: 36px;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.search-button:hover {
+  color: rgb(68, 129, 195);
+  font-family: sans-serif;
+  font-size: 36px;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}

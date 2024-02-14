@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
+import './Search.css'
 
 export const Search = () => {
   useEffect(() => {
@@ -45,7 +46,10 @@ export const Search = () => {
   }
 
   return (
-    <div>
+    <div className="Search">
+      <p className="text">
+        Enter the name of the character below to search for them
+      </p>
       <input
         value={userInput}
         onChange={(event) => {
@@ -57,11 +61,13 @@ export const Search = () => {
             onSearch(userInput.toLowerCase())
           }
         }}
+        className="text-2"
       />
       <button
         onClick={() => {
           onSearch(userInput.toLowerCase())
         }}
+        className="search-button"
       >
         Search
       </button>

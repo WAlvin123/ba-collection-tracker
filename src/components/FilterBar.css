@@ -6,12 +6,14 @@
   border: none;
   background-color: lightgray;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .school-filter-button-unclicked {
   border: none;
   background-color: white;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .school-filter-button-unclicked:hover {

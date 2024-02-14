@@ -9,17 +9,30 @@ export const Navbar = () => {
       <h1 className='text-2'>
         Your<span className='text'>Archive</span>
       </h1>
-      <button className='search' onClick={() => {
-        localStorage.setItem('Page', 'Collection')
+      <button className='navbar-button' onClick={() => {
         navigate('/')
         }}>
         Collection
       </button>
-      <button className='search' onClick={() => {
-        localStorage.setItem('Page', 'Search')
+      <button className='navbar-button' onClick={() => {
         navigate('/search')
         }}>
         Search
+      </button>
+      <button className='navbar-button' onClick={() => {
+        navigate('/banners')
+        }}>
+        Banners
+      </button>
+      <button className='navbar-button' onClick={() => {
+        navigate('/raids')
+        }}>
+        Total Assaults
+      </button>
+      <button className='navbar-button' onClick={() => {
+        navigate('/sources')
+        }}>
+        Sources
       </button>
     </div>
   )
