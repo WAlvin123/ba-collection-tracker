@@ -22,5 +22,24 @@
 }
 
 .banner-table {
-  width: 100vw;
+  width:95vw;
+}
+
+.current-table {
+  width:50vw;
+}
+
+
+.current-table-row {
+  background-color: white;
+  color: rgb(68, 129, 195);
+  font-size: large;
+}
+
+.current-table-header {
+  background-color: white;
+  font-size: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: rgb(68, 129, 195);
 }

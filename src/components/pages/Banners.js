@@ -3,12 +3,23 @@ import './Banners.css'
 import axios from 'axios'
 import TLBanners from '../../resources/TLBanners'
 
-// TODO: Translate banners from japanese to english using google translate API, reimplement sorting logic + learn, and convert timestamps to dates.
+// TODO: get currentBanners from the API and render
 
 export const Banners = () => {
   useEffect(() => {
-    axios.get('https://api.ennead.cc/buruaka/banner').then((res) => {
-      setCurrentBannerEN(res.data.current)
+    fetch('https://api.ennead.cc/buruaka/banner').then(res => {
+      return res.json()
+    }).then(data => {
+      setCurrentBannerEN(data.current.map(banner => {
+        const currentStartDate = new Date(banner.startAt)
+        const currentStartDay = currentStartDate.toLocaleDateString()
+        const currentStartHour = currentStartDate.toLocaleTimeString()
+        const currentEndDate = new Date(banner.endAt + 1)
+        const currentEndDay = currentEndDate.toLocaleDateString()
+        const currentEndHour = currentEndDate.toLocaleTimeString()
+
+        return { ...banner, startAt: `${currentStartDay}, ${currentStartHour}`, endAt: `${currentEndDay}, ${currentEndHour}` }
+      }))
     })
 
     const sortedBanners = [...TLBanners.current, ...TLBanners.ended, ...TLBanners.upcoming].sort((a, b) => b.startAt - a.startAt)
@@ -18,8 +29,8 @@ export const Banners = () => {
       const startHour = startDate.toLocaleTimeString()
       const globalStartDate = new Date(banner.startAt)
       globalStartDate.setMonth(globalStartDate.getMonth() + 6)
+      globalStartDate.setDate(globalStartDate.getDate() + 6)
       const globalStartDay = globalStartDate.toLocaleDateString()
-
       const endDate = new Date(banner.endAt)
       const endDay = endDate.toLocaleDateString()
       const endHour = endDate.toLocaleTimeString()
@@ -33,10 +44,7 @@ export const Banners = () => {
     }
   }, [])
 
-  const [currentBannerJP, setCurrentBannerJP] = useState({})
   const [currentBannerEN, setCurrentBannerEN] = useState({})
-  const [pastBanners, setPastBanners] = useState([])
-  const [upcomingBanners, setUpcomingBanners] = useState([])
   const [allBanners, setAllBanners] = useState([])
   const [characters, setCharacters] = useState([])
 
@@ -45,6 +53,42 @@ export const Banners = () => {
     <div className='Banners'>
       <h2 className='text'>EN start times may not be entirely accurate, as they were calculated <br />
         under the assumption of a 6 month difference between servers</h2>
+      <p className='text'>Current banner (EN)</p>
+
+      <div className='centered-container'>
+        {currentBannerEN.length >= 0 && (
+          <table className='current-table'>
+            <th className='current-table-header'>Rate ups</th>
+            <th className='current-table-header'>Start time</th>
+            <th className='current-table-header'>End time</th>
+            {
+              currentBannerEN.map(banner => {
+                return (
+                  <tr className='current-table-row'>
+                    <td className='current-table-detail'>
+                      {banner.rateups.map(rateup => {
+                        const indexOfCharacter = characters.findIndex(character => rateup === character.name)
+                        if (indexOfCharacter !== 1) {
+                          return (
+                            <div>
+                              <img src={characters[indexOfCharacter].photoUrl} style={{ width: '80px', paddingTop: '20px' }}></img>
+                              <p>{rateup}</p>
+                            </div>
+                          )
+                        } else {
+                          return null
+                        }
+                      })}
+                    </td>
+                    <td className='current-table-detail'>{banner.startAt}</td>
+                    <td className='current-table-detail'>{banner.endAt}</td>
+                  </tr>
+                )
+              })
+            }
+          </table>)}
+      </div>
+      <h1></h1>
       <div className='centered-container'>
         <table className='banner-table'>
           <th className='banner-table-header'>Rate ups</th>
@@ -79,104 +123,7 @@ export const Banners = () => {
           })}
         </table>
       </div>
+      <p>API: https://api.ennead.cc/buruaka/banner and https://api.ennead.cc/buruaka/banner?region=japan</p>
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-      const sortedBanners = allBanners.sort((a, b) => b.startAt - a.startAt)
-      setAllBanners(sortedBanners.map((banner) => {
-        const startDate = new Date(banner.startAt)
-        const endDate = new Date(banner.endAt)
-        const startDay = startDate.toLocaleDateString()
-        const startHour = startDate.toLocaleTimeString()
-        const endDay = endDate.toLocaleDateString()
-        const endHour = endDate.toLocaleTimeString()
-        return { ...banner, startAt: `${startDay}, ${startHour}`, endAt:  `${endDay}, ${endHour}` }
-      }))
-
-                <th>Rate ups</th>
-          <th>Gacha type</th>
-          <th>Start</th>
-          <th>End</th>
-
-          {allBanners.map(banner => {
-            return (
-              <tr>
-                <td>
-                  {banner.rateups.map(rateup => {
-                    const indexOfCharacter = characters.findIndex(character => rateup == character.name)
-                    if (indexOfCharacter !== -1) {
-                      return <img src={characters[indexOfCharacter].photoUrl} width={'120vw'} />
-                    } else {
-                      return null
-                    }
-                  })}
-                </td>
-                <td>{banner.gachaType}</td>
-                <td>{banner.startAt}</td>
-                <td>{banner.endAt}</td>
-              </tr>
-            )
-          })}
-*/

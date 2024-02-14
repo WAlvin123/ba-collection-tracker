@@ -11,28 +11,18 @@ export const Navbar = () => {
       </h1>
       <button className='navbar-button' onClick={() => {
         navigate('/')
-        }}>
+      }}>
         Collection
       </button>
       <button className='navbar-button' onClick={() => {
         navigate('/search')
-        }}>
+      }}>
         Search
       </button>
       <button className='navbar-button' onClick={() => {
         navigate('/banners')
-        }}>
+      }}>
         Banners
-      </button>
-      <button className='navbar-button' onClick={() => {
-        navigate('/raids')
-        }}>
-        Total Assaults
-      </button>
-      <button className='navbar-button' onClick={() => {
-        navigate('/sources')
-        }}>
-        Sources
       </button>
     </div>
   )
