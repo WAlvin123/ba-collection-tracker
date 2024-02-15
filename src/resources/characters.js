@@ -420,7 +420,7 @@ const newCharacters = [
     school: 'Red Winter',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/53/Momiji.png',
     damageType: 'Sonic',
-    clicked: 'false'
+    clicked: false
   }
 ]
 

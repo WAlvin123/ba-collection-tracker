@@ -71,7 +71,7 @@ export const Banners = () => {
                         if (indexOfCharacter !== 1) {
                           return (
                             <div>
-                              <img src={characters[indexOfCharacter].photoUrl} style={{ width: '80px', paddingTop: '20px' }}></img>
+                              <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
                               <p>{rateup}</p>
                             </div>
                           )
@@ -105,7 +105,7 @@ export const Banners = () => {
                     if (indexOfCharacter !== -1) {
                       return (
                         <>
-                          <img src={characters[indexOfCharacter].photoUrl} style={{ width: '160px', paddingTop: '50px' }}></img>
+                          <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
                           <p>{rateup}</p>
                         </>
                       )

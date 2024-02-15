@@ -1,14 +1,21 @@
 .navbar {
+  display:grid;
+  column-count: 1fr;
   background-color: rgb(52, 52, 52);
-  padding-top: 0.3vw;
-  padding-left: 3%;
-  padding-right: 20%;
-  padding-bottom: 0.1vw;
-  display: flex;
-  justify-content:space-between;
-  height:80px;
-  width: 90vw;
-  position: fixed;
+  padding-bottom: 10px;
+
+  @media (min-width: 720px) {
+    background-color: rgb(52, 52, 52);
+    padding-top: 0.3vw;
+    padding-left: 3%;
+    padding-right: 20%;
+    padding-bottom: 0.1vw;
+    display: flex;
+    justify-content:space-between;
+    height:80px;
+    width: 90vw;
+    position: fixed;
+  }
 }
 
 .text {

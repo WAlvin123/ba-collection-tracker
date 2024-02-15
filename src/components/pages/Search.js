@@ -61,7 +61,7 @@ export const Search = () => {
             onSearch(userInput.toLowerCase())
           }
         }}
-        className="text-2"
+        className="search-input"
       />
       <button
         onClick={() => {
