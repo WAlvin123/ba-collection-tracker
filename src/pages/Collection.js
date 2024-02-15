@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FilterBar } from '../FilterBar';
-import newCharacters from '../../resources/characters';
+import { FilterBar } from '../components/FilterBar'
+import newCharacters from '../resources/characters';
 import './Collection.css'
 
 export const Collection = () => {
