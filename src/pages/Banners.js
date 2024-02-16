@@ -50,14 +50,18 @@ export const Banners = () => {
   const [showAll, setShowAll] = useState(true)
 
   const handleSearch = () => {
-    const lowerCaseRateUps = allBanners.map(prevBanner => {
-      const updatedName = prevBanner.rateups.map(rateup => {
+    const bannersJoinedLowerCaseRateups = allBanners.map(banner => {
+      const lowerCaseRateups = banner.rateups.map(rateup => {
         return rateup.toLowerCase()
       })
-      return { ...prevBanner, rateups: updatedName }
+      const joinedRateups = lowerCaseRateups.join(',')
+      return { ...banner, rateups: joinedRateups }
     })
-    setFilteredBanners(lowerCaseRateUps.filter(character => character.rateups.includes(searchInput.toLowerCase())))
-    console.log(filteredBanners)
+
+    const filteredBannerJoined = bannersJoinedLowerCaseRateups.filter(banner => banner.rateups.includes(searchInput.toLowerCase()))
+    setFilteredBanners(filteredBannerJoined.map(banner => {
+      return { ...banner, rateups: banner.rateups.split(',') }
+    }))
   }
 
 
@@ -130,81 +134,98 @@ export const Banners = () => {
         </>)}
 
       {showAll === true && (
-      <>
-      <p className='text'>All Banners (JP)</p>
-      <div className='centered-container'>
-        <table className='banner-table'>
-          <th className='banner-table-header'>Rate ups</th>
-          <th className='banner-table-header'>Gacha type</th>
-          <th className='banner-table-header'>Start time (JP)</th>
-          <th className='banner-table-header'>End time (JP)</th>
-          <th className='banner-table-header'>Projected start time (EN)</th>
-          {allBanners.map(banner => {
-            return (
-              <tr className='banner-table-row'>
-                <td className='banner-table-detail'>
-                  {banner.rateups.map(rateup => {
-                    const indexOfCharacter = characters.findIndex(character => character.name === rateup)
-                    if (indexOfCharacter !== -1) {
-                      return (
-                        <>
-                          <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
-                          <p>{rateup}</p>
-                        </>
-                      )
-                    } else {
-                      return null
-                    }
-                  })}
-                </td>
-                <td className='banner-table-detail'>{banner.gachaType}</td>
-                <td className='banner-table-detail'>{banner.startAt}</td>
-                <td className='banner-table-detail'>{banner.endAt}</td>
-                <td className='banner-table-detail'>{banner.globalStartAt}</td>
-              </tr>
-            )
-          })}
-        </table>
-      </div>
-      </>
-      
+        <>
+          <p className='text'>All Banners (JP)</p>
+          <div className='centered-container'>
+            <table className='banner-table'>
+              <th className='banner-table-header'>Rate ups</th>
+              <th className='banner-table-header'>Gacha type</th>
+              <th className='banner-table-header'>Start time (JP)</th>
+              <th className='banner-table-header'>End time (JP)</th>
+              <th className='banner-table-header'>Projected start time (EN)</th>
+              {allBanners.map(banner => {
+                return (
+                  <tr className='banner-table-row'>
+                    <td className='banner-table-detail'>
+                      {banner.rateups.map(rateup => {
+                        const indexOfCharacter = characters.findIndex(character => character.name === rateup)
+                        if (indexOfCharacter !== -1) {
+                          return (
+                            <>
+                              <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                              <p>{rateup}</p>
+                            </>
+                          )
+                        } else {
+                          return null
+                        }
+                      })}
+                    </td>
+                    <td className='banner-table-detail'>{banner.gachaType}</td>
+                    <td className='banner-table-detail'>{banner.startAt}</td>
+                    <td className='banner-table-detail'>{banner.endAt}</td>
+                    <td className='banner-table-detail'>{banner.globalStartAt}</td>
+                  </tr>
+                )
+              })}
+            </table>
+          </div>
+        </>
+
       )}
 
-      {showAll === false && (<div className='centered-container'>
-        <table className='banner-table'>
-          <th className='banner-table-header'>Rate ups</th>
-          <th className='banner-table-header'>Gacha type</th>
-          <th className='banner-table-header'>Start time (JP)</th>
-          <th className='banner-table-header'>End time (JP)</th>
-          <th className='banner-table-header'>Projected start time (EN)</th>
-          {filteredBanners.map(banner => {
-            return (
-              <tr className='banner-table-row'>
-                <td className='banner-table-detail'>
-                  {banner.rateups.map(rateup => {
-                    const indexOfCharacter = characters.findIndex(character => character.name.toLowerCase() === rateup)
-                    if (indexOfCharacter !== -1) {
-                      return (
-                        <>
-                          <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
-                          <p>{characters[indexOfCharacter].name}</p>
-                        </>
-                      )
-                    } else {
-                      return null
-                    }
-                  })}
-                </td>
-                <td className='banner-table-detail'>{banner.gachaType}</td>
-                <td className='banner-table-detail'>{banner.startAt}</td>
-                <td className='banner-table-detail'>{banner.endAt}</td>
-                <td className='banner-table-detail'>{banner.globalStartAt}</td>
-              </tr>
-            )
-          })}
-        </table>
-      </div>)}
+      {showAll === false && (
+        <div className='centered-container'>
+          <table className='banner-table'>
+            <th className='banner-table-header'>Rate ups</th>
+            <th className='banner-table-header'>Gacha type</th>
+            <th className='banner-table-header'>Start time (JP)</th>
+            <th className='banner-table-header'>End time (JP)</th>
+            <th className='banner-table-header'>Projected start time (EN)</th>
+            {filteredBanners.map(banner => {
+              return (
+                <tr className='banner-table-row'>
+                  <td className='banner-table-detail'>
+                    {banner.rateups.map(rateup => {
+                      const indexOfCharacter = characters.findIndex(character => character.name.toLowerCase() === rateup)
+                      if (indexOfCharacter !== -1) {
+                        return (
+                          <>
+                            <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                            <p>{characters[indexOfCharacter].name}</p>
+                          </>
+                        )
+                      } else {
+                        return null
+                      }
+                    })}
+                  </td>
+                  <td className='banner-table-detail'>{banner.gachaType}</td>
+                  <td className='banner-table-detail'>{banner.startAt}</td>
+                  <td className='banner-table-detail'>{banner.endAt}</td>
+                  <td className='banner-table-detail'>{banner.globalStartAt}</td>
+                </tr>
+              )
+            })}
+          </table>
+        </div>)}
       <p>API: https://api.ennead.cc/buruaka/banner and https://api.ennead.cc/buruaka/banner?region=japan</p>
     </div>
   )
 }
+
+/* 
+    const lowerCaseRateUps = allBanners.map(prevBanner => {
+      const updatedNames = prevBanner.rateups.map(rateup => {
+        return rateup.toLowerCase()
+      })
+      const joinedNames = updatedNames.join(',')
+      return { ...prevBanner, rateups: joinedNames }
+    })
+
+    const filteredBannersSplit = lowerCaseRateUps.filter(character => character.rateups.includes(searchInput.toLowerCase()))
+
+    setFilteredBanners(filteredBannersSplit.map(banner => {
+      const splitNames = banner.rateups.split(',')
+      return {...banner, rateups: splitNames}
+    })) */

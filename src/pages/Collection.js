@@ -257,11 +257,7 @@ export const Collection = () => {
             setSchoolFilter(true)
             setSchools(prevSchools => {
               const updatedSchools = prevSchools.filter(filteredSchool => filteredSchool !== school)
-              const filteredCharacters = characters.filter(character => {
-                if (updatedSchools.includes(character.school)) {
-                  return true
-                } else return false
-              })
+              const filteredCharacters = characters.filter(character => updatedSchools.includes(character.school))
               setFilteredCharacters(filteredCharacters)
               setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
               return updatedSchools
@@ -272,52 +268,37 @@ export const Collection = () => {
           setSchoolFilter(true)
           setSchools(prevSchools => {
             const updatedSchools = [school, ...prevSchools]
-            const filteredCharacters = characters.filter(character => {
-              if (updatedSchools.includes(character.school)) {
-                return true
-              } else return false
-            })
+            const filteredCharacters = characters.filter(character => updatedSchools.includes(character.school))
             setFilteredCharacters(filteredCharacters)
             setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
             return updatedSchools
           })
         }
       }
-      else if (dmgFilter == true) { // All 3 filters
-        if (schools.includes(school)) {
-          if (schools.length === 1) {
+      else if (dmgFilter == true) { // dmg + school filter
+        if (!schools.includes(school)) {
+          setSchools(prevSchools => {
+            const updatedSchools = [...prevSchools, school]
+            setSchoolFilter(true)
+            setFilteredCharacters(characters.filter(character => updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType)))
+            setOwnedCharacters(characters.filter(character => updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType) && character.clicked === true))
+            return updatedSchools
+          })
+        } else {
+          if (schools.length == 1) {
+            setSchoolFilter(false)
             setSchools([])
             setFilteredCharacters(characters.filter(character => dmgTypes.includes(character.damageType)))
-            setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
-            setSchoolFilter(false)
+            setOwnedCharacters(characters.filter(character => dmgTypes.includes(character.damageType) && character.clicked === true))
           } else {
             setSchoolFilter(true)
             setSchools(prevSchools => {
-              const updatedSchools = prevSchools.filter(filteredSchool => filteredSchool !== school)
-              const filteredCharacters = characters.filter(character => {
-                if (updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType)) {
-                  return true
-                } else return false
-              })
-              setFilteredCharacters(filteredCharacters)
-              setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
+              const updatedSchools = prevSchools.filter(removedSchool => removedSchool !== school)
+              setFilteredCharacters(characters.filter(character => updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType)))
+              setOwnedCharacters(characters.filter(character => updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType) && character.clicked === true))
               return updatedSchools
             })
           }
-        }
-        else {
-          setSchoolFilter(true)
-          setSchools(prevFilters => {
-            const updatedSchools = [school, ...prevFilters]
-            const filteredCharacters = characters.filter(character => {
-              if (updatedSchools.includes(character.school) && dmgTypes.includes(character.damageType)) {
-                return true
-              } else return false
-            })
-            setFilteredCharacters(filteredCharacters)
-            setOwnedCharacters(filteredCharacters.filter(character => character.clicked == true))
-            return updatedSchools
-          })
         }
       }
     }

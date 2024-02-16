@@ -31,14 +31,14 @@ export const Raids = () => {
         <th>Start time</th>
         <th>End time</th>
         {globalRaids.map(raid => {
-        return (
-          <tr>
-            <td>{raid.bossName}</td>
-            <td>{raid.startAt}</td>
-            <td>{raid.endAt}</td>
-          </tr>
-        )
-      })}
+          return (
+            <tr>
+              <td>{raid.bossName}</td>
+              <td>{raid.startAt}</td>
+              <td>{raid.endAt}</td>
+            </tr>
+          )
+        })}
       </table>
 
     </div>
