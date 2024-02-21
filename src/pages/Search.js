@@ -20,6 +20,7 @@ export const Search = () => {
   const [userInput, setUserInput] = useState('')
   const [currentProfile, setCurrentProfile] = useState(null)
   const [showAll, setShowAll] = useState(true)
+  const [visible, setVisible] = useState(false)
 
   const onSearch = (name) => {
     setFilteredCharacters(characters.filter(character => character.name.toLowerCase().includes(name)))
@@ -48,7 +49,7 @@ export const Search = () => {
     <div className="Search">
       {showAll === true && (<>
         <p className="text">
-          Enter the name of the character below to search for them
+          Search for a character and click their icon to view more details about them
         </p>
         <input
           value={userInput}
@@ -94,11 +95,20 @@ export const Search = () => {
         <div>
           <button className='search-button' onClick={() => {
             setShowAll(true)
+            setVisible(false)
           }}>Return</button>
           <h1></h1>
           <div>
-            <p>Memolobby:</p>
-            <img src={currentProfile.image.lobby} width={'300vw'}></img>
+            <div>
+              <p>Memolobby:</p>
+              {visible === true && (<img src={currentProfile.image.lobby} width={'300vw'}></img>)}
+              <button
+                onClick={() => {
+                  setVisible(!visible)
+                }}
+                className="navbar-button"
+              >Click to view Memolobby</button>
+            </div>
             <p>Name: {currentProfile.character.name}</p>
             <p>School: {currentProfile.info.school}</p>
             <p>Club: {currentProfile.info.club}</p>
@@ -107,15 +117,22 @@ export const Search = () => {
             <p>Damage Type: {currentProfile.character.bulletType}</p>
             <p>Squad: {currentProfile.character.squadType}</p>
             <p>Role: {currentProfile.character.role}</p>
-            <p>Profile: {currentProfile.character.profile}</p>
-            <table>
-              <th>Moods</th>
-              <tr>
-                <td>Street: {currentProfile.stat.streetMood}</td>
-                <td>Outdoor: {currentProfile.stat.outdoorMood}</td>
-                <td>Indoor: {currentProfile.stat.indoorMood}</td>
-              </tr>
-            </table>
+            <div className="centered-container">
+              <p className="profile-text">Profile: {currentProfile.character.profile}</p>
+            </div>
+            <div className='centered-container'>
+              <table>
+                <th>Street mood</th>
+                <th>Outdoor mood</th>
+                <th>Indoor mood</th>
+
+                <tr>
+                  <td> {currentProfile.stat.streetMood}</td>
+                  <td> {currentProfile.stat.outdoorMood}</td>
+                  <td> {currentProfile.stat.indoorMood}</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       )}
