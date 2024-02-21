@@ -15,14 +15,19 @@ export const Navbar = () => {
         Collection
       </button>
       <button className='navbar-button' onClick={() => {
-        navigate('/search')
+        navigate('/profiles')
       }}>
-        Search
+        Profiles
       </button>
       <button className='navbar-button' onClick={() => {
         navigate('/banners')
       }}>
         Banners
+      </button>
+      <button className='navbar-button' onClick={() => {
+        navigate('/planner')
+      }}>
+        Planner
       </button>
     </div>
   )

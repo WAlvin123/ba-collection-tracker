@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import './Banners.css'
 import TLBanners from '../resources/TLBanners'
+import { all } from 'axios'
 
 // TODO: improve search functionality by displaying all rate ups which includes search input by string input and not by array object comparison
 
 export const Banners = () => {
+
   useEffect(() => {
     fetch('https://api.ennead.cc/buruaka/banner').then(res => {
       return res.json()
@@ -32,13 +34,19 @@ export const Banners = () => {
       const endDate = new Date(banner.endAt)
       const endDay = endDate.toLocaleDateString()
       const endHour = endDate.toLocaleTimeString()
-
       return { ...banner, startAt: `${startDay}, ${startHour}`, endAt: `${endDay}, ${endHour}`, globalStartAt: `~${globalStartDay}` }
     }))
 
     const storedCharacters = JSON.parse(localStorage.getItem('characters'))
     if (storedCharacters) {
       setCharacters(storedCharacters)
+    }
+
+    const storedPlannedBanners = JSON.parse(localStorage.getItem('plannedBanners'))
+    if (storedPlannedBanners) {
+      setPlannedBanners(storedPlannedBanners)
+    } else {
+      setPlannedBanners([])
     }
   }, [])
 
@@ -48,30 +56,44 @@ export const Banners = () => {
   const [searchInput, setSearchInput] = useState('')
   const [filteredBanners, setFilteredBanners] = useState([])
   const [showAll, setShowAll] = useState(true)
+  const [plannedBanners, setPlannedBanners] = useState([''])
 
   const handleSearch = () => {
-    const bannersJoinedLowerCaseRateups = allBanners.map(banner => {
-      const lowerCaseRateups = banner.rateups.map(rateup => {
+    const lowerCaseBanners = allBanners.map(banner => {
+      const lowercaseRateups = banner.rateups.map(rateup => {
         return rateup.toLowerCase()
       })
-      const joinedRateups = lowerCaseRateups.join(',')
-      return { ...banner, rateups: joinedRateups }
+      return { ...banner, rateups: lowercaseRateups }
     })
 
-    const filteredBannerJoined = bannersJoinedLowerCaseRateups.filter(banner => banner.rateups.includes(searchInput.toLowerCase()))
-    setFilteredBanners(filteredBannerJoined.map(banner => {
+    const splitBanners = lowerCaseBanners.map(banner => {
+      const splitRateups = banner.rateups.join(',')
+      return { ...banner, rateups: splitRateups }
+    })
+
+    setFilteredBanners(splitBanners.filter(banner => banner.rateups.includes(searchInput.toLowerCase())).map(banner => {
       return { ...banner, rateups: banner.rateups.split(',') }
     }))
   }
 
+  const handleAddToPlanner = (banner) => {
+    if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups === banner.rateups)) {
+      console.log('This banner is already in the planner ')
+    } else {
+      setPlannedBanners(prevBanners => {
+        const updatedBanners = [...prevBanners, { ...banner, id: Math.random() }]
+        localStorage.setItem('plannedBanners', JSON.stringify(updatedBanners))
+        return updatedBanners
+      })
+    }
+  }
 
   return (
     <div className='Banners'>
       <h2 className='text'>EN start times may not be entirely accurate, as they were calculated <br />
         under the assumption of a 6 month difference between servers</h2>
-
       <p className='text'>Got a specific rate up you're looking for?</p>
-      <input className='text-2'
+      <input className='search-input'
         value={searchInput}
         onChange={(event) => {
           setSearchInput(event.target.value)
@@ -114,7 +136,7 @@ export const Banners = () => {
                           if (indexOfCharacter !== 1) {
                             return (
                               <div>
-                                <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                                <img src={characters[indexOfCharacter].photoUrl} className='current-character-img'></img>
                                 <p>{rateup}</p>
                               </div>
                             )
@@ -143,6 +165,7 @@ export const Banners = () => {
               <th className='banner-table-header'>Start time (JP)</th>
               <th className='banner-table-header'>End time (JP)</th>
               <th className='banner-table-header'>Projected start time (EN)</th>
+              <th className='banner-table-header'>Add to Planner</th>
               {allBanners.map(banner => {
                 return (
                   <tr className='banner-table-row'>
@@ -165,6 +188,16 @@ export const Banners = () => {
                     <td className='banner-table-detail'>{banner.startAt}</td>
                     <td className='banner-table-detail'>{banner.endAt}</td>
                     <td className='banner-table-detail'>{banner.globalStartAt}</td>
+                    <td className='banner-table-detail'>
+                      <button
+                        className='search-button'
+                        onClick={() => {
+                          handleAddToPlanner(banner)
+                        }}
+                      >
+                        Add
+                      </button>
+                    </td>
                   </tr>
                 )
               })}
@@ -174,7 +207,7 @@ export const Banners = () => {
 
       )}
 
-      {showAll === false && (
+      {showAll === false && filteredBanners.length > 0 && (
         <div className='centered-container'>
           <table className='banner-table'>
             <th className='banner-table-header'>Rate ups</th>
@@ -209,23 +242,12 @@ export const Banners = () => {
             })}
           </table>
         </div>)}
+
+      {showAll === false && filteredBanners.length == 0 && (
+        <div className='centered-container'>
+          <h1 className='text'>No results found</h1>
+        </div>)}
       <p>API: https://api.ennead.cc/buruaka/banner and https://api.ennead.cc/buruaka/banner?region=japan</p>
     </div>
   )
 }
-
-/* 
-    const lowerCaseRateUps = allBanners.map(prevBanner => {
-      const updatedNames = prevBanner.rateups.map(rateup => {
-        return rateup.toLowerCase()
-      })
-      const joinedNames = updatedNames.join(',')
-      return { ...prevBanner, rateups: joinedNames }
-    })
-
-    const filteredBannersSplit = lowerCaseRateUps.filter(character => character.rateups.includes(searchInput.toLowerCase()))
-
-    setFilteredBanners(filteredBannersSplit.map(banner => {
-      const splitNames = banner.rateups.split(',')
-      return {...banner, rateups: splitNames}
-    })) */

@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Routes, useNavigate, useLocation } from 'r
 import { Search } from './pages/Search';
 import { Collection } from './pages/Collection';
 import { Banners } from './pages/Banners';
+import { Planner } from './pages/Planner';
 
 // TODO: Search page
 
@@ -15,8 +16,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path={'/'} element={<Collection />} />
-          <Route path={'/search'} element={<Search />} />
+          <Route path={'/profiles'} element={<Search />} />
           <Route path={'/banners'} element={<Banners />} />
+          <Route path={'/planner'} element={<Planner />} />
         </Routes>
       </Router>
     </div>

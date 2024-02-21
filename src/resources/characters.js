@@ -24,7 +24,7 @@ const newCharacters = [
     clicked: false
   },
   {
-    _id: 'hi645wj', // START HERE
+    _id: 'hi645wj',
     name: 'Haruna (New Year)',
     school: 'Gehenna',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/b/b3/Haruna_%28New_Year%29.png',
@@ -281,7 +281,7 @@ const newCharacters = [
   },
   {
     _id: '35g496m980456gemj',
-    name: 'Shokuhou Miksaki',
+    name: 'Shokuhou Misaki',
     school: 'Collab',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/6/66/Shokuhou_Misaki.png',
     damageType: 'Explosive',
@@ -421,7 +421,23 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/53/Momiji.png',
     damageType: 'Sonic',
     clicked: false
-  }
+  },
+  {
+    id: '67rjk67rij56u76jtenyu',
+    name: 'Aru (Dress)',
+    school: 'Gehenna',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/1/1f/Aru_%28Dress%29.png',
+    damageType: 'Penetration',
+    clicked: false
+  },
+  {
+    id: 'ej567r67j586jr78',
+    name: 'Kayoko (Dress)',
+    school: 'Gehenna',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/9/9b/Kayoko_%28Dress%29.png',
+    damageType: 'Penetration',
+    clicked: false
+  },
 ]
 
 export default newCharacters

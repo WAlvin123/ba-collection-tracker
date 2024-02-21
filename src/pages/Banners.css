@@ -69,3 +69,13 @@
     padding-top: 50px;
   }
 }
+
+.current-character-img {
+  width: 50px;
+  padding-top: 50px;
+
+  @media (min-width: 720px) {
+    width: 90px;
+    padding-top: 50px;
+  }
+}
