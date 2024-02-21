@@ -854,7 +854,7 @@ const TLBanners =
       "startAt": 1669777200000,
       "endAt": 1670381999000,
       "rateups": [
-        "Chiatsu (Hot Spring)"
+        "Chinatsu (Hot Spring)"
       ]
     },
     {

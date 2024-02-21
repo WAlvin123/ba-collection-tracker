@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Banners.css'
 import TLBanners from '../resources/TLBanners'
-import { all } from 'axios'
 
 // TODO: improve search functionality by displaying all rate ups which includes search input by string input and not by array object comparison
 
@@ -56,7 +55,7 @@ export const Banners = () => {
   const [searchInput, setSearchInput] = useState('')
   const [filteredBanners, setFilteredBanners] = useState([])
   const [showAll, setShowAll] = useState(true)
-  const [plannedBanners, setPlannedBanners] = useState([''])
+  const [plannedBanners, setPlannedBanners] = useState([])
 
   const handleSearch = () => {
     const lowerCaseBanners = allBanners.map(banner => {
@@ -90,8 +89,13 @@ export const Banners = () => {
 
   return (
     <div className='Banners'>
-      <h2 className='text'>EN start times may not be entirely accurate, as they were calculated <br />
-        under the assumption of a 6 month difference between servers</h2>
+      <div className='centered-container'>
+        <p className='caution-text'>
+          EN start times may not be entirely accurate, as they were
+          calculated under the assumption of a 6 month difference
+          between the current EN banner and the latest JP banner
+        </p>
+      </div>
       <p className='text'>Got a specific rate up you're looking for?</p>
       <input className='search-input'
         value={searchInput}
@@ -162,9 +166,9 @@ export const Banners = () => {
             <table className='banner-table'>
               <th className='banner-table-header'>Rate ups</th>
               <th className='banner-table-header'>Gacha type</th>
-              <th className='banner-table-header'>Start time (JP)</th>
-              <th className='banner-table-header'>End time (JP)</th>
-              <th className='banner-table-header'>Projected start time (EN)</th>
+              <th className='banner-table-header'>Start (JP)</th>
+              <th className='banner-table-header'>End (JP)</th>
+              <th className='banner-table-header'>Projected Start (EN)</th>
               <th className='banner-table-header'>Add to Planner</th>
               {allBanners.map(banner => {
                 return (
@@ -190,7 +194,7 @@ export const Banners = () => {
                     <td className='banner-table-detail'>{banner.globalStartAt}</td>
                     <td className='banner-table-detail'>
                       <button
-                        className='search-button'
+                        className='add-remove-button'
                         onClick={() => {
                           handleAddToPlanner(banner)
                         }}
@@ -212,9 +216,9 @@ export const Banners = () => {
           <table className='banner-table'>
             <th className='banner-table-header'>Rate ups</th>
             <th className='banner-table-header'>Gacha type</th>
-            <th className='banner-table-header'>Start time (JP)</th>
-            <th className='banner-table-header'>End time (JP)</th>
-            <th className='banner-table-header'>Projected start time (EN)</th>
+            <th className='banner-table-header'>Start (JP)</th>
+            <th className='banner-table-header'>End (JP)</th>
+            <th className='banner-table-header'>Projected Start (EN)</th>
             {filteredBanners.map(banner => {
               return (
                 <tr className='banner-table-row'>
