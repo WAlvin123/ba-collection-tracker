@@ -125,7 +125,6 @@ export const Search = () => {
                 <th>Street mood</th>
                 <th>Outdoor mood</th>
                 <th>Indoor mood</th>
-
                 <tr>
                   <td> {currentProfile.stat.streetMood}</td>
                   <td> {currentProfile.stat.outdoorMood}</td>
