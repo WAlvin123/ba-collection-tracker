@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import './Banners.css'
 import TLBanners from '../resources/TLBanners'
 
-// TODO: improve search functionality by displaying all rate ups which includes search input by string input and not by array object comparison
-
 export const Banners = () => {
 
   useEffect(() => {
