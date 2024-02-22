@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import './Banners.css'
+import './CurrentTable.css'
 import TLBanners from '../resources/TLBanners'
-import { all } from 'axios'
 
 export const Banners = () => {
+
+  // TODO: fix the add to planner function for filteredbanners
 
   useEffect(() => {
     fetch('https://api.ennead.cc/buruaka/banner').then(res => {
@@ -44,6 +46,9 @@ export const Banners = () => {
     if (storedPlannedBanners) {
       setPlannedBanners(storedPlannedBanners)
     }
+
+    localStorage.setItem('page', 'banners')
+
   }, [])
 
   const [currentBannerEN, setCurrentBannerEN] = useState({})
@@ -63,7 +68,7 @@ export const Banners = () => {
     const splitBannersFiltered = splitBanners.filter(banner => banner.rateups.toLowerCase().includes(searchInput.toLowerCase()))
 
     setFilteredBanners(splitBannersFiltered.map(banner => {
-      return {...banner, rateups: banner.rateups.split(',')} 
+      return { ...banner, rateups: banner.rateups.split(',') }
     }))
 
     console.log(filteredBanners)
@@ -220,7 +225,7 @@ export const Banners = () => {
                 <tr className='banner-table-row'>
                   <td className='banner-table-detail'>
                     {banner.rateups.map(rateup => {
-                      const indexOfCharacter = characters.findIndex(character => character.name.toLowerCase() === rateup.toLowerCase())
+                      const indexOfCharacter = characters.findIndex(character => character.name === rateup)
                       if (indexOfCharacter !== -1) {
                         return (
                           <>

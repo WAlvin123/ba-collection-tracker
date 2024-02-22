@@ -1,0 +1,42 @@
+.current-character-img {
+  width: 25px;
+  padding-top: 15px;
+
+  @media (min-width: 900px) {
+    width: 90px;
+    padding-top: 20px;
+  }
+}
+
+.current-table {
+  width: 50vw;
+  background-color: rgb(52, 52, 52);
+}
+
+.current-table-row {
+  background-color: white;
+  color: rgb(68, 129, 195);
+  font-size: xx-small;
+
+  @media (min-width:900px) {
+    background-color: white;
+    color: rgb(68, 129, 195);
+    font-size: large;
+  }
+}
+
+.current-table-header {
+  background-color: rgb(52, 52, 52);
+  font-size: x-small;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+
+  @media (min-width:900px) {
+    background-color: rgb(52, 52, 52);
+    font-size: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: rgb(255, 255, 255);
+  }
+}

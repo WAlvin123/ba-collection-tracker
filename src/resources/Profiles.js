@@ -775,6 +775,56 @@ const Profiles = [
       indoorMood: 'S'
     }
   },
+  {
+    character: {
+      name: "Aru (Dress)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Penetration",
+      position: "Back",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "SR",
+      profile: "The president of Problem Solver 68 and a student of Gehenna Academy, who accepted the request for an infiltration mission. She doesn't get to show off in dresses often, but she wears them perfectly. Aru is absolutely thrilled to be offered such a hard-boiled job, but she tries to keep a straight face."
+    },
+    info: {
+      club: 'Problem Solver 68',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/1/12/Lobbyillust_Aru_%28Dress%29.png/180px-Lobbyillust_Aru_%28Dress%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'B',
+      indoorMood: 'S'
+    }
+  },
+  {
+    character: {
+      name: "Kayoko (Dress)",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Penetration",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "Section Chief of Problem Solver 68 and student of Gehenna Academy, currently infiltrating an Opera House. Kayoko claims to be unaccustomed to wearing such clothes, but you wouldn't be able to tell it looking at her. She pays no attention to gazes of those around and just calmly goes about with her work."
+    },
+    info: {
+      club: 'Problem Solver 68',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/5/59/Lobbyillust_Kayoko_%28Dress%29.png/180px-Lobbyillust_Kayoko_%28Dress%29.png'
+    },
+    stat: {
+      streetMood: 'S',
+      outdoorMood: 'B',
+      indoorMood: 'D'
+    }
+  }
 ]
 
 export default Profiles

@@ -1,32 +1,46 @@
 import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
+import { useEffect, useState } from 'react'
 
 export const Navbar = () => {
   const navigate = useNavigate()
+  const [page, setPage] = useState('')
+
+  useEffect(() => {
+    setPage(localStorage.getItem('page'))
+  })
 
   return (
     <div className='navbar'>
       <h1 className='text-2'>
         Your<span className='text'>Archive</span>
       </h1>
-      <button className='navbar-button' onClick={() => {
-        navigate('/')
-      }}>
+      <button className={page === 'collection' ? 'navbar-button-clicked' : 'navbar-button'}
+        onClick={() => {
+          navigate('/')
+          localStorage.setItem('page', 'collection')
+        }}>
         Collection
       </button>
-      <button className='navbar-button' onClick={() => {
-        navigate('/profiles')
-      }}>
+      <button className={page === 'profiles' ? 'navbar-button-clicked' : 'navbar-button'}
+        onClick={() => {
+          navigate('/profiles')
+          localStorage.setItem('page', 'profiles')
+        }}>
         Profiles
       </button>
-      <button className='navbar-button' onClick={() => {
-        navigate('/banners')
-      }}>
+      <button className={page === 'banners' ? 'navbar-button-clicked' : 'navbar-button'}
+        onClick={() => {
+          navigate('/banners')
+          localStorage.setItem('page', 'banners')
+        }}>
         Banners
       </button>
-      <button className='navbar-button' onClick={() => {
-        navigate('/planner')
-      }}>
+      <button className={page === 'planner' ? 'navbar-button-clicked' : 'navbar-button'}
+        onClick={() => {
+          navigate('/planner')
+          localStorage.setItem('page', 'planner')
+        }}>
         Planner
       </button>
     </div>

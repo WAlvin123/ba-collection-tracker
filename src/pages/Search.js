@@ -12,7 +12,6 @@ export const Search = () => {
     } else {
       console.log('How are you here?')
     }
-    console.log(currentProfile)
   }, [])
 
   const [characters, setCharacters] = useState([])
@@ -135,8 +134,12 @@ export const Search = () => {
           </div>
         </div>
       )}
-      <h2>API: https://api.ennead.cc/buruaka/character/ </h2>
-      <h2>Memolobby icons: https://bluearchive.wiki/wiki/Main_Page </h2>
+      <div className="centered-container">
+        <h2 className="citation">API: https://api.ennead.cc/buruaka/character/ </h2>
+      </div>
+      <div className="centered-container">
+        <h2 className="citation">Memolobby icons: https://bluearchive.wiki/wiki/Main_Page </h2>
+      </div>
     </div>
   )
 }
