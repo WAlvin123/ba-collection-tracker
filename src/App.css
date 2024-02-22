@@ -2,6 +2,7 @@
   text-align: center;
   color: white;
   min-height:fit-content;
+  font-family: 'Lucida Sans';
 }
 
 .App-link {
@@ -45,4 +46,5 @@ cursor: pointer;
 
 body {
   background-color:rgb(130, 183, 211); 
+  
 }

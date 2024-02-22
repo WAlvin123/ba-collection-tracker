@@ -4,9 +4,16 @@
 
 .search-input {
   color: rgb(68, 129, 195);
-  font-family: sans-serif;
-  font-size: 35px;
+  font-family: 'Lucida Sans';
+  font-size: x-large;
   width: 40vw;
+
+  @media (min-width: 900px) {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: xx-large;
+    width: 20vw;
+  }
 }
 
 .profile-text {
@@ -16,8 +23,5 @@
 
 .citation {
   max-width: 300px;
-
-  @media (min-width: 900px) {
-    
-  }
+  font-family: 'Lucida Sans';
 }

@@ -64,6 +64,7 @@ export const Search = () => {
             }
           }}
           className="search-input"
+          placeholder='e.g. Saori...'
         />
         <button
           onClick={() => {
@@ -137,10 +138,10 @@ export const Search = () => {
         </div>
       )}
       <div className="centered-container">
-        <h2 className="citation">API: https://api.ennead.cc/buruaka/character/ </h2>
+        <p className="citation">API: https://api.ennead.cc/buruaka/character/ </p>
       </div>
       <div className="centered-container">
-        <h2 className="citation">Memolobby icons: https://bluearchive.wiki/wiki/Main_Page </h2>
+        <p className="citation">Memolobby icons: https://bluearchive.wiki/wiki/Memorial_Lobby</p>
       </div>
     </div>
   )

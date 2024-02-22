@@ -26,6 +26,8 @@
   background-color: lightgray;
   cursor: pointer;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .owned-filter-button-unclicked {
@@ -33,10 +35,14 @@
   background-color: white;
   cursor: pointer;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .owned-filter-button-unclicked:hover {
   background-color: lightgray;
+  font-family: 'Lucida Sans';
+
 }
 
 .explosive-clicked {
@@ -45,11 +51,14 @@
   cursor: pointer;
   color: red;
   font-size: 20px;
-  
+  font-family: 'Lucida Sans';
+
 }
 
 .explosive-unclicked:hover {
   background-color: lightgray;
+  font-family: 'Lucida Sans';
+
 }
 
 .explosive-unclicked {
@@ -58,6 +67,8 @@
   cursor: pointer;
   color: rgb(255, 0, 0);
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .piercing-clicked {
@@ -66,10 +77,14 @@
   cursor: pointer;
   color: goldenrod;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .piercing-unclicked:hover {
   background-color: lightgray;
+  font-family: 'Lucida Sans';
+
 }
 
 .piercing-unclicked {
@@ -78,6 +93,8 @@
   cursor: pointer;
   color: goldenrod;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .mystic-clicked {
@@ -86,10 +103,14 @@
   cursor: pointer;
   color: rgb(40, 147, 214);
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .mystic-unclicked:hover {
   background-color: lightgray;
+  font-family: 'Lucida Sans';
+
 }
 
 .mystic-unclicked {
@@ -98,6 +119,8 @@
   cursor: pointer;
   color: rgb(40, 147, 214);
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 
@@ -107,10 +130,14 @@
   cursor: pointer;
   color: purple;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }
 
 .sonic-unclicked:hover {
   background-color: lightgray;
+  font-family: 'Lucida Sans';
+
 }
 
 .sonic-unclicked {
@@ -119,4 +146,6 @@
   cursor: pointer;
   color: purple;
   font-size: 20px;
+  font-family: 'Lucida Sans';
+
 }

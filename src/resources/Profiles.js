@@ -824,7 +824,32 @@ const Profiles = [
       outdoorMood: 'B',
       indoorMood: 'D'
     }
-  }
+  },
+  {
+    character: {
+      name: "Mari (Sportswear)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Mystic",
+      position: "Middle",
+      role: "Healer",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "A student of Trinity Integrated Academy, and a member of the Sisterhood, Mari changed into gym clothes to participate in the Kourin Taisai Festival. She volunteered to work as a committee member for the festival that was supposed to promote peace in Kivothos, only to find out that there was constant conflict and trouble. This, coupled with her kind nature which makes her unable to leave others in peril, seems to keep Marie involved in all sorts of disputes."
+    },
+    info: {
+      club: 'Sisterhood',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/2/25/Lobbyillust_Mari_%28Sportswear%29.png/180px-Lobbyillust_Mari_%28Sportswear%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'D',
+      indoorMood: 'S'
+    }
+  },
 ]
 
 export default Profiles

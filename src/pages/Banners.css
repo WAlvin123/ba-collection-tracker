@@ -11,11 +11,13 @@
   color: rgb(68, 129, 195);
   background-color: white;
   font-size: x-small;
+  font-family: 'Lucida Sans';
 
   @media (min-width: 900px) {
     background-color: white;
     color: rgb(68, 129, 195);
     font-size: x-large;
+    font-family: 'Lucida Sans';
   }
 }
 
@@ -23,6 +25,8 @@
   color: rgb(255, 255, 255);
   background-color: rgb(52, 52, 52);
   font-size: 10px;
+  font-family: 'Lucida Sans';
+
 
 
   @media (min-width: 900px) {
@@ -31,23 +35,28 @@
     padding-right: 20px;
     padding-left: 20px;
     color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans';
+
   }
 }
 
 .banner-table {
   width: 45vw;
   background-color: rgb(52, 52, 52);
+  font-family: 'Lucida Sans';
+
 
 
   @media (min-width: 900px) {
     width: 70vw;
     font-size: x-large;
     background-color: rgb(52, 52, 52);
+    font-family: 'Lucida Sans';
   }
 }
 
 .banner-table-img {
-  padding-top: 20px;
+  padding-top: 10px;
   width: 35px;
 
   @media (min-width: 900px) {
@@ -60,17 +69,18 @@
 
 .add-remove-button {
   color: rgb(68, 129, 195);
-  font-family: sans-serif;
+  font-family: 'Lucida Sans';
   font-size: small;
   height: fit-content;
   border: none;
   cursor: pointer;
   background-color: white;
+  
 }
 
 .add-remove-button:hover {
   color: rgb(68, 129, 195);
-  font-family: sans-serif;
+  font-family: 'Lucida Sans';
   font-size: small;
   height: fit-content;
   border: none;
@@ -95,12 +105,12 @@
 
 .caution-text {
   color: rgb(0, 0, 0);
-  font-family: sans-serif;
+  font-family: 'Lucida Sans';
   font-size: 25px;
 
   @media (min-width: 900px) {
     color: rgb(0, 0, 0);
-    font-family: sans-serif;
+    font-family: 'Lucida Sans';
     font-size: 25px;
     max-width: 33vw;
   }

@@ -632,7 +632,7 @@ export const Collection = () => {
                 )
               }))}
           </div>
-          <p>API: https://api-blue-archive.vercel.app/</p>
+          <p style={{fontFamily:'Lucida Sans'}}>API: https://api-blue-archive.vercel.app/</p>
         </div>
       )}
     </>

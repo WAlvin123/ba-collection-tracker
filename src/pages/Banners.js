@@ -106,7 +106,9 @@ export const Banners = () => {
             handleSearch()
             setSearchInput('')
           }
-        }} />
+        }}
+        placeholder='e.g. Saori...'
+      />
       <button className='search-button' onClick={() => {
         setShowAll(false)
         handleSearch()
@@ -163,11 +165,11 @@ export const Banners = () => {
           <div className='centered-container'>
             <table className='banner-table'>
               <th className='banner-table-header'>Rate ups</th>
-              <th className='banner-table-header'>Gacha type</th>
+              <th className='banner-table-header'>Gacha</th>
               <th className='banner-table-header'>Start (JP)</th>
               <th className='banner-table-header'>End (JP)</th>
-              <th className='banner-table-header'>Projected Start (EN)</th>
-              <th className='banner-table-header'>Add to Planner</th>
+              <th className='banner-table-header'>Start (EN)</th>
+              <th className='banner-table-header'>Planner</th>
               {allBanners.map(banner => {
                 return (
                   <tr className='banner-table-row'>
