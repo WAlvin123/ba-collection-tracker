@@ -52,7 +52,7 @@ export const Planner = () => {
                       if (indexOfCharacter !== 1) {
                         return (
                           <div>
-                            <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                            <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
                             <p>{rateup}</p>
                           </div>
                         )

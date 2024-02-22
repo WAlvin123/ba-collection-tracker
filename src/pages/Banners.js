@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Banners.css'
 import TLBanners from '../resources/TLBanners'
+import { all } from 'axios'
 
 export const Banners = () => {
 
@@ -42,8 +43,6 @@ export const Banners = () => {
     const storedPlannedBanners = JSON.parse(localStorage.getItem('plannedBanners'))
     if (storedPlannedBanners) {
       setPlannedBanners(storedPlannedBanners)
-    } else {
-      setPlannedBanners([])
     }
   }, [])
 
@@ -56,25 +55,22 @@ export const Banners = () => {
   const [plannedBanners, setPlannedBanners] = useState([])
 
   const handleSearch = () => {
-    const lowerCaseBanners = allBanners.map(banner => {
-      const lowercaseRateups = banner.rateups.map(rateup => {
-        return rateup.toLowerCase()
-      })
-      return { ...banner, rateups: lowercaseRateups }
-    })
-
-    const splitBanners = lowerCaseBanners.map(banner => {
+    const splitBanners = allBanners.map(banner => {
       const splitRateups = banner.rateups.join(',')
       return { ...banner, rateups: splitRateups }
     })
 
-    setFilteredBanners(splitBanners.filter(banner => banner.rateups.includes(searchInput.toLowerCase())).map(banner => {
-      return { ...banner, rateups: banner.rateups.split(',') }
+    const splitBannersFiltered = splitBanners.filter(banner => banner.rateups.toLowerCase().includes(searchInput.toLowerCase()))
+
+    setFilteredBanners(splitBannersFiltered.map(banner => {
+      return {...banner, rateups: banner.rateups.split(',')} 
     }))
+
+    console.log(filteredBanners)
   }
 
   const handleAddToPlanner = (banner) => {
-    if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups === banner.rateups)) {
+    if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups[0] === banner.rateups[0])) {
       console.log('This banner is already in the planner ')
     } else {
       setPlannedBanners(prevBanners => {
@@ -177,7 +173,7 @@ export const Banners = () => {
                         if (indexOfCharacter !== -1) {
                           return (
                             <>
-                              <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                              <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
                               <p>{rateup}</p>
                             </>
                           )
@@ -217,16 +213,18 @@ export const Banners = () => {
             <th className='banner-table-header'>Start (JP)</th>
             <th className='banner-table-header'>End (JP)</th>
             <th className='banner-table-header'>Projected Start (EN)</th>
+            <th className='banner-table-header'>Add to Planner</th>
+
             {filteredBanners.map(banner => {
               return (
                 <tr className='banner-table-row'>
                   <td className='banner-table-detail'>
                     {banner.rateups.map(rateup => {
-                      const indexOfCharacter = characters.findIndex(character => character.name.toLowerCase() === rateup)
+                      const indexOfCharacter = characters.findIndex(character => character.name.toLowerCase() === rateup.toLowerCase())
                       if (indexOfCharacter !== -1) {
                         return (
                           <>
-                            <img src={characters[indexOfCharacter].photoUrl} className='character-img'></img>
+                            <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
                             <p>{characters[indexOfCharacter].name}</p>
                           </>
                         )
@@ -239,11 +237,22 @@ export const Banners = () => {
                   <td className='banner-table-detail'>{banner.startAt}</td>
                   <td className='banner-table-detail'>{banner.endAt}</td>
                   <td className='banner-table-detail'>{banner.globalStartAt}</td>
+                  <td className='banner-table-detail'>
+                    <button
+                      className='add-remove-button'
+                      onClick={() => {
+                        handleAddToPlanner(banner)
+                      }}
+                    >
+                      Add
+                    </button>
+                  </td>
                 </tr>
               )
             })}
           </table>
         </div>)}
+
 
       {showAll === false && filteredBanners.length == 0 && (
         <div className='centered-container'>

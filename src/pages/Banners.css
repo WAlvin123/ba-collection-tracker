@@ -76,12 +76,12 @@
   }
 }
 
-.character-img {
-  width: 40px;
+.banner-table-img {
+  width: 35px;
   padding-top: 50px;
 
   @media (min-width: 900px) {
-    width: 160px;
+    width: 200px;
     padding-top: 50px;
   }
 }
@@ -97,7 +97,7 @@
 }
 
 .add-remove-button {
-  color: rgb(68, 129, 195);
+  color: rgb(0, 0, 0);
   font-family: sans-serif;
   font-size: medium;
   height: fit-content;
@@ -113,7 +113,7 @@
     height: fit-content;
     border: none;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
   }
 }
 
