@@ -32,7 +32,9 @@ export const Collection = () => {
         //setCharacters(JSON.parse(storedCharacters)) (Why doesnt this work?)
         setCharacters(sortedCharacters)
       }
-    })
+    })  
+
+    localStorage.setItem('page', 'collection')
   }, [])
 
   useEffect(() => {

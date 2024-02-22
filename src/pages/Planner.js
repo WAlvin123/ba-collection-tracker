@@ -13,6 +13,8 @@ export const Planner = () => {
 
     const storedCharacters = JSON.parse(localStorage.getItem('characters'))
     setCharacters(storedCharacters)
+
+    localStorage.setItem('page', 'planner')
   }, [])
 
   const [plannedBanners, setPlannedBanners] = useState([])

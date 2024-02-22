@@ -12,6 +12,8 @@ export const Search = () => {
     } else {
       console.log('How are you here?')
     }
+
+    localStorage.setItem('page', 'profiles')
   }, [])
 
   const [characters, setCharacters] = useState([])

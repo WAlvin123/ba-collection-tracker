@@ -48,7 +48,6 @@ export const Banners = () => {
     }
 
     localStorage.setItem('page', 'banners')
-
   }, [])
 
   const [currentBannerEN, setCurrentBannerEN] = useState({})
