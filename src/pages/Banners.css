@@ -40,12 +40,12 @@
 }
 
 .banner-table {
-  width: 45vw;
+  width: 60vw;
   background-color: rgb(52, 52, 52);
   font-family: 'Lucida Sans';
 
   @media (min-width: 900px) {
-    width: 65vw;
+    width: 55vw;
     font-size: x-large;
     background-color: rgb(52, 52, 52);
     font-family: 'Lucida Sans';
@@ -122,4 +122,11 @@
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 25px;
+}
+
+.select-font {
+  color: rgb(68, 129, 195);
+ font-size: x-large; 
+ background-color: rgb(52, 52, 52);
+ border: none;
 }

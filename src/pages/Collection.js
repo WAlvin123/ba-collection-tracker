@@ -603,9 +603,9 @@ export const Collection = () => {
           )}
 
           <div className='centered-container'>
-            <div className='characters-container'>
-              {showAll &&
-                (characters.map(character => {
+            {showAll && (
+              <div className='characters-container'>
+                {characters.map(character => {
                   return (
                     <div>
                       <button
@@ -614,14 +614,17 @@ export const Collection = () => {
                       >
                         <img src={character.photoUrl} className='collection-character-image' />
                       </button>
-                      <p className='character-name'>{character.name}</p>
+                      <p className={character.clicked ? 'character-name-clicked' : 'character-name-unclicked'}>{character.name}</p>
                     </div>
                   )
-                }))}
+                })}
+              </div>
+            )}
 
 
-              {showAll !== true &&
-                (filteredCharacters.map(character => {
+            {showAll !== true && filteredCharacters.length > 0 && (
+              <div className='characters-container'>
+                {filteredCharacters.map(character => {
                   return (
                     <div>
                       <button
@@ -630,11 +633,17 @@ export const Collection = () => {
                       >
                         <img src={character.photoUrl} className='collection-character-image' />
                       </button>
-                      <p className='character-name'>{character.name}</p>
+                      <p className={character.clicked ? 'character-name-clicked' : 'character-name-unclicked'}>{character.name}</p>
                     </div>
                   )
-                }))}
-            </div>
+                })}
+              </div>
+            )}
+
+            {showAll !== true && filteredCharacters.length === 0 && (
+              <p className='text'>No results found...</p>
+            )}
+
           </div>
           <p style={{ fontFamily: 'Lucida Sans' }}>API: https://api-blue-archive.vercel.app/</p>
         </div>

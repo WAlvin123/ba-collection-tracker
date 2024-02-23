@@ -7,8 +7,8 @@
   padding-top: 2vw;
   grid-template-columns: repeat(3, 1fr);
   width: fit-content;
-  min-width:330px;
-  background-color: rgb(52, 52, 52);
+  min-width: 330px;
+  background-color: rgb(122, 122, 122);
   border-radius: 25px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -16,10 +16,11 @@
 
 .character-button-clicked {
   border: none;
-  background-color: rgb(246, 122, 255);
   padding-left: 2%;
   padding-right: 2%;
   cursor: pointer;
+  background-color: transparent;
+  opacity: 0.7;
 }
 
 .character-button-unclicked {
@@ -34,21 +35,26 @@
   opacity: 0.75;
 }
 
-.character-name {
-  color: rgb(77, 157, 243);
+.character-name-unclicked {
   font-size: x-small;
+  color: rgb(77, 157, 243);
+}
+
+.character-name-clicked {
+  font-size: x-small;
+  color: rgb(255, 95, 220);
 }
 
 .collection-character-image {
   width: 80px;
 }
 
-@media (min-width:1080px) {
+@media (min-width:800px) {
   .characters-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     width: fit-content;
-    min-width:1200px;
+    min-width: 500px;
     background-color: rgb(52, 52, 52);
     border-radius: 25px;
     padding-top: 20px;
@@ -57,10 +63,11 @@
 
   .character-button-clicked {
     border: none;
-    background-color: rgb(246, 122, 255);
     padding-left: 2%;
     padding-right: 2%;
     cursor: pointer;
+    background-color: transparent;
+
   }
 
   .character-button-unclicked {
@@ -75,8 +82,14 @@
     width: 110px;
   }
 
-  .character-name {
+  .character-name-unclicked {
     font-size: 14px;
+    color: rgb(77, 157, 243);
+  }
+
+  .character-name-clicked {
+    font-size: 14px;
+    color: rgb(255, 95, 220);
   }
 }
 
@@ -90,7 +103,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     width: fit-content;
-    min-width:2200px;
+    min-width: 2000px;
     background-color: rgb(52, 52, 52);
     border-radius: 25px;
     padding-top: 20px;
@@ -99,10 +112,10 @@
 
   .character-button-clicked {
     border: none;
-    background-color: rgb(246, 122, 255);
     padding-left: 2%;
     padding-right: 2%;
     cursor: pointer;
+    background-color: transparent;
   }
 
   .character-button-unclicked {
@@ -117,8 +130,13 @@
     width: 140px;
   }
 
-  .character-name {
+  .character-name-unclicked {
     font-size: 17px;
+    color: rgb(77, 157, 243);
+  }
+
+  .character-name-clicked {
+    font-size: 17px;
+    color: rgb(255, 95, 220);
   }
 }
-

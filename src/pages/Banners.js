@@ -19,8 +19,8 @@ export const Banners = () => {
       }))
     })
 
-    const sortedBanners = [...TLBanners.current, ...TLBanners.ended, ...TLBanners.upcoming].sort((a, b) => b.startAt - a.startAt)
-    setAllBanners(sortedBanners.map(banner => {
+    const sortedJPBanners = [...TLBanners.current, ...TLBanners.ended, ...TLBanners.upcoming].sort((a, b) => b.startAt - a.startAt)
+    setAllJPBanners(sortedJPBanners.map(banner => {
       const startDate = new Date(banner.startAt)
       const startDay = startDate.toLocaleDateString()
       const startHour = startDate.toLocaleTimeString()
@@ -33,6 +33,25 @@ export const Banners = () => {
       const endHour = endDate.toLocaleTimeString()
       return { ...banner, startAt: `${startDay}, ${startHour}`, endAt: `${endDay}, ${endHour}`, globalStartAt: `~${globalStartDay}` }
     }))
+
+    fetch('https://api.ennead.cc/buruaka/banner')
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        const sortedBanners = [...data.current, ...data.upcoming, ...data.ended].sort((b, a) => a.startAt - b.startAt)
+        setAllENBanners(sortedBanners.map(banner => {
+          const startDate = new Date(banner.startAt)
+          const endDate = new Date(banner.endAt)
+          const startDay = startDate.toLocaleDateString()
+          const startHour = startDate.toLocaleTimeString()
+          const endDay = endDate.toLocaleDateString()
+          const endHour = endDate.toLocaleTimeString()
+          return { ...banner, startAt: `${startDay}, ${startHour}`, endAt: `${endDay}, ${endHour}` }
+        }))
+        console.log(allENBanners)
+      })
+
 
     const storedCharacters = JSON.parse(localStorage.getItem('characters'))
     if (storedCharacters) {
@@ -48,24 +67,39 @@ export const Banners = () => {
   }, [])
 
   const [currentBannerEN, setCurrentBannerEN] = useState({})
-  const [allBanners, setAllBanners] = useState([])
+  const [allJPBanners, setAllJPBanners] = useState([])
+  const [allENBanners, setAllENBanners] = useState([])
   const [characters, setCharacters] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [filteredBanners, setFilteredBanners] = useState([])
   const [showAll, setShowAll] = useState(true)
   const [plannedBanners, setPlannedBanners] = useState([])
+  const [bannerRegion, setBannerRegion] = useState('JP')
 
   const handleSearch = () => {
-    const splitBanners = allBanners.map(banner => {
-      const splitRateups = banner.rateups.join(',')
-      return { ...banner, rateups: splitRateups }
-    })
+    if (bannerRegion == 'JP') {
+      const splitBanners = allJPBanners.map(banner => {
+        const splitRateups = banner.rateups.join(',')
+        return { ...banner, rateups: splitRateups }
+      })
 
-    const splitBannersFiltered = splitBanners.filter(banner => banner.rateups.toLowerCase().includes(searchInput.toLowerCase()))
+      const splitBannersFiltered = splitBanners.filter(banner => banner.rateups.toLowerCase().includes(searchInput.toLowerCase()))
 
-    setFilteredBanners(splitBannersFiltered.map(banner => {
-      return { ...banner, rateups: banner.rateups.split(',') }
-    }))
+      setFilteredBanners(splitBannersFiltered.map(banner => {
+        return { ...banner, rateups: banner.rateups.split(',') }
+      }))
+    } else {
+      const splitBanners = allENBanners.map(banner => {
+        const splitRateups = banner.rateups.join(',')
+        return { ...banner, rateups: splitRateups }
+      })
+
+      const splitBannersFiltered = splitBanners.filter(banner => banner.rateups.toLowerCase().includes(searchInput.toLowerCase()))
+
+      setFilteredBanners(splitBannersFiltered.map(banner => {
+        return { ...banner, rateups: banner.rateups.split(',') }
+      }))
+    }
   }
 
   const handleAddToPlanner = (banner) => {
@@ -85,7 +119,7 @@ export const Banners = () => {
       <div className='centered-container'>
         {showAll === true && (
           <p className='caution-text'>
-            Projected EN dates are calculated under the assumption of a 6 month difference between the current EN banner and the latest JP banner. Additionally, note that some reruns are shuffled in EN.
+            Predicted EN dates may be inaccurate due to scheduling changes, view actual EN banners for reference.
           </p>
         )}
       </div>
@@ -113,7 +147,7 @@ export const Banners = () => {
         </div>)}
         <div>
           <h1></h1>
-        {showAll === false && (
+          {showAll === false && (
             <button
               className='search-button'
               onClick={() => {
@@ -122,10 +156,10 @@ export const Banners = () => {
               }}>
               Return
             </button>
-        )}
+          )}
         </div>
       </div>
-      <h1></h1>
+
 
       {currentBannerEN.length >= 0 && showAll === true && (
         <>
@@ -133,8 +167,8 @@ export const Banners = () => {
           <div className='centered-container'>
             <table className='current-table'>
               <th className='current-table-header'>Rate ups</th>
-              <th className='current-table-header'>Start time</th>
-              <th className='current-table-header'>End time</th>
+              <th className='current-table-header'>Start</th>
+              <th className='current-table-header'>End</th>
               {
                 currentBannerEN.map(banner => {
                   return (
@@ -163,19 +197,30 @@ export const Banners = () => {
             </table>
           </div>
         </>)}
-
+      <h1></h1>
       {showAll === true && (
+        <select
+          onChange={(event) => {
+            setBannerRegion(event.target.value)
+          }}
+          className='select-font'
+        >
+          <option>JP</option>
+          <option>EN</option>
+        </select>
+      )}
+
+      {showAll === true && bannerRegion == 'JP' && (
         <>
           <p className='text'>All Banners (JP)</p>
           <div className='centered-container'>
             <table className='banner-table'>
               <th className='banner-table-header'>Rate ups</th>
-              <th className='banner-table-header'>Gacha</th>
               <th className='banner-table-header'>Start (JP)</th>
               <th className='banner-table-header'>End (JP)</th>
               <th className='banner-table-header'>Start (EN)</th>
               <th className='banner-table-header'>Planner</th>
-              {allBanners.map(banner => {
+              {allJPBanners.map(banner => {
                 return (
                   <tr className='banner-table-row'>
                     <td className='banner-table-detail'>
@@ -185,7 +230,7 @@ export const Banners = () => {
                           return (
                             <>
                               <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
-                              <p>{rateup}</p>
+                              <p>{rateup} [{banner.gachaType}]</p>
                             </>
                           )
                         } else {
@@ -193,7 +238,6 @@ export const Banners = () => {
                         }
                       })}
                     </td>
-                    <td className='banner-table-detail'>{banner.gachaType}</td>
                     <td className='banner-table-detail'>{banner.startAt}</td>
                     <td className='banner-table-detail'>{banner.endAt}</td>
                     <td className='banner-table-detail'>{banner.globalStartAt}</td>
@@ -213,14 +257,48 @@ export const Banners = () => {
             </table>
           </div>
         </>
+      )}
 
+      {showAll === true && bannerRegion == 'EN' && (
+        <>
+          <p className='text'>All Banners (EN)</p>
+          <div className='centered-container'>
+            <table className='banner-table'>
+              <th className='banner-table-header'>Rate ups</th>
+              <th className='banner-table-header'>Start</th>
+              <th className='banner-table-header'>End</th>
+              {allENBanners.map(banner => {
+                return (
+                  <tr className='banner-table-row'>
+                    <td className='banner-table-detail'>
+                      {banner.rateups.map(rateup => {
+                        const indexOfCharacter = characters.findIndex(character => character.name === rateup)
+                        if (indexOfCharacter !== -1) {
+                          return (
+                            <>
+                              <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
+                              <p>{rateup}</p>
+                            </>
+                          )
+                        } else {
+                          return null
+                        }
+                      })}
+                    </td>
+                    <td className='banner-table-detail'>{banner.startAt}</td>
+                    <td className='banner-table-detail'>{banner.endAt}</td>
+                  </tr>
+                )
+              })}
+            </table>
+          </div>
+        </>
       )}
 
       {showAll === false && filteredBanners.length > 0 && (
         <div className='centered-container'>
           <table className='banner-table'>
             <th className='banner-table-header'>Rate ups</th>
-            <th className='banner-table-header'>Gacha type</th>
             <th className='banner-table-header'>Start (JP)</th>
             <th className='banner-table-header'>End (JP)</th>
             <th className='banner-table-header'>Start (EN)</th>
@@ -236,7 +314,7 @@ export const Banners = () => {
                         return (
                           <>
                             <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
-                            <p>{characters[indexOfCharacter].name}</p>
+                            <p>{characters[indexOfCharacter].name} [{banner.gachaType}]</p>
                           </>
                         )
                       } else {
@@ -244,7 +322,6 @@ export const Banners = () => {
                       }
                     })}
                   </td>
-                  <td className='banner-table-detail'>{banner.gachaType}</td>
                   <td className='banner-table-detail'>{banner.startAt}</td>
                   <td className='banner-table-detail'>{banner.endAt}</td>
                   <td className='banner-table-detail'>{banner.globalStartAt}</td>
