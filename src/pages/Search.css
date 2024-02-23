@@ -1,5 +1,5 @@
 .Search {
-  padding-top: 90px;
+  padding-top: 120px;
 }
 
 .search-prompt {
@@ -49,6 +49,10 @@
 }
 
 @media (min-width:720px) {
+  .Search {
+    padding-top: 90px;
+  }
+
   .search-button {
     color: rgb(68, 129, 195);
     font-family: 'Lucida Sans';

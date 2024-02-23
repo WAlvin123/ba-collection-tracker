@@ -1,5 +1,5 @@
 .Collection {
-  padding-top: 90px;
+  padding-top: 140px;
 }
 
 .characters-container {
@@ -48,6 +48,7 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     width: fit-content;
+    min-width:1200px;
     background-color: rgb(52, 52, 52);
     border-radius: 25px;
     padding-top: 20px;
@@ -81,11 +82,15 @@
 
 
 @media (min-width: 1920px) {
+  .Collection {
+    padding-top: 90px;
+  }
+
   .characters-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     width: fit-content;
-    min-width:1920px;
+    min-width:2200px;
     background-color: rgb(52, 52, 52);
     border-radius: 25px;
     padding-top: 20px;

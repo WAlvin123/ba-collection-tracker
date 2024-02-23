@@ -1,8 +1,27 @@
 .Planner {
-  padding-top: 90px;
+  padding-top: 120px;
+}
+
+.planner-text {
+  font-size: medium;
 }
 
 .pyro-img {
-  width: 60px;
-  transform: translateY(10px);
+  width: 30px;
+  transform: translateY(5px);
+}
+
+@media (min-width: 900px) {
+  .Planner {
+    padding-top: 90px;
+  }
+
+  .planner-text {
+    font-size: x-large;
+  }
+
+  .pyro-img {
+    width: 60px;
+    transform: translateY(10px);
+  }
 }

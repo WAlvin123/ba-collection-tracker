@@ -15,6 +15,7 @@ export const Navbar = () => {
       <h1 className='title-2'>
         Your<span className='title'>Archive</span>
       </h1>
+      <div className='links'>
       <button className={page === 'collection' ? 'navbar-button-clicked' : 'navbar-button'}
         onClick={() => {
           navigate('/')
@@ -43,6 +44,7 @@ export const Navbar = () => {
         }}>
         Planner
       </button>
+      </div>
     </div>
   )
 }

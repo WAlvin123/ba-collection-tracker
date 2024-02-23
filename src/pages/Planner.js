@@ -31,8 +31,8 @@ export const Planner = () => {
   return (
     <div className="Planner">
       <>
-        <p className='text'>Upcoming Planned Banners  : {plannedBanners.length}</p>
-        <p className='text'>Projected Cost  : {plannedBanners.length * 24000} <img src='https://static.miraheze.org/bluearchivewiki/3/3b/Currency_Icon_Gem.png' className="pyro-img"></img></p>
+        <p className="planner-text">Upcoming Planned Banners  : {plannedBanners.length}</p>
+        <p className="planner-text">Projected Cost  : {plannedBanners.length * 24000} <img src='https://static.miraheze.org/bluearchivewiki/3/3b/Currency_Icon_Gem.png' className="pyro-img"></img></p>
 
         {plannedBanners.length !== 0 && (
         <div className='centered-container'>

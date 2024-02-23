@@ -1,8 +1,10 @@
 .navbar {
-  display: grid;
-  column-count: 1fr;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(52, 52, 52);
   padding-bottom: 10px;
+  position:fixed;
+  width: 100%;
 
   @media (min-width: 720px) {
     background-color: rgb(52, 52, 52);
@@ -11,6 +13,7 @@
     padding-right: 20%;
     padding-bottom: 0.1vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 80px;
     width: 90vw;
@@ -47,7 +50,7 @@
 .navbar-button {
   color: white;
   font-family: 'Lucida Sans';
-  font-size: 30px;
+  font-size: small;
   height: fit-content;
   background-color: transparent;
   border: none;
@@ -59,7 +62,7 @@
 .navbar-button:hover {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: 30px;
+  font-size: small;
   height: fit-content;
   background-color: transparent;
   border: none;
@@ -71,68 +74,60 @@
 .navbar-button-clicked {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: 30px;
+  font-size: small;
   height: fit-content;
   background-color: transparent;
   border: none;
   cursor: pointer;
   transform: translateY(0.8vw);
-
-}
-
-.search-button {
-  color: rgb(68, 129, 195);
-  font-family: 'Lucida Sans';
-  font-size: x-large;
-  height: fit-content;
-  border: none;
-  cursor: pointer;
-  background-color: white;
-
-  @media(min-width: 900px) {
-    color: rgb(68, 129, 195);
-    font-family: 'Lucida Sans';
-    font-size: x-large;
-    height: fit-content;
-    border: none;
-    cursor: pointer;
-    background-color: white;
-  }
-}
-
-.search-button:hover {
-  color: rgb(68, 129, 195);
-  font-family: 'Lucida Sans';
-  font-size: x-large;
-  height: fit-content;
-  border: none;
-  cursor: pointer;
-  background-color: lightgray;
-}
-
-@media (min-width:900px) {
-  .search-button {
-    color: rgb(68, 129, 195);
-    font-family: 'Lucida Sans';
-    font-size: xx-large;
-    height: fit-content;
-    border: none;
-    cursor: pointer;
-    background-color: white;
-  }
-
-  .search-button:hover {
-    color: rgb(68, 129, 195);
-    font-family: 'Lucida Sans';
-    font-size: xx-large;
-    height: fit-content;
-    border: none;
-    cursor: pointer;
-    background-color: lightgray;
-  }
 }
 
 .links {
   display: flex;
   justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (min-width: 720px) {
+  .navbar-button {
+    color: white;
+    font-family: 'Lucida Sans';
+    font-size: 30px;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(0.8vw);
+  }
+
+
+  .navbar-button:hover {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: 30px;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(0.8vw);
+
+  }
+
+  .navbar-button-clicked {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: 30px;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(0.8vw);
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width:60vw;
+  }
 }

@@ -66,8 +66,6 @@ export const Banners = () => {
     setFilteredBanners(splitBannersFiltered.map(banner => {
       return { ...banner, rateups: banner.rateups.split(',') }
     }))
-
-    console.log(filteredBanners)
   }
 
   const handleAddToPlanner = (banner) => {
@@ -85,11 +83,11 @@ export const Banners = () => {
   return (
     <div className='Banners'>
       <div className='centered-container'>
-        <p className='caution-text'>
-          EN start times may not be entirely accurate, as they were
-          calculated under the assumption of a 6 month difference
-          between the current EN banner and the latest JP banner
-        </p>
+        {showAll === true && (
+          <p className='caution-text'>
+            Projected EN dates are calculated under the assumption of a 6 month difference between the current EN banner and the latest JP banner. Additionally, note that some reruns are shuffled in EN.
+          </p>
+        )}
       </div>
       <div className='centered-container'>
         {showAll === true && (<div className='banner-search-container'>
@@ -113,12 +111,19 @@ export const Banners = () => {
             handleSearch()
           }}>Search</button>
         </div>)}
+        <div>
+          <h1></h1>
         {showAll === false && (
-          <button className='search-button' onClick={() => {
-            setShowAll(true)
-            setSearchInput('')
-          }}>Return</button>
+            <button
+              className='search-button'
+              onClick={() => {
+                setShowAll(true)
+                setSearchInput('')
+              }}>
+              Return
+            </button>
         )}
+        </div>
       </div>
       <h1></h1>
 
@@ -218,7 +223,7 @@ export const Banners = () => {
             <th className='banner-table-header'>Gacha type</th>
             <th className='banner-table-header'>Start (JP)</th>
             <th className='banner-table-header'>End (JP)</th>
-            <th className='banner-table-header'>Projected Start (EN)</th>
+            <th className='banner-table-header'>Start (EN)</th>
             <th className='banner-table-header'>Add to Planner</th>
 
             {filteredBanners.map(banner => {
