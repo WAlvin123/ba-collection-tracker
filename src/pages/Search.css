@@ -41,7 +41,7 @@
 .search-button:hover {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: x-large;
+  font-size: large;
   height: fit-content;
   border: none;
   cursor: pointer;

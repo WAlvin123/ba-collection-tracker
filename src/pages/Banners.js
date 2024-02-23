@@ -4,9 +4,6 @@ import './CurrentTable.css'
 import TLBanners from '../resources/TLBanners'
 
 export const Banners = () => {
-
-  // TODO: fix the add to planner function for filteredbanners
-
   useEffect(() => {
     fetch('https://api.ennead.cc/buruaka/banner').then(res => {
       return res.json()
@@ -95,7 +92,7 @@ export const Banners = () => {
         </p>
       </div>
       <div className='centered-container'>
-        <div className='banner-search-container'>
+        {showAll === true && (<div className='banner-search-container'>
           <p className='search-prompt'>Got a specific rate up you're looking for?</p>
           <input className='search-input'
             value={searchInput}
@@ -115,13 +112,13 @@ export const Banners = () => {
             setShowAll(false)
             handleSearch()
           }}>Search</button>
-          {showAll === false && (
-            <button className='search-button' onClick={() => {
-              setShowAll(true)
-              setSearchInput('')
-            }}>Return</button>
-          )}
-        </div>
+        </div>)}
+        {showAll === false && (
+          <button className='search-button' onClick={() => {
+            setShowAll(true)
+            setSearchInput('')
+          }}>Return</button>
+        )}
       </div>
       <h1></h1>
 
