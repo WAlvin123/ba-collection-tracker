@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   color: white;
-  min-height:fit-content;
+  min-height: fit-content;
   font-family: 'Lucida Sans';
 }
 
@@ -9,42 +9,7 @@
   color: #61dafb;
 }
 
-.characters-container {
-  display: grid;
-  padding-top: 2vw;
-  grid-template-columns: repeat(2, 1fr); 
-
-  @media (min-width: 1920px) {
-    grid-template-columns: repeat(15, 1fr); 
-  }
-}
-
-.character-button-unclicked {
-border: none;
-background-color: transparent;
-padding-left: 2%;
-padding-right: 2%;
-cursor: pointer;
-}
-
-.character-button-unclicked:hover {
-  opacity: 0.75;
-}
-
-.character-button-clicked {
-  border: none;
-  background-color:rgb(246, 122, 255);
-  padding-left: 2%;
-  padding-right: 2%;
-  cursor:pointer;
-}
-
-.character-name {
-  color: white;
-  font-size: large;
-}
-
 body {
-  background-color:rgb(130, 183, 211); 
-  
+  background-color: rgb(93, 186, 236);
 }
+

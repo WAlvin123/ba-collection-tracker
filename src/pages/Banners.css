@@ -45,8 +45,6 @@
   background-color: rgb(52, 52, 52);
   font-family: 'Lucida Sans';
 
-
-
   @media (min-width: 900px) {
     width: 70vw;
     font-size: x-large;
@@ -75,7 +73,7 @@
   border: none;
   cursor: pointer;
   background-color: white;
-  
+
 }
 
 .add-remove-button:hover {
@@ -114,4 +112,13 @@
     font-size: 25px;
     max-width: 33vw;
   }
+}
+
+.banner-search-container {
+  display: inline-block;
+  background-color: rgb(52, 52, 52);
+  border-radius: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
 }

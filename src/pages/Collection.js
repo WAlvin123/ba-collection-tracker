@@ -32,7 +32,7 @@ export const Collection = () => {
         //setCharacters(JSON.parse(storedCharacters)) (Why doesnt this work?)
         setCharacters(sortedCharacters)
       }
-    })  
+    })
 
     localStorage.setItem('page', 'collection')
   }, [])
@@ -602,37 +602,41 @@ export const Collection = () => {
             <h2 style={{ color: 'white' }}>Currently owned: {ownedCharacters.length}/{filteredCharacters.length}</h2>
           )}
 
-          <div className='characters-container'>
-            {showAll &&
-              (characters.map(character => {
-                return (
-                  <div>
-                    <button
-                      className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
-                      onClick={() => { handleClick(character._id) }}
-                    >
-                      <img src={character.photoUrl} width={'120vw'} />
-                    </button>
-                    <p className='character-name'>{character.name}</p>
-                  </div>
-                )
-              }))}
-            {showAll !== true &&
-              (filteredCharacters.map(character => {
-                return (
-                  <div>
-                    <button
-                      className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
-                      onClick={() => { handleClick(character._id) }}
-                    >
-                      <img src={character.photoUrl} width={'120vw'} />
-                    </button>
-                    <p className='character-name'>{character.name}</p>
-                  </div>
-                )
-              }))}
+          <div className='centered-container'>
+            <div className='characters-container'>
+              {showAll &&
+                (characters.map(character => {
+                  return (
+                    <div>
+                      <button
+                        className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
+                        onClick={() => { handleClick(character._id) }}
+                      >
+                        <img src={character.photoUrl} className='collection-character-image' />
+                      </button>
+                      <p className='character-name'>{character.name}</p>
+                    </div>
+                  )
+                }))}
+
+
+              {showAll !== true &&
+                (filteredCharacters.map(character => {
+                  return (
+                    <div>
+                      <button
+                        className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
+                        onClick={() => { handleClick(character._id) }}
+                      >
+                        <img src={character.photoUrl} className='collection-character-image' />
+                      </button>
+                      <p className='character-name'>{character.name}</p>
+                    </div>
+                  )
+                }))}
+            </div>
           </div>
-          <p style={{fontFamily:'Lucida Sans'}}>API: https://api-blue-archive.vercel.app/</p>
+          <p style={{ fontFamily: 'Lucida Sans' }}>API: https://api-blue-archive.vercel.app/</p>
         </div>
       )}
     </>

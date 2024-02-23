@@ -48,50 +48,59 @@ export const Search = () => {
 
   return (
     <div className="Search">
-      {showAll === true && (<>
-        <p className="text">
-          Search for a character and click their icon to view more details about them
-        </p>
-        <input
-          value={userInput}
-          onChange={(event) => {
-            setUserInput(event.target.value)
-            console.log(userInput)
-          }}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter') {
+      <h1></h1>
+      {showAll === true && (
+        <div className="banner-search-container">
+          <p className="search-prompt">
+            Search a name and click an icon to view more details about the unit
+          </p>
+          <input
+            value={userInput}
+            onChange={(event) => {
+              setUserInput(event.target.value)
+              console.log(userInput)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                onSearch(userInput.toLowerCase())
+              }
+            }}
+            className="search-input"
+            placeholder='e.g. Saori...'
+          />
+          <button
+            onClick={() => {
               onSearch(userInput.toLowerCase())
-            }
-          }}
-          className="search-input"
-          placeholder='e.g. Saori...'
-        />
-        <button
-          onClick={() => {
-            onSearch(userInput.toLowerCase())
-          }}
-          className="search-button"
-        >
-          Search
-        </button>
-      </>)}
+            }}
+            className="search-button"
+          >
+            Search
+          </button>
+        </div>
+      )}
+      <h1></h1>
+      {filteredCharacters.length > 0 && showAll === true && (
+        <div className="centered-container">
 
-      <div className="characters-container">
-        {showAll === true && (
-          filteredCharacters.map(character => {
-            return (
-              <div>
-                <button
-                  className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
-                  onClick={() => { handleClick(character.name) }}
-                >
-                  <img src={character.photoUrl} width={'120vw'} />
-                </button>
-                <p className='character-name'>{character.name}</p>
-              </div>
-            )
-          }))}
-      </div>
+          <div className="characters-container">
+
+            {showAll === true && (
+              filteredCharacters.map(character => {
+                return (
+                  <div>
+                    <button
+                      className={character.clicked ? 'character-button-clicked' : 'character-button-unclicked'}
+                      onClick={() => { handleClick(character.name) }}
+                    >
+                      <img src={character.photoUrl} className="collection-character-image" />
+                    </button>
+                    <p className='character-name'>{character.name}</p>
+                  </div>
+                )
+              }))}
+          </div>
+        </div>
+      )}
 
       {currentProfile !== null && showAll === false && (
         <div>
@@ -111,7 +120,7 @@ export const Search = () => {
                 className="navbar-button"
               >Click to view Memolobby</button>
             </div>
-            <p>Name: {currentProfile.character.name}</p>
+            <p style={{ paddingTop: '20px' }}>Name: {currentProfile.character.name}</p>
             <p>School: {currentProfile.info.school}</p>
             <p>Club: {currentProfile.info.club}</p>
             <p>Base Star: {currentProfile.character.baseStar}</p>

@@ -94,32 +94,35 @@ export const Banners = () => {
           between the current EN banner and the latest JP banner
         </p>
       </div>
-      <p className='text'>Got a specific rate up you're looking for?</p>
-      <input className='search-input'
-        value={searchInput}
-        onChange={(event) => {
-          setSearchInput(event.target.value)
-        }}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter') {
+      <div className='centered-container'>
+        <div className='banner-search-container'>
+          <p className='search-prompt'>Got a specific rate up you're looking for?</p>
+          <input className='search-input'
+            value={searchInput}
+            onChange={(event) => {
+              setSearchInput(event.target.value)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                setShowAll(false)
+                handleSearch()
+                setSearchInput('')
+              }
+            }}
+            placeholder='e.g. Saori...'
+          />
+          <button className='search-button' onClick={() => {
             setShowAll(false)
             handleSearch()
-            setSearchInput('')
-          }
-        }}
-        placeholder='e.g. Saori...'
-      />
-      <button className='search-button' onClick={() => {
-        setShowAll(false)
-        handleSearch()
-      }}>Search</button>
-      <h1></h1>
-      {showAll === false && (
-        <button className='search-button' onClick={() => {
-          setShowAll(true)
-          setSearchInput('')
-        }}>Return</button>
-      )}
+          }}>Search</button>
+          {showAll === false && (
+            <button className='search-button' onClick={() => {
+              setShowAll(true)
+              setSearchInput('')
+            }}>Return</button>
+          )}
+        </div>
+      </div>
       <h1></h1>
 
       {currentBannerEN.length >= 0 && showAll === true && (

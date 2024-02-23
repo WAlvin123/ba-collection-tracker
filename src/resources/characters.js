@@ -414,8 +414,9 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/d/da/Shigure.png',
     damageType: 'Explosive',
     clicked: false
-  }, {
-    id: 'ghngngngnccbtrbrath465y',
+  }, 
+  {
+    _id: 'avtrhartdhadthj',
     name: 'Momiji',
     school: 'Red Winter',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/53/Momiji.png',
@@ -423,7 +424,7 @@ const newCharacters = [
     clicked: false
   },
   {
-    id: '67rjk67rij56u76jtenyu',
+    _id: '8nh7g3287u3mu',
     name: 'Aru (Dress)',
     school: 'Gehenna',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/1/1f/Aru_%28Dress%29.png',
@@ -431,7 +432,7 @@ const newCharacters = [
     clicked: false
   },
   {
-    id: 'ej567r67j586jr78',
+    _id: 'a34nh3anm8bjhn35m7',
     name: 'Kayoko (Dress)',
     school: 'Gehenna',
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/9/9b/Kayoko_%28Dress%29.png',

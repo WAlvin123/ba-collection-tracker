@@ -2,18 +2,20 @@
   padding-top: 90px;
 }
 
+.search-prompt {
+  font-size: small;
+  color: rgb(68, 129, 195);
+  max-width: 200px;
+}
+
+
 .search-input {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: x-large;
-  width: 40vw;
-
-  @media (min-width: 900px) {
-    color: rgb(68, 129, 195);
-    font-family: 'Lucida Sans';
-    font-size: xx-large;
-    width: 20vw;
-  }
+  font-size: large;
+  width: 35vw;
+  background-color: rgb(255, 255, 255);
+  border: none;
 }
 
 .profile-text {
@@ -24,4 +26,59 @@
 .citation {
   max-width: 300px;
   font-family: 'Lucida Sans';
+}
+
+.search-button {
+  color: rgb(68, 129, 195);
+  font-family: 'Lucida Sans';
+  font-size: large;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.search-button:hover {
+  color: rgb(68, 129, 195);
+  font-family: 'Lucida Sans';
+  font-size: x-large;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+@media (min-width:720px) {
+  .search-button {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: x-large;
+    height: fit-content;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  .search-button:hover {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: x-large;
+    height: fit-content;
+    border: none;
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  .search-prompt {
+    font-size: large;
+    color: rgb(68, 129, 195);
+    max-width: 1000000000px;
+  }
+
+  .search-input {
+    color: rgb(68, 129, 195);
+    font-family: 'Lucida Sans';
+    font-size: x-large;
+    width: 20vw
+  }
 }

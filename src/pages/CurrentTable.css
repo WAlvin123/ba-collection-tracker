@@ -17,6 +17,7 @@
   background-color: white;
   color: rgb(68, 129, 195);
   font-size: xx-small;
+  
 
   @media (min-width:900px) {
     background-color: white;

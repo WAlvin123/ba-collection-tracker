@@ -38,11 +38,11 @@ export const Planner = () => {
         <div className='centered-container'>
           <table className='banner-table'>
             <th className='banner-table-header'>Rate ups</th>
-            <th className='banner-table-header'>Gacha type</th>
-            <th className='banner-table-header'>Start time</th>
-            <th className='banner-table-header'>End time</th>
-            <th className='banner-table-header'>Projected Start Time (EN)</th>
-            <th className='banner-table-header'>Remove From Planner</th>
+            <th className='banner-table-header'>Gacha</th>
+            <th className='banner-table-header'>Start (JP)</th>
+            <th className='banner-table-header'>End (JP)</th>
+            <th className='banner-table-header'>Start (EN)</th>
+            <th className='banner-table-header'>Planner</th>
 
 
             {plannedBanners.map(banner => {

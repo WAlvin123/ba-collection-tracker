@@ -1,3 +1,119 @@
 .Collection {
   padding-top: 90px;
 }
+
+.characters-container {
+  display: grid;
+  padding-top: 2vw;
+  grid-template-columns: repeat(3, 1fr);
+  width: fit-content;
+  min-width:360px;
+  background-color: rgb(52, 52, 52);
+  border-radius: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.character-button-clicked {
+  border: none;
+  background-color: rgb(246, 122, 255);
+  padding-left: 2%;
+  padding-right: 2%;
+  cursor: pointer;
+}
+
+.character-button-unclicked {
+  border: none;
+  background-color: transparent;
+  padding-left: 2%;
+  padding-right: 2%;
+  cursor: pointer;
+}
+
+.character-button-unclicked:hover {
+  opacity: 0.75;
+}
+
+.character-name {
+  color: rgb(77, 157, 243);
+  font-size: x-small;
+}
+
+.collection-character-image {
+  width: 80px;
+}
+
+@media (min-width:1080px) {
+  .characters-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: fit-content;
+    background-color: rgb(52, 52, 52);
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .character-button-clicked {
+    border: none;
+    background-color: rgb(246, 122, 255);
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
+  }
+
+  .character-button-unclicked {
+    border: none;
+    background-color: transparent;
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
+  }
+
+  .collection-character-image {
+    width: 110px;
+  }
+
+  .character-name {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 1920px) {
+  .characters-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: fit-content;
+    min-width:1920px;
+    background-color: rgb(52, 52, 52);
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .character-button-clicked {
+    border: none;
+    background-color: rgb(246, 122, 255);
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
+  }
+
+  .character-button-unclicked {
+    border: none;
+    background-color: transparent;
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
+  }
+
+  .collection-character-image {
+    width: 140px;
+  }
+
+  .character-name {
+    font-size: 17px;
+  }
+}
+
