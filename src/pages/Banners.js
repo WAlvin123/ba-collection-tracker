@@ -40,7 +40,7 @@ export const Banners = () => {
       })
       .then(data => {
         const sortedBanners = [...data.current, ...data.upcoming, ...data.ended].sort((b, a) => a.startAt - b.startAt)
-        setAllENBanners(sortedBanners.map(banner => {
+        const convertedDateBanners = sortedBanners.map(banner => {
           const startDate = new Date(banner.startAt)
           const endDate = new Date(banner.endAt)
           const startDay = startDate.toLocaleDateString()
@@ -48,8 +48,38 @@ export const Banners = () => {
           const endDay = endDate.toLocaleDateString()
           const endHour = endDate.toLocaleTimeString()
           return { ...banner, startAt: `${startDay}, ${startHour}`, endAt: `${endDay}, ${endHour}` }
+        })
+
+        setAllENBanners(convertedDateBanners.map(banner => {
+          const convertedNames = banner.rateups.map(rateup => {
+            if (rateup === 'Aris') {
+              return 'Arisu'
+            } else if (rateup === 'Aris (Maid)') {
+              return 'Arisu (Maid)'
+            } else if (rateup === 'Toki (Bunny)') {
+              return 'Toki (Bunny Girl)'
+            } else if (rateup === 'Shiroko (Cycling)') {
+              return 'Shiroko (Riding)'
+            } else if (rateup === 'Yuuka (Track)') {
+              return 'Yuuka (Sportswear)'
+            } else if (rateup === 'Mari (Track)') {
+              return 'Mari (Sportswear)'
+            } else if (rateup === 'Karin (Bunny)') {
+              return 'Karin (Bunny Girl)'
+            } else if (rateup === 'Asuna (Bunny)') {
+              return 'Asuna (Bunny Girl)'
+            } else if (rateup === 'Akane (Bunny)') {
+              return 'Akane (Bunny Girl)'
+            } else if (rateup === 'Neru (Bunny)') {
+              return 'Neru (Bunny Girl)'
+            } else if (rateup === 'Utaha (Cheer Squad)') {
+              return 'Utaha (Cheerleader)'
+            } else {
+              return rateup
+            }
+          })
+          return { ...banner, rateups: convertedNames }
         }))
-        console.log(allENBanners)
       })
 
 
@@ -153,6 +183,11 @@ export const Banners = () => {
               onClick={() => {
                 setShowAll(true)
                 setSearchInput('')
+                if (bannerRegion == 'EN') {
+                  setBannerRegion('EN')
+                } else {
+                  setBannerRegion('JP')
+                }
               }}>
               Return
             </button>
@@ -204,6 +239,7 @@ export const Banners = () => {
             setBannerRegion(event.target.value)
           }}
           className='select-font'
+          value={bannerRegion}
         >
           <option>JP</option>
           <option>EN</option>
@@ -281,7 +317,7 @@ export const Banners = () => {
                             </>
                           )
                         } else {
-                          return null
+                          return <p>{rateup}</p>
                         }
                       })}
                     </td>
@@ -295,7 +331,7 @@ export const Banners = () => {
         </>
       )}
 
-      {showAll === false && filteredBanners.length > 0 && (
+      {showAll === false && filteredBanners.length > 0 && bannerRegion == 'JP' && (
         <div className='centered-container'>
           <table className='banner-table'>
             <th className='banner-table-header'>Rate ups</th>
@@ -335,6 +371,40 @@ export const Banners = () => {
                       Add
                     </button>
                   </td>
+                </tr>
+              )
+            })}
+          </table>
+        </div>)}
+
+      {showAll === false && filteredBanners.length > 0 && bannerRegion == 'EN' && (
+        <div className='centered-container'>
+          <table className='banner-table'>
+            <th className='banner-table-header'>Rate ups</th>
+            <th className='banner-table-header'>Start (EN)</th>
+            <th className='banner-table-header'>End (EN)</th>
+
+
+            {filteredBanners.map(banner => {
+              return (
+                <tr className='banner-table-row'>
+                  <td className='banner-table-detail'>
+                    {banner.rateups.map(rateup => {
+                      const indexOfCharacter = characters.findIndex(character => character.name === rateup)
+                      if (indexOfCharacter !== -1) {
+                        return (
+                          <>
+                            <img src={characters[indexOfCharacter].photoUrl} className='banner-table-img'></img>
+                            <p>{characters[indexOfCharacter].name} [{banner.gachaType}]</p>
+                          </>
+                        )
+                      } else {
+                        return null
+                      }
+                    })}
+                  </td>
+                  <td className='banner-table-detail'>{banner.startAt}</td>
+                  <td className='banner-table-detail'>{banner.endAt}</td>
                 </tr>
               )
             })}

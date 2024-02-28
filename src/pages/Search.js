@@ -100,7 +100,7 @@ export const Search = () => {
         </div>
       )}
 
-      {showAll == true && filteredCharacters.length === 0 && (
+      {showAll == false && filteredCharacters.length === 0 && (
         <p className='text'>No results found...</p>
       )}
 
@@ -115,7 +115,7 @@ export const Search = () => {
 
       {currentProfile !== null && showAll === false && (
         <div className="centered-container">
-          <div className='profile-container'>
+          <div className="profile-container">
             <div style={{ display: "flex", flexDirection: 'column' }}>
               <p>Memolobby:</p>
               <div className="centered-container">

@@ -8,6 +8,13 @@
   max-width: 200px;
 }
 
+.profile-container {
+  display: inline-block;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
 
 .search-input {
   color: rgb(68, 129, 195);
@@ -50,13 +57,7 @@
   background-color: lightgray;
 }
 
-.profile-container {
-  display: inline-block;
-  background: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 15px;
-}
+
 
 .profile-button {
   color: rgb(23, 107, 195);
@@ -144,13 +145,5 @@
     max-width: 700px;
     overflow-wrap: break-word;
     color: rgb(68, 129, 195);
-  }
-
-  .profile-container {
-    display: inline-block;
-    background: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 15px;
   }
 }
