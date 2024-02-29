@@ -5,6 +5,8 @@ import { Search } from './pages/Search';
 import { Collection } from './pages/Collection';
 import { Banners } from './pages/Banners';
 import { Planner } from './pages/Planner';
+import { Register } from './pages/Register';
+import { Signin } from './pages/Signin';
 
 // TODO: Search page
 
@@ -19,6 +21,8 @@ function App() {
           <Route path={'/profiles'} element={<Search />} />
           <Route path={'/banners'} element={<Banners />} />
           <Route path={'/planner'} element={<Planner />} />
+          <Route path={'/signin'} element={<Signin/>} />
+          <Route path={'/register'} element={<Register />} />
         </Routes>
       </Router>
     </div>

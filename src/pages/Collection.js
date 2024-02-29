@@ -3,9 +3,13 @@ import axios from 'axios';
 import { FilterBar } from '../components/FilterBar'
 import newCharacters from '../resources/characters';
 import './Collection.css'
+import { auth, db } from '../config/firestore';
+import { useCharacter } from '../Custom hooks/useCharacter';
+import { doc, setDoc } from 'firebase/firestore';
+import { click } from '@testing-library/user-event/dist/click';
 
 export const Collection = () => {
-  const [characters, setCharacters] = useState([])
+  const [characters, setCharacters, getCharacters] = useCharacter()
   const [showAll, setShowAll] = useState(false)
   const [filteredCharacters, setFilteredCharacters] = useState([])
   const [schools, setSchools] = useState([])
@@ -18,24 +22,9 @@ export const Collection = () => {
 
   useEffect(() => {
     setShowAll(true)
-    axios.get('https://api-blue-archive.vercel.app/api/characters?page=1&perPage=120').then((res) => {
-      const apiCharacters = res.data.data.map(character => {
-        return { ...character, clicked: false }
-      })
-      const allCharacters = [...apiCharacters, ...newCharacters]
-      const sortedCharacters = allCharacters.sort((a, b) => a.name.localeCompare(b.name))
-      const storedCharacters = localStorage.getItem('characters')
-      if (storedCharacters) {
-        setCharacters(JSON.parse(storedCharacters))
-      } else {
-        localStorage.setItem('characters', JSON.stringify(sortedCharacters))
-        //setCharacters(JSON.parse(storedCharacters)) (Why doesnt this work?)
-        setCharacters(sortedCharacters)
-      }
-    })
-
-    localStorage.setItem('page', 'collection')
-  }, [])
+    getCharacters()
+  }
+    , [])
 
   useEffect(() => {
     if (showAll == true) {
@@ -57,41 +46,78 @@ export const Collection = () => {
     setDmgFilter(false)
   }
 
-  const handleClick = (id) => {
-    if (showAll == true) {
-      setCharacters(prevCharacters => {
-        const updatedCharacters = prevCharacters.map(character => {
-          if (id == character._id) {
-            return { ...character, clicked: !character.clicked }
-          } else {
-            return character
-          }
+  const handleClick = async (id) => {
+    if (auth.currentUser === null) {
+      if (showAll == true) {
+        setCharacters(prevCharacters => {
+          const updatedCharacters = prevCharacters.map(character => {
+            if (id == character._id) {
+              return { ...character, clicked: !character.clicked }
+            } else {
+              return character
+            }
+          })
+          localStorage.setItem('characters', JSON.stringify(updatedCharacters))
+          return updatedCharacters
         })
-        localStorage.setItem('characters', JSON.stringify(updatedCharacters))
-        return updatedCharacters
-      })
+      } else {
+        setFilteredCharacters(prevCharacters => {
+          const updatedCharacters = prevCharacters.map(character => {
+            if (id == character._id) {
+              return { ...character, clicked: !character.clicked }
+            } else {
+              return character
+            }
+          })
+          return updatedCharacters
+        })
+        setCharacters(prevCharacters => {
+          const updatedCharacters = prevCharacters.map(character => {
+            if (id == character._id) {
+              return { ...character, clicked: !character.clicked }
+            } else {
+              return character
+            }
+          })
+          localStorage.setItem('characters', JSON.stringify(updatedCharacters))
+          return updatedCharacters
+        })
+      }
     } else {
-      setFilteredCharacters(prevCharacters => {
-        const updatedCharacters = prevCharacters.map(character => {
-          if (id == character._id) {
+      if (showAll === true) {
+        const updatedCharacters = characters.map(character => {
+          if (character._id === id) {
             return { ...character, clicked: !character.clicked }
           } else {
             return character
           }
         })
-        return updatedCharacters
-      })
-      setCharacters(prevCharacters => {
-        const updatedCharacters = prevCharacters.map(character => {
-          if (id == character._id) {
+        await setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+          characters: updatedCharacters,
+          plannedBanners: []
+        })
+        getCharacters()
+      } else {
+        setFilteredCharacters(filteredCharacters.map(character => {
+          if (character._id === id) {
+            return { ...character, clicked: !character.clicked }
+          } else {
+            return character
+          }
+        }))
+        const updatedCharacters = characters.map(character => {
+          if (character._id === id) {
             return { ...character, clicked: !character.clicked }
           } else {
             return character
           }
         })
-        localStorage.setItem('characters', JSON.stringify(updatedCharacters))
-        return updatedCharacters
-      })
+        await setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+          characters: updatedCharacters,
+          plannedBanners: []
+        })
+      }
+      getCharacters()
     }
   }
 
@@ -586,6 +612,7 @@ export const Collection = () => {
     <>
       {characters !== null && (
         <div className="Collection">
+          {auth.currentUser !== null && (<p>Welcome {auth.currentUser.email}</p>)}
           <FilterBar
             handleFilterBySchool={handleFilterBySchool}
             setShowAll={handleShowAll}
