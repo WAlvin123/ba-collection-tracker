@@ -13,6 +13,8 @@ export const Signin = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       navigate('/')
+      localStorage.setItem('page', 'collection')
+
     } catch (error) {
       console.log(error)
     }

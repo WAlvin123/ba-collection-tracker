@@ -1,38 +1,42 @@
 import { useEffect, useState } from "react"
 import './Planner.css'
+import { useCharacter } from "../Custom hooks/useCharacter"
+import { usePlanner } from "../Custom hooks/usePlanner"
+import { auth, db } from "../config/firestore"
+import { doc, setDoc } from "firebase/firestore"
 
 export const Planner = () => {
   useEffect(() => {
-    const storedPlannedBanners = JSON.parse(localStorage.getItem('plannedBanners'))
-    if (storedPlannedBanners) {
-      const sortedBanners = storedPlannedBanners.sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime())
-      setPlannedBanners(sortedBanners)
-    } else {
-      setPlannedBanners([])
-    }
-
-    const storedCharacters = JSON.parse(localStorage.getItem('characters'))
-    setCharacters(storedCharacters)
-
+    getCharacters()
+    getPlannedBanners()
     localStorage.setItem('page', 'planner')
   }, [])
 
-  const [plannedBanners, setPlannedBanners] = useState([])
-  const [characters, setCharacters] = useState([])
+  const [plannedBanners, setPlannedBanners, getPlannedBanners] = usePlanner()
+  const [characters, setCharacters, getCharacters] = useCharacter()
 
   const handleRemove = (idToRemove) => {
-    setPlannedBanners(prevBanners => {
-      const updatedBanners = prevBanners.filter(banner => banner.id !== idToRemove)
-      localStorage.setItem('plannedBanners', JSON.stringify(updatedBanners))
-      return updatedBanners
-    })
+    if (auth.currentUser === null) {
+      setPlannedBanners(prevBanners => {
+        const updatedBanners = prevBanners.filter(banner => banner.id !== idToRemove)
+        localStorage.setItem('plannedBanners', JSON.stringify(updatedBanners))
+        return updatedBanners
+      })
+    } else {
+      const updatedBanners = plannedBanners.filter(banner => banner.id !== idToRemove)
+      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
+        plannedBanners: updatedBanners
+      }).then(() => {
+        getPlannedBanners()
+      })
+    }
   }
 
   return (
     <div>
       <div className="Planner">
         <>
-        <h1></h1>
+          <h1></h1>
           <div className="banner-search-container">
             <p className="planner-text">Upcoming Planned Banners  : {plannedBanners.length}</p>
             <p className="planner-text">Projected Cost  : {plannedBanners.length * 24000} <img src='https://static.miraheze.org/bluearchivewiki/3/3b/Currency_Icon_Gem.png' className="pyro-img"></img></p>

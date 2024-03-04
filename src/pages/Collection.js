@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { FilterBar } from '../components/FilterBar'
-import newCharacters from '../resources/characters';
 import './Collection.css'
 import { auth, db } from '../config/firestore';
 import { useCharacter } from '../Custom hooks/useCharacter';
 import { doc, setDoc } from 'firebase/firestore';
-import { click } from '@testing-library/user-event/dist/click';
 
 export const Collection = () => {
   const [characters, setCharacters, getCharacters] = useCharacter()
@@ -23,6 +20,7 @@ export const Collection = () => {
   useEffect(() => {
     setShowAll(true)
     getCharacters()
+    localStorage.setItem('page', 'collection')
   }
     , [])
 
@@ -84,7 +82,7 @@ export const Collection = () => {
         })
       }
     } else {
-      if (showAll === true) {
+      if (showAll == true) {
         const updatedCharacters = characters.map(character => {
           if (character._id === id) {
             return { ...character, clicked: !character.clicked }
@@ -92,9 +90,9 @@ export const Collection = () => {
             return character
           }
         })
-        await setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
           characters: updatedCharacters,
-          plannedBanners: []
+          plannedBanner: []
         })
         getCharacters()
       } else {
@@ -112,12 +110,12 @@ export const Collection = () => {
             return character
           }
         })
-        await setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
           characters: updatedCharacters,
-          plannedBanners: []
+          plannedBanner: []
         })
+        getCharacters()
       }
-      getCharacters()
     }
   }
 

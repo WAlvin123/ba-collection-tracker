@@ -2,22 +2,18 @@ import { useEffect, useState } from 'react'
 import './Banners.css'
 import './CurrentTable.css'
 import TLBanners from '../resources/TLBanners'
+import { useCharacter } from '../Custom hooks/useCharacter'
+import { usePlanner } from '../Custom hooks/usePlanner'
+import { auth, db } from '../config/firestore'
+import { setDoc, doc } from 'firebase/firestore'
 
 export const Banners = () => {
+
+  const [characters, setCharacters, getCharacters] = useCharacter()
+
   useEffect(() => {
-    fetch('https://api.ennead.cc/buruaka/banner').then(res => {
-      return res.json()
-    }).then(data => {
-      setCurrentBannerEN(data.current.map(banner => {
-        const currentStartDate = new Date(banner.startAt)
-        const currentStartDay = currentStartDate.toLocaleDateString()
-        const currentStartHour = currentStartDate.toLocaleTimeString()
-        const currentEndDate = new Date(banner.endAt + 1)
-        const currentEndDay = currentEndDate.toLocaleDateString()
-        const currentEndHour = currentEndDate.toLocaleTimeString()
-        return { ...banner, startAt: `${currentStartDay}, ${currentStartHour}`, endAt: `${currentEndDay}, ${currentEndHour}` }
-      }))
-    })
+
+    getCharacters()
 
     const sortedJPBanners = [...TLBanners.current, ...TLBanners.ended, ...TLBanners.upcoming].sort((a, b) => b.startAt - a.startAt)
     setAllJPBanners(sortedJPBanners.map(banner => {
@@ -88,22 +84,17 @@ export const Banners = () => {
       setCharacters(storedCharacters)
     }
 
-    const storedPlannedBanners = JSON.parse(localStorage.getItem('plannedBanners'))
-    if (storedPlannedBanners) {
-      setPlannedBanners(storedPlannedBanners)
-    }
-
+    getPlannedBanners()
     localStorage.setItem('page', 'banners')
   }, [])
 
   const [currentBannerEN, setCurrentBannerEN] = useState({})
   const [allJPBanners, setAllJPBanners] = useState([])
   const [allENBanners, setAllENBanners] = useState([])
-  const [characters, setCharacters] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [filteredBanners, setFilteredBanners] = useState([])
   const [showAll, setShowAll] = useState(true)
-  const [plannedBanners, setPlannedBanners] = useState([])
+  const [plannedBanners, setPlannedBanners, getPlannedBanners] = usePlanner()
   const [bannerRegion, setBannerRegion] = useState('JP')
 
   const handleSearch = () => {
@@ -132,15 +123,26 @@ export const Banners = () => {
     }
   }
 
-  const handleAddToPlanner = (banner) => {
-    if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups[0] === banner.rateups[0])) {
-      console.log('This banner is already in the planner ')
-    } else {
-      setPlannedBanners(prevBanners => {
-        const updatedBanners = [...prevBanners, { ...banner, id: Math.random() }]
-        localStorage.setItem('plannedBanners', JSON.stringify(updatedBanners))
-        return updatedBanners
-      })
+  const handleAddToPlanner = async (banner) => {
+    if (auth.currentUser === null)
+      if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups[0] === banner.rateups[0])) {
+        console.log('This banner is already in the planner ')
+      } else {
+        setPlannedBanners(prevBanners => {
+          const updatedBanners = [...prevBanners, { ...banner, id: Math.random() }]
+          localStorage.setItem('plannedBanners', JSON.stringify(updatedBanners))
+          return updatedBanners
+        })
+      } else {
+      if (plannedBanners.some(existingBanner => existingBanner.startAt === banner.startAt && existingBanner.endAt === banner.endAt && existingBanner.rateups[0] === banner.rateups[0])) {
+        console.log('This banner is already in the planner ')
+      } else {
+        const updatedBanners = [...plannedBanners, { ...banner, id: Math.random() }]
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
+          plannedBanners: updatedBanners
+        })
+        getPlannedBanners()
+      }
     }
   }
 

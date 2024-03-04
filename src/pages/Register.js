@@ -28,11 +28,14 @@ export const Register = () => {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
-      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
-        characters: characters,
+      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
+        characters: characters
+      })
+      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
         plannedBanners: []
       })
       navigate('/')
+      localStorage.setItem('page', 'collection')
     } catch (error) {
       console.log(error)
     }
