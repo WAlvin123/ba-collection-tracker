@@ -1,3 +1,31 @@
 .register {
   padding-top: 120px;
 }
+
+.register-container {
+    display: inline-block;
+    background-color: rgb(52, 52, 52);
+    border-radius: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+@media (min-width: 720px) {
+  .register-container {
+    display: inline-block;
+    background-color: rgb(52, 52, 52);
+    border-radius: 18px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;  }
+
+    .register-value {
+      font-size: x-large;
+    }
+    
+    .register-prompt {
+      font-size: x-large;
+      padding-top:15px;
+    }
+}

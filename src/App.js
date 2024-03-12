@@ -7,26 +7,56 @@ import { Banners } from './pages/Banners';
 import { Planner } from './pages/Planner';
 import { Register } from './pages/Register';
 import { Signin } from './pages/Signin';
+import { SignoutConfirmation } from './components/SignoutConfirmation';
+import { useState } from 'react';
+import { auth } from './config/firestore';
+import { signOut } from 'firebase/auth';
 
-// TODO: Search page
 
 function App() {
+  const [visibleConfirmation, setVisibleConfirmation] = useState(false)
+  const [loggedin, setLoggedin] = useState(false)
+  const [page, setPage] = useState('')
+
+  const handleSignOut = () => {
+    signOut(auth)
+    setVisibleConfirmation(false)
+    window.location.reload()
+  }
+
+
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <SignoutConfirmation
+          visibleConfirmation={visibleConfirmation}
+          setVisibleConfirmation={setVisibleConfirmation}
+          handleSignOut={handleSignOut}
+        />
+        <Navbar
+          visibleConfirmation={visibleConfirmation}
+          setVisibleConfirmation={setVisibleConfirmation}
+          loggedin={loggedin}
+          setLoggedin={setLoggedin}
+          handleSignOut={handleSignOut}
+          page={page}
+          setPage={setPage}
+        />
+
         <Routes>
           <Route path={'/'} element={<Collection />} />
           <Route path={'/profiles'} element={<Search />} />
           <Route path={'/banners'} element={<Banners />} />
           <Route path={'/planner'} element={<Planner />} />
-          <Route path={'/signin'} element={<Signin/>} />
+          <Route path={'/signin'} element={<Signin />} />
           <Route path={'/register'} element={<Register />} />
         </Routes>
       </Router>
+
     </div>
   );
 }
 
 export default App;
+

@@ -850,6 +850,31 @@ const Profiles = [
       indoorMood: 'S'
     }
   },
+  {
+    character: {
+      name: "Akari (New Year)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Mystic",
+      position: "Back",
+      role: "Support",
+      squadType: "Support",
+      weaponType: "AR",
+      profile: "Akari from Gehenna Academys' Gourmet Research Society changed into a kimono to welcome the new year. She's smiling as usual, but she also seems a little flustered. Is she excited about the new year, or..."
+    },
+    info: {
+      club: 'Gourmet Research Society',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/6/64/Lobbyillust_Akari_%28New_Year%29.png/180px-Lobbyillust_Akari_%28New_Year%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
 ]
 
 export default Profiles

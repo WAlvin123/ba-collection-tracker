@@ -28,6 +28,7 @@ export const FilterBar = ({ handleFilterBySchool, handlePulled, handleNotPulled,
             onClick={() => {
               handleFilterBySchool('Abydos')
               setButtonStates({ ...buttonStates, b1State: !buttonStates.b1State })
+              console.log(localStorage.getItem('confirmVisible'))
             }}
             className={buttonStates.b1State ? 'school-filter-button-clicked' : 'school-filter-button-unclicked'}
           >

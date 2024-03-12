@@ -414,7 +414,7 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/d/da/Shigure.png',
     damageType: 'Explosive',
     clicked: false
-  }, 
+  },
   {
     _id: 'avtrhartdhadthj',
     name: 'Momiji',
@@ -439,6 +439,14 @@ const newCharacters = [
     damageType: 'Penetration',
     clicked: false
   },
+  {
+    _id: 'er5hbyh45ybh4b5y',
+    name: 'Akari (New Year)',
+    school: 'Gehenna',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/a/ae/Akari_%28New_Year%29.png',
+    damageType: 'Mystic',
+    clicked: false
+  }
 ]
 
 export default newCharacters

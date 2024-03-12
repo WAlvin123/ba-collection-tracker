@@ -1791,6 +1791,55 @@ const TLBanners =
       rateups: [
         "Kayoko (Dress)"
       ]
+    },
+
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1709694000000,
+      "endAt": 1710903599000,
+      "rateups": [
+        "Akari (New Year)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1709694000000,
+      "endAt": 1710903599000,
+      "rateups": [
+        "Haruna (New Year)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1709694000000,
+      "endAt": 1710903599000,
+      "rateups": [
+        "Fuuka (New Year)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1710903600000,
+      "endAt": 1711508399000,
+      "rateups": [
+        "Ui"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1710903600000,
+      "endAt": 1711508399000,
+      "rateups": [
+        "Hinata"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1710903600000,
+      "endAt": 1711508399000,
+      "rateups": [
+        "Sakurako"
+      ]
     }
   ]
 }

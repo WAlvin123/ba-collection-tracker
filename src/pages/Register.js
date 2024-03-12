@@ -13,7 +13,7 @@ export const Register = () => {
         return res.json()
       })
       .then((data) => {
-        const allCharacters = [...data.data, ...newCharacters]
+        const allCharacters = [...data.data, ...newCharacters].sort((a, b) => a.name.localeCompare(b.name))
         setCharacters(allCharacters.map(character => {
           return { ...character, clicked: false }
         }))
@@ -21,42 +21,74 @@ export const Register = () => {
   }, [])
 
   const [characters, setCharacters] = useState([])
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const navigate = useNavigate()
 
   const handleRegister = async () => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password)
-      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
-        characters: characters
-      })
-      setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
-        plannedBanners: []
-      })
-      navigate('/')
-      localStorage.setItem('page', 'collection')
-    } catch (error) {
-      console.log(error)
+    if (password === confirmPassword) {
+      try {
+        await createUserWithEmailAndPassword(auth, `${username}@mail.com`, password)
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
+          characters: characters
+        })
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
+          plannedBanners: []
+        })
+        navigate('/')
+        localStorage.setItem('page', 'collection')
+      } catch (error) {
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            setErrorMessage('Username already in use');
+            break;
+          case 'auth/weak-password':
+            setErrorMessage('Password must atleast be 6 characters long');
+            break;
+        }
+        console.log(error)
+      }
+    } else {
+      setErrorMessage('Passwords do not match')
     }
   }
 
   return (
     <div className="register">
       <p>Create an account to sync your data across multiple devices</p>
-      <div className='banner-search-container'>
-        <p>Email</p>
+      <div className='register-container'>
+        <p className='register-prompt'>Username</p>
         <input
           onChange={(event) => {
-            setEmail(event.target.value)
-          }} value={email} />
-        <p>Password</p>
+            setUsername(event.target.value)
+          }}
+          value={username}
+          className='register-value'
+        />
+        <p className='register-prompt'>Password</p>
         <input
           onChange={(event) => {
             setPassword(event.target.value)
           }}
-          value={password} />
+          value={password}
+          type='password'
+          className='register-value'
+
+        />
+        <p className='register-prompt'>Confirm Password</p>
+        <input
+          onChange={(event) => {
+            setConfirmPassword(event.target.value)
+          }}
+          value={confirmPassword}
+          type='password'
+          className='register-value'
+
+        />
         <h1></h1>
+        <p className='register-error'>{errorMessage}</p>
         <button
           onClick={() => {
             handleRegister()

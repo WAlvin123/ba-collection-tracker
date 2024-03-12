@@ -1,50 +1,69 @@
 import { useState } from 'react'
 import './Signin.css'
 import { auth } from '../config/firestore'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { flushSync } from 'react-dom'
 
 export const Signin = () => {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const navigate = useNavigate()
 
-  const handleRegister = async () => {
+  const handleSignin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(auth, `${username}@mail.com`, password)
       navigate('/')
       localStorage.setItem('page', 'collection')
 
     } catch (error) {
+      switch (error.code) {
+        case 'auth/missing-password':
+          setErrorMessage('Username or password is invalid');
+          break;
+        case 'auth/invalid-credential':
+          setErrorMessage('Username or password is invalid');
+          break;
+        case 'auth/invalid-email':
+          setErrorMessage('Username does not exist')
+          break;
+      }
       console.log(error)
     }
   }
 
   return (
     <div className="signin">
-      <p>Sign in below</p>
-      <div className='banner-search-container'>
-        <form style={{ display: 'flex', flexDirection: 'column' }}>
-          <p>Email</p>
-          <input
-            onChange={(event) => {
-              setEmail(event.target.value)
-            }} value={email} />
-          <p>Password</p>
-          <input
-            onChange={(event) => {
-              setPassword(event.target.value)
-            }}
-            value={password} />
-          <h1></h1>
-          <button
-            onClick={() => {
-              handleRegister()
-            }}
-            className='search-button'
-          >Sign in</button>
-        </form>
+      <div className='register-container'>
+        <p className='register-prompt'>Username</p>
+        <input
+          onChange={(event) => {
+            setUsername(event.target.value)
+          }}
+          value={username}
+          className='register-value'
+        />
+        <p className='register-prompt'>Password</p>
+        <input
+          onChange={(event) => {
+            setPassword(event.target.value)
+          }}
+          value={password}
+          type='password'
+          className='register-value'
+        />
+        <h1></h1>
+
+        <button
+          onClick={() => {
+            handleSignin()
+          }}
+          className='search-button'
+        >Sign in</button>
+        <p>{errorMessage}</p>
       </div>
+
     </div>
   )
 }

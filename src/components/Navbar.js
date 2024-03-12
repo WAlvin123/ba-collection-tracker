@@ -3,22 +3,26 @@ import './Navbar.css'
 import { useEffect, useState } from 'react'
 import { auth } from '../config/firestore'
 import { signOut } from 'firebase/auth'
-import { useCharacter } from '../Custom hooks/useCharacter'
+import { useLogin } from '../Custom hooks/useLogin'
 
-export const Navbar = () => {
+export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, visibleConfirmation, setVisibleConfirmation }) => {
   const navigate = useNavigate()
-  const [page, setPage] = useState('')
+
 
   useEffect(() => {
     setPage(localStorage.getItem('page'))
   })
 
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-      navigate('/')
-      localStorage.setItem('page', 'collection')
-    })
-  }
+  useEffect(() => {
+    if (auth.currentUser === null) {
+      setLoggedin(false)
+    } else {
+      setLoggedin(true)
+    }
+  })
+
+
+
 
   return (
     <div className='navbar'>
@@ -55,17 +59,17 @@ export const Navbar = () => {
           Planner
         </button>
 
-        {auth.currentUser == null && (
+        {loggedin === false && (
           <button className={page === 'signin' ? 'navbar-button-clicked' : 'navbar-button'}
             onClick={() => {
               navigate('/signin')
               localStorage.setItem('page', 'signin')
             }}>
-            Sign in
+            Login
           </button>
         )}
 
-        {auth.currentUser == null && (
+        {loggedin === false && (
           <button className={page === 'register' ? 'navbar-button-clicked' : 'navbar-button'}
             onClick={() => {
               navigate('/register')
@@ -76,9 +80,9 @@ export const Navbar = () => {
         )}
 
 
-        {auth.currentUser !== null && (
+        {loggedin !== false && (
           <button className='navbar-button' onClick={() => {
-            handleSignOut()
+            setVisibleConfirmation(true)
           }}>Sign out</button>
         )}
       </div>

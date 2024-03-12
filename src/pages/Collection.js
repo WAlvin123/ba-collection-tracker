@@ -4,6 +4,7 @@ import './Collection.css'
 import { auth, db } from '../config/firestore';
 import { useCharacter } from '../Custom hooks/useCharacter';
 import { doc, setDoc } from 'firebase/firestore';
+import { useLogin } from '../Custom hooks/useLogin';
 
 export const Collection = () => {
   const [characters, setCharacters, getCharacters] = useCharacter()
@@ -16,6 +17,8 @@ export const Collection = () => {
   const [ownedFilter, setOwnedFilter] = useState(false)
   const [notOwnedFilter, setNotOwnedFilter] = useState(false)
   const [dmgFilter, setDmgFilter] = useState(false)
+  const [nameVisible, setNameVisible] = useState(false)
+  const [loggedin] = useLogin()
 
   useEffect(() => {
     setShowAll(true)
@@ -31,6 +34,10 @@ export const Collection = () => {
       setOwnedCharacters(filteredCharacters.filter(character => character.clicked === true))
     }
   }, [characters])
+
+  useEffect(() => {
+      setNameVisible(!nameVisible)
+  }, [auth.currentUser])
 
   const handleShowAll = () => {
     setShowAll(true)
@@ -90,7 +97,7 @@ export const Collection = () => {
             return character
           }
         })
-        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
           characters: updatedCharacters,
           plannedBanner: []
         })
@@ -110,7 +117,7 @@ export const Collection = () => {
             return character
           }
         })
-        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s data`), {
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
           characters: updatedCharacters,
           plannedBanner: []
         })
@@ -610,7 +617,7 @@ export const Collection = () => {
     <>
       {characters !== null && (
         <div className="Collection">
-          {auth.currentUser !== null && (<p>Welcome {auth.currentUser.email}</p>)}
+          {loggedin === true && (<p>Welcome</p>)}
           <FilterBar
             handleFilterBySchool={handleFilterBySchool}
             setShowAll={handleShowAll}
