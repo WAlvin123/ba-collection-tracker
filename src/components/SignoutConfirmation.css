@@ -4,24 +4,43 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items:flex-start;
-  padding-top:120px
+  align-items: flex-start;
+  padding-top: 120px;
+  z-index: 1000000;
+  padding-top: 150px;
 }
 
 .confirmation-container {
-  width:80%;
-  height:75%;
+  width: 80%;
+  height: 75%;
   border-radius: 12px;
   background-color: white;
-  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
-  display:flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
   flex-direction: column;
   padding: 25px;
   overflow: auto;
+  z-index: 1000000;
 }
 
-.confirmation-message {
-  color: red;
-  font-weight: bold;
-  font-size: 180%;
+.confirmation-button {
+  color: rgb(68, 129, 195);
+  font-family: 'Lucida Sans';
+  font-size: x-large;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  width: fit-content;
+}
+
+.confirmation-button:hover {
+  color: rgb(68, 129, 195);
+  font-family: 'Lucida Sans';
+  font-size: x-large;
+  height: fit-content;
+  border: none;
+  cursor: pointer;
+  background-color: lightgray;
+  width: fit-content;
 }

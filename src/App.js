@@ -11,6 +11,7 @@ import { SignoutConfirmation } from './components/SignoutConfirmation';
 import { useState } from 'react';
 import { auth } from './config/firestore';
 import { signOut } from 'firebase/auth';
+import { Profile } from './pages/Profile';
 
 
 function App() {
@@ -46,11 +47,12 @@ function App() {
 
         <Routes>
           <Route path={'/'} element={<Collection />} />
-          <Route path={'/profiles'} element={<Search />} />
+          <Route path={'/search'} element={<Search />} />
           <Route path={'/banners'} element={<Banners />} />
           <Route path={'/planner'} element={<Planner />} />
           <Route path={'/signin'} element={<Signin />} />
           <Route path={'/register'} element={<Register />} />
+          <Route path={'/profile'} element={<Profile/>}/>
         </Routes>
       </Router>
 

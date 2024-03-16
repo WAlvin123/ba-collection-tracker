@@ -11,16 +11,19 @@ export const SignoutConfirmation = ({ handleSignOut, visibleConfirmation, setVis
     <div>
       {visibleConfirmation === true && (<div className="confirmation-background">
         <div className="confirmation-container">
-          <p className='text-2'>Are you sure you woud like to Logout?</p>
-          <button className='search-button' onClick={() => {
+          <p className='text-2'>Are you sure you would like to logout?</p>
+          <div className='centered-container'>
+          <button className='confirmation-button' 
+          onClick={() => {
             handleSignOut()
             navigate('/')
           }}>Yes</button>
-          <button className='search-button'
+          <button className='confirmation-button'
             onClick={() => {
               setVisibleConfirmation(false)
             }}
           >No</button>
+          </div>
         </div>
       </div>)}
     </div>

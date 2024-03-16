@@ -12,9 +12,7 @@ export const Banners = () => {
   const [characters, setCharacters, getCharacters] = useCharacter()
 
   useEffect(() => {
-
     getCharacters()
-
     const sortedJPBanners = [...TLBanners.current, ...TLBanners.ended, ...TLBanners.upcoming].sort((a, b) => b.startAt - a.startAt)
     setAllJPBanners(sortedJPBanners.map(banner => {
       const startDate = new Date(banner.startAt)
@@ -70,6 +68,10 @@ export const Banners = () => {
               return 'Neru (Bunny Girl)'
             } else if (rateup === 'Utaha (Cheer Squad)') {
               return 'Utaha (Cheerleader)'
+            } else if (rateup === 'Haruna (Track)') {
+              return 'Haruna (Sportswear)'
+            } else if (rateup === 'Kotori (Cheer Squad)') {
+              return 'Kotori (Cheerleader)'
             } else {
               return rateup
             }

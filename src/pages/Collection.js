@@ -36,7 +36,7 @@ export const Collection = () => {
   }, [characters])
 
   useEffect(() => {
-      setNameVisible(!nameVisible)
+    setNameVisible(!nameVisible)
   }, [auth.currentUser])
 
   const handleShowAll = () => {
@@ -617,7 +617,9 @@ export const Collection = () => {
     <>
       {characters !== null && (
         <div className="Collection">
-          {loggedin === true && (<p>Welcome</p>)}
+          {auth.currentUser !== null && (
+            <p className='text'>{auth.currentUser.email.slice(0, -9)}'s collection</p>
+          )}
           <FilterBar
             handleFilterBySchool={handleFilterBySchool}
             setShowAll={handleShowAll}

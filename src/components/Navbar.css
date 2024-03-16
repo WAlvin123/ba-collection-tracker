@@ -51,7 +51,7 @@
 .navbar-button {
   color: white;
   font-family: 'Lucida Sans';
-  font-size: small;
+  font-size: x-small;
   height: fit-content;
   background-color: transparent;
   border: none;
@@ -63,7 +63,7 @@
 .navbar-button:hover {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: small;
+  font-size: x-small;
   height: fit-content;
   background-color: transparent;
   border: none;
@@ -75,7 +75,7 @@
 .navbar-button-clicked {
   color: rgb(68, 129, 195);
   font-family: 'Lucida Sans';
-  font-size: small;
+  font-size: x-small;
   height: fit-content;
   background-color: transparent;
   border: none;

@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { useEffect, useState } from 'react'
 import { auth } from '../config/firestore'
-import { signOut } from 'firebase/auth'
-import { useLogin } from '../Custom hooks/useLogin'
 
 export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, visibleConfirmation, setVisibleConfirmation }) => {
   const navigate = useNavigate()
@@ -39,10 +37,10 @@ export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, vi
         </button>
         <button className={page === 'profiles' ? 'navbar-button-clicked' : 'navbar-button'}
           onClick={() => {
-            navigate('/profiles')
+            navigate('/search')
             localStorage.setItem('page', 'profiles')
           }}>
-          Profiles
+          Search
         </button>
         <button className={page === 'banners' ? 'navbar-button-clicked' : 'navbar-button'}
           onClick={() => {
@@ -79,6 +77,16 @@ export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, vi
           </button>
         )}
 
+        {loggedin !== false && (
+          <button className={page === 'profile' ? 'navbar-button-clicked' : 'navbar-button'}
+          onClick={() => {
+            navigate('/profile')
+            localStorage.setItem('page', 'profile')
+          }}
+          >
+            Profile
+          </button>
+        )}
 
         {loggedin !== false && (
           <button className='navbar-button' onClick={() => {

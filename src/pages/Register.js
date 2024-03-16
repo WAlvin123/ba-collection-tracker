@@ -37,6 +37,18 @@ export const Register = () => {
         setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`), {
           plannedBanners: []
         })
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s favorite character`), {
+          favoriteCharacter: {
+            name: 'Yuuka',
+            school: 'Millennium',
+            photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/3e/Yuuka.png',
+            damageType: 'Explosive',
+            clicked: false
+          }
+        })
+        setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s favorite school`), {
+          favoriteSchool: 'Millennium'
+        })
         navigate('/')
         localStorage.setItem('page', 'collection')
       } catch (error) {
