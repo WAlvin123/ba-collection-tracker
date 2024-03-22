@@ -10,7 +10,7 @@
 
 .profile-container {
   display: inline-block;
-  background: white;
+  background-color: rgb(52, 52, 52);
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 15px;

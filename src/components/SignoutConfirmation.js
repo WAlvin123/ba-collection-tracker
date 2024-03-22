@@ -17,6 +17,7 @@ export const SignoutConfirmation = ({ handleSignOut, visibleConfirmation, setVis
           onClick={() => {
             handleSignOut()
             navigate('/')
+            window.location.reload()
           }}>Yes</button>
           <button className='confirmation-button'
             onClick={() => {

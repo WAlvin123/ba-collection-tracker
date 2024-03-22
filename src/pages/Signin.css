@@ -1,3 +1,19 @@
 .signin {
   padding-top: 120px;
 }
+
+.signin-link {
+  background: transparent;
+  border: none;
+  color: rgb(68, 129, 195);
+  font-size: large;
+  cursor: pointer;
+}
+
+.signin-link:hover{
+  background: transparent;
+  border: none;
+  color: rgb(161, 184, 197);
+  font-size: large;
+  cursor: pointer;
+}

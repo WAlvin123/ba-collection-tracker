@@ -10,4 +10,9 @@
   .Profile {
     padding-top: 120px;
   }
+
+  .pyro-img-profile {
+    width: 60px;
+    transform: translateY(10px);
+  }
 }

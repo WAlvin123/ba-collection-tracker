@@ -22,7 +22,6 @@ function App() {
   const handleSignOut = () => {
     signOut(auth)
     setVisibleConfirmation(false)
-    window.location.reload()
   }
 
 

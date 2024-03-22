@@ -62,6 +62,12 @@ export const Signin = () => {
           className='search-button'
         >Sign in</button>
         <p>{errorMessage}</p>
+        <p style={{ fontSize: 'large' }}>Don't have an account? Register <button className='signin-link'
+          onClick={() => {
+             navigate('/register')
+            localStorage.setItem('page', 'register')
+            }}
+        >here</button></p>
       </div>
 
     </div>

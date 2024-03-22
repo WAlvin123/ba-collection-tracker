@@ -117,7 +117,7 @@ export const Search = () => {
         <div className="centered-container">
           <div className="profile-container">
             <div style={{ display: "flex", flexDirection: 'column' }}>
-              <p>Memolobby:</p>
+              <p></p>
               <div className="centered-container">
                 {visible === true && (<img src={currentProfile.image.lobby} width={'150vw'}></img>)}
               </div>

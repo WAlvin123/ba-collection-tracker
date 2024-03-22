@@ -69,8 +69,9 @@ export const Register = () => {
 
   return (
     <div className="register">
-      <p>Create an account to sync your data across multiple devices</p>
       <div className='register-container'>
+        <p>Create an account to sync your data across multiple devices</p>
+
         <p className='register-prompt'>Username</p>
         <input
           onChange={(event) => {
