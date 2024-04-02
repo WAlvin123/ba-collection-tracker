@@ -858,13 +858,63 @@ const Profiles = [
       bulletType: "Mystic",
       position: "Back",
       role: "Support",
-      squadType: "Support",
+      squadType: "Special",
       weaponType: "AR",
       profile: "Akari from Gehenna Academys' Gourmet Research Society changed into a kimono to welcome the new year. She's smiling as usual, but she also seems a little flustered. Is she excited about the new year, or..."
     },
     info: {
       club: 'Gourmet Research Society',
       school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/6/64/Lobbyillust_Akari_%28New_Year%29.png/180px-Lobbyillust_Akari_%28New_Year%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Tsubaki (Guide)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Penetration",
+      position: "Back",
+      role: "Support",
+      squadType: "Special",
+      weaponType: "SMG",
+      profile: "President of the inner discipline club at Hyakkiyako Academy. She is filling in the role of a guide to take students on school excursions, but never neglects her own sleep training. Sometimes she dozes off, sometimes she sharply cuts to the heart of the matter, and sometimes she manages to mix both in a casual manner."
+    },
+    info: {
+      club: 'Inner Discipline Club',
+      school: 'Hyakkiyako'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/6/64/Lobbyillust_Akari_%28New_Year%29.png/180px-Lobbyillust_Akari_%28New_Year%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Umika",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Mystic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "A first-year member of the festival management committee of Hyakkiyako Alliance Academy. Being from the countryside, Umika was always fascinated by the festivals held in cities. She has exhaustive knowledge of all the festivals held throughout Kivotos. Once Umika starts talking, she tends to gush about obscure festival topics; others often note that she's very attractive when silent."
+    },
+    info: {
+      club: 'Festivals Operations Department',
+      school: 'Hyakkiyako'
     },
     image: {
       lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/6/64/Lobbyillust_Akari_%28New_Year%29.png/180px-Lobbyillust_Akari_%28New_Year%29.png'

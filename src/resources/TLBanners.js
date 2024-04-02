@@ -1840,6 +1840,39 @@ const TLBanners =
       "rateups": [
         "Sakurako"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1711508400000,
+      "endAt": 1712804399000,
+      "rateups": [
+        'Tsubaki (Guide)'
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1711508400000,
+      "endAt": 1712804399000,
+      "rateups": [
+        'Umika'
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1711508400000,
+      "endAt": 1712804399000,
+      "rateups": [
+        "Mimori"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1711508400000,
+      "endAt": 1712804399000,
+      "rateups": [
+        "Izuna",
+        "Shizuko"
+      ]
     }
   ]
 }

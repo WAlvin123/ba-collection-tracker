@@ -446,7 +446,24 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/a/ae/Akari_%28New_Year%29.png',
     damageType: 'Mystic',
     clicked: false
-  }
+  },
+  {
+    _id: 'r67j876jr86rj7h6h7rt',
+    name: 'Tsubaki (Guide)',
+    school: 'Hyakkiyako',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/e/ef/Tsubaki_%28Guide%29.png',
+    damageType: 'Penetration',
+    clicked: false
+  },
+  {
+    _id: '908muh65798umh65u',
+    name: 'Umika',
+    school: 'Hyakkiyako',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/e/e2/Umika.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+
 ]
 
 export default newCharacters

@@ -49,12 +49,12 @@
   width: 80px;
 }
 
-@media (min-width:800px) {
+@media (min-width:1000px) {
   .characters-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     width: fit-content;
-    min-width: 500px;
+    min-width: 900px;
     background-color: rgb(52, 52, 52);
     border-radius: 25px;
     padding-top: 20px;

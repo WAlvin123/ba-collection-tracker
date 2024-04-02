@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { useEffect, useState } from 'react'
 import { auth } from '../config/firestore'
+import { signOut } from 'firebase/auth'
 
 export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, visibleConfirmation, setVisibleConfirmation }) => {
   const navigate = useNavigate()
@@ -79,10 +80,10 @@ export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, vi
 
         {loggedin !== false && (
           <button className={page === 'profile' ? 'navbar-button-clicked' : 'navbar-button'}
-          onClick={() => {
-            navigate('/profile')
-            localStorage.setItem('page', 'profile')
-          }}
+            onClick={() => {
+              navigate('/profile')
+              localStorage.setItem('page', 'profile')
+            }}
           >
             Profile
           </button>
@@ -90,7 +91,9 @@ export const Navbar = ({ loggedin, setLoggedin, page, setPage, handleSignOut, vi
 
         {loggedin !== false && (
           <button className='navbar-button' onClick={() => {
-            setVisibleConfirmation(true)
+            signOut(auth)
+            navigate('/')
+            window.location.reload()
           }}>Sign out</button>
         )}
       </div>
