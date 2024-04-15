@@ -3,7 +3,6 @@ import { auth, db } from "../config/firestore"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import newCharacters from "../resources/characters"
 
-// TODO: Update characters 
 
 export const useCharacter = () => {
   const [characters, setCharacters] = useState([])

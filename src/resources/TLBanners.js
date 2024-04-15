@@ -1873,6 +1873,55 @@ const TLBanners =
         "Izuna",
         "Shizuko"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1712804400000,
+      "endAt": 1713322799000,
+      "rateups": [
+        "Kazusa"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1712804400000,
+      "endAt": 1713322799000,
+      "rateups": [
+        "Reisa"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1712804400000,
+      "endAt": 1713322799000,
+      "rateups": [
+        "Natsu",
+        "Mari"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1713322800000,
+      "endAt": 1713927599000,
+      "rateups": [
+        "Toki"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1713322800000,
+      "endAt": 1713927599000,
+      "rateups": [
+        "Nagisa"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1713322800000,
+      "endAt": 1713927599000,
+      "rateups": [
+        "Koyuki"
+      ]
     }
   ]
 }
