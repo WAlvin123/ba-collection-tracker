@@ -23,8 +23,14 @@ export const useCharacter = () => {
           const storedCharacters = JSON.parse(localStorage.getItem('characters'))
           if (storedCharacters) {
             if (storedCharacters.length < sortedCharacters.length) {
-              localStorage.setItem('characters', JSON.stringify(sortedCharacters))
-              setCharacters(sortedCharacters)
+              let updatedCharacters = storedCharacters
+              sortedCharacters.forEach(character => {
+                if (!updatedCharacters.map(character => character.name).includes(character.name)) {
+                  updatedCharacters.push(character)
+                }
+              })
+              localStorage.setItem('characters', JSON.stringify(updatedCharacters))
+              setCharacters(updatedCharacters)
             } else {
               setCharacters(storedCharacters)
             }
@@ -49,8 +55,14 @@ export const useCharacter = () => {
           const docSnap = await getDoc(docRef)
           const dbCharacters = docSnap.get('characters')
           if (dbCharacters.length < sortedCharacters.length) {
+            let updatedCharacters = dbCharacters
+            sortedCharacters.forEach(character => {
+              if (!updatedCharacters.map(character => character.name).includes(character.name)) {
+                updatedCharacters.push(character)
+              }
+            })
             setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
-              characters: sortedCharacters
+              characters: updatedCharacters
             }).then(setCharacters(dbCharacters))
           } else {
             setCharacters(dbCharacters)

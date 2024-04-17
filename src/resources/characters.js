@@ -462,8 +462,7 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/e/e2/Umika.png',
     damageType: 'Mystic',
     clicked: false
-  },
-
+  }
 ]
 
 export default newCharacters
