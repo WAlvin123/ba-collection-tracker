@@ -925,6 +925,57 @@ const Profiles = [
       indoorMood: 'D'
     }
   },
+  {
+    character: {
+      name: "Kazusa (Band)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Explosive",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "MG",
+      profile: "A member of the After School Sweets Club at Trinity Integrated Academy, and the singing bassist of the hastily formed band 'Sugar Rush'. Due to a slip of the tongue, Kazusa ended up in charge of the vocals, and stubbornly avoided backing out of the role. By now Kazusa is used to all the noisy events that the group gets to, and she accepts her role in the band."
+    },
+    info: {
+      club: 'After-School Sweets Club',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/e/ef/Lobbyillust_Kazusa_%28Band%29.png/180px-Lobbyillust_Kazusa_%28Band%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Yoshimi (Band)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Explosive",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "A member of the After School Sweets Club at Trinity Integrated Academy, and the guitarist of the hastily formed 'Sugar Rush.' band. Yoshimi initially decided start the band by the spur the moment, but she is commited that 'if it's worth doing, it's worth doing right'. She is also in charge of the visual aspects of the band, such as their logo, visuals, and costumes."
+    }
+    ,
+    info: {
+      club: 'After-School Sweets Club',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/2/20/Lobbyillust_Yoshimi_%28Band%29.png/180px-Lobbyillust_Yoshimi_%28Band%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
 ]
 
 export default Profiles

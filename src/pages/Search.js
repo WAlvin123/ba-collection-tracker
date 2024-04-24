@@ -119,7 +119,7 @@ export const Search = () => {
             <div style={{ display: "flex", flexDirection: 'column' }}>
               <p></p>
               <div className="centered-container">
-                {visible === true && (<img src={currentProfile.image.lobby} width={'150vw'}></img>)}
+                {visible === true && (<img src={currentProfile.image.lobby} width={'230vw'}></img>)}
               </div>
               <button
                 onClick={() => {

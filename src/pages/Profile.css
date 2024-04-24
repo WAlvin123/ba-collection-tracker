@@ -6,9 +6,26 @@
   width: 20vw
 }
 
+.profile-container {
+  background-color: rgb(52, 52, 52);
+  border-radius: 18px;
+  padding-bottom: 25px;
+  width: 70%;
+}
+
 @media (min-width: 720px) {
   .Profile {
     padding-top: 120px;
+  }
+
+  .profile-container {
+    display: inline-block;
+    background-color: rgb(52, 52, 52);
+    border-radius: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    width: fit-content
   }
 
   .pyro-img-profile {

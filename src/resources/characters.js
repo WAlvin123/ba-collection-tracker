@@ -462,6 +462,22 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/e/e2/Umika.png',
     damageType: 'Mystic',
     clicked: false
+  },
+  {
+    _id: 'h6556bey87n987y9n ',
+    name: 'Kazusa (Band)',
+    school: 'Trinity',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/36/Kazusa_%28Band%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: 'j6478j67j67nur ',
+    name: 'Yoshimi (Band)',
+    school: 'Trinity',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/c/ca/Yoshimi_%28Band%29.png',
+    damageType: 'Explosive',
+    clicked: false
   }
 ]
 
