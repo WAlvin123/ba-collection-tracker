@@ -29,6 +29,7 @@ export const useCharacter = () => {
                   updatedCharacters.push(character)
                 }
               })
+              updatedCharacters.sort((a, b) => a.name.localeCompare(b.name))
               localStorage.setItem('characters', JSON.stringify(updatedCharacters))
               setCharacters(updatedCharacters)
             } else {
@@ -61,6 +62,7 @@ export const useCharacter = () => {
                 updatedCharacters.push(character)
               }
             })
+            updatedCharacters.sort((a, b) => a.name.localeCompare(b.name))
             setDoc(doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s characters`), {
               characters: updatedCharacters
             }).then(setCharacters(dbCharacters))

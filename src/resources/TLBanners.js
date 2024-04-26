@@ -1922,6 +1922,30 @@ const TLBanners =
       "rateups": [
         "Koyuki"
       ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1713927600000,
+      "endAt": 1715223599000,
+      "rateups": [
+        "Kazusa (Band)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1713927600000,
+      "endAt": 1715223599000,
+      "rateups": [
+        "Yoshimi (Band)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1713927600000,
+      "endAt": 1715223599000,
+      "rateups": [
+        "Ako"
+      ]
     }
   ]
 }
