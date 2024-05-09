@@ -1946,6 +1946,38 @@ const TLBanners =
       "rateups": [
         "Ako"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1715223600000,
+      "endAt": 1715828399000,
+      "rateups": [
+        "Kirara"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1715223600000,
+      "endAt": 1715828399000,
+      "rateups": [
+        "Kaede"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1715223600000,
+      "endAt": 1715828399000,
+      "rateups": [
+        "Kaho"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1715223600000,
+      "endAt": 1715828399000,
+      "rateups": [
+        "Tsukuyo"
+      ]
     }
   ]
 }

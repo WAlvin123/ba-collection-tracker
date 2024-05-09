@@ -976,6 +976,32 @@ const Profiles = [
       indoorMood: 'D'
     }
   },
+  {
+    character: {
+      name: "Kirara",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Sonic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "Kirara is a high school girl with a bright personality from the Gehenna Academy. She is always on lookout for novelty and excitement. Kirara is extremely sociable and can easily chat up people she'd just met for the first time."
+    }
+    ,
+    info: {
+      club: 'Sparkle Club',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/6/69/Lobbyillust_Kirara.png/180px-Lobbyillust_Kirara.png'
+    },
+    stat: {
+      streetMood: 'S',
+      outdoorMood: 'B',
+      indoorMood: 'D'
+    }
+  },
 ]
 
 export default Profiles

@@ -478,6 +478,14 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/c/ca/Yoshimi_%28Band%29.png',
     damageType: 'Explosive',
     clicked: false
+  },
+  {
+    _id: '35h76b3h576h73563h756b ',
+    name: 'Kirara',
+    school: 'Gehenna',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/3f/Kirara.png',
+    damageType: 'Sonic',
+    clicked: false
   }
 ]
 
