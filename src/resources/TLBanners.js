@@ -2008,7 +2008,7 @@ const TLBanners =
       "startAt": 1716346800000,
       "endAt": 1717556399000,
       "rateups": [
-        "Toki (Bunny)"
+        "Toki (Bunny Girl)"
       ]
     }
   ]
