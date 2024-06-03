@@ -1002,6 +1002,59 @@ const Profiles = [
       indoorMood: 'D'
     }
   },
+  {
+    character: {
+      name: "Momoi (Maid)",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Sonic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "Student of Millennium Science School, and the scenario writer for the Game Development Club. By chance, they were mistaken for C&C and ended up wearing maid outfits. Momoi is caught up in an incident, but with her characteristic bright and dignified demeanor, she manages to overcome the adversity."
+    }
+    ,
+    info: {
+      club: 'Game Development Department',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/a/ae/Lobbyillust_Momoi_%28Maid%29.png/180px-Lobbyillust_Momoi_%28Maid%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+
+  {
+    character: {
+      name: "Midori (Maid)",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Sonic",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "SR",
+      profile: "An illustrator of the Millennium Science School Game Development Club is disguised as a member of C&C... Although Midori herself claims that she ended up wearing the maid outfit unwillingly, she seems to be taking the mission seriously."
+    }
+    ,
+    info: {
+      club: 'Game Development Department',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/5/5e/Lobbyillust_Midori_%28Maid%29.png/180px-Lobbyillust_Midori_%28Maid%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  }
 ]
 
 export default Profiles

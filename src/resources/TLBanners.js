@@ -1978,6 +1978,38 @@ const TLBanners =
       "rateups": [
         "Tsukuyo"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1716346800000,
+      "endAt": 1717556399000,
+      "rateups": [
+        "Momoi (Maid)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1716346800000,
+      "endAt": 1717556399000,
+      "rateups": [
+        "Midori (Maid)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1716346800000,
+      "endAt": 1717556399000,
+      "rateups": [
+        "Arisu (Maid)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1716346800000,
+      "endAt": 1717556399000,
+      "rateups": [
+        "Toki (Bunny)"
+      ]
     }
   ]
 }

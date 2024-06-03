@@ -486,6 +486,22 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/3f/Kirara.png',
     damageType: 'Sonic',
     clicked: false
+  },
+  {
+    _id: 'h65747h564h7456756 ',
+    name: 'Momoi (Maid)',
+    school: 'Millennium',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/31/Momoi_%28Maid%29.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: '35b6u5bu6bubum ',
+    name: 'Midori (Maid)',
+    school: 'Millennium',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/2/29/Midori_%28Maid%29.png',
+    damageType: 'Sonic',
+    clicked: false
   }
 ]
 
