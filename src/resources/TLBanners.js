@@ -2010,6 +2010,78 @@ const TLBanners =
       "rateups": [
         "Toki (Bunny Girl)"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1717556400000,
+      "endAt": 1718506799000,
+      "rateups": [
+        "Nonomi (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1717556400000,
+      "endAt": 1718506799000,
+      "rateups": [
+        "Wakamo (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1717556400000,
+      "endAt": 1718506799000,
+      "rateups": [
+        "Shiroko (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1717556400000,
+      "endAt": 1718506799000,
+      "rateups": [
+        "Serika (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1718506800000,
+      "endAt": 1719370799000,
+      "rateups": [
+        "Izuna (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1718506800000,
+      "endAt": 1719370799000,
+      "rateups": [
+        "Mimori (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1718506800000,
+      "endAt": 1719370799000,
+      "rateups": [
+        "Chise (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1719370800000,
+      "endAt": 1720580399000,
+      "rateups": [
+        "Kanna (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1719370800000,
+      "endAt": 1720580399000,
+      "rateups": [
+        "Fubuki (Swimsuit)"
+      ]
     }
   ]
 }

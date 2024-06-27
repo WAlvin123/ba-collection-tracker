@@ -502,6 +502,38 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/2/29/Midori_%28Maid%29.png',
     damageType: 'Sonic',
     clicked: false
+  },
+  {
+    _id: '6h5456h64gb6b5hb5',
+    name: 'Kanna (Swimsuit)',
+    school: 'Valkyrie',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/8/83/Kanna_%28Swimsuit%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '5e6hyhy56grt',
+    name: 'Fubuki (Swimsuit)',
+    school: 'Valkyrie',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/3/34/Fubuki_%28Swimsuit%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: 'tyju7j7un6j7ntuyj7uhytn',
+    name: 'Kirino (Swimsuit)',
+    school: 'Valkyrie',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/c/cc/Kirino_%28Swimsuit%29.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+  {
+    _id: 'h356yh56yh65y65h456bhy',
+    name: 'Serika (Swimsuit)',
+    school: 'Abydos',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/0/0f/Serika_%28Swimsuit%29.png',
+    damageType: 'Mystic',
+    clicked: false
   }
 ]
 

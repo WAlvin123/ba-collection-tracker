@@ -1054,6 +1054,87 @@ const Profiles = [
       outdoorMood: 'S',
       indoorMood: 'B'
     }
+  },
+
+  {
+    character: {
+      name: "Kanna (Swimsuit)",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Explosive",
+      position: "Middle",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "The head of the Public Peace Bureau of the Valkyrie Police Academy, dispatched as a lifeguard. Although she has excellent swimming skills, danger perception, and situational ovareness, Kanna seems to have a hard time dealing with citizens, perhaps due to her uniquely threatening appearance."
+    }
+    ,
+    info: {
+      club: 'Public Peace Bureau',
+      school: 'Valkyrie'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/a/ae/Lobbyillust_Kanna_%28Swimsuit%29.png/180px-Lobbyillust_Kanna_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+
+  {
+    character: {
+      name: "Fubuki (Swimsuit)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Special",
+      weaponType: "SR",
+      profile: "A lazy student of the Public Peace Bureau of Valkyrie Police Academy who was dispatched as a lifeguard. Fubuki accepted the assignment at the water park without much thought, thinking she could slack off. While at it, she also seems to be constantly devising ways to evade doing any work"
+    }
+    ,
+    info: {
+      club: 'Public Peace Bureau',
+      school: 'Valkyrie'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/f/ff/Lobbyillust_Fubuki_%28Swimsuit%29.png/180px-Lobbyillust_Fubuki_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+
+  {
+    character: {
+      name: "Serika (Swimsuit)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Mystic",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Special",
+      weaponType: "AR",
+      profile: "Student of Abydos High School, and the secretary of the Abydos Foreclosure Task Force, Serika is visiting a resort to enjoy her well-deserved vacation. Undeterred by repeated failures, Serika tries to treat the vacation as seriously as her part-time job. Even though she appears to be overwhelmed at times, she enjoys spending time with the members of the committee."
+    }
+    ,
+    info: {
+      club: 'Foreclosure Task Force',
+      school: 'Abydos'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/2/20/Lobbyillust_Serika_%28Swimsuit%29.png/180px-Lobbyillust_Serika_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'B',
+      indoorMood: 'S'
+    }
   }
 ]
 
