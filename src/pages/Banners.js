@@ -20,7 +20,7 @@ export const Banners = () => {
       const startHour = startDate.toLocaleTimeString()
       const globalStartDate = new Date(banner.startAt)
       globalStartDate.setMonth(globalStartDate.getMonth() + 6)
-      globalStartDate.setDate(globalStartDate.getDate() + 6)
+      globalStartDate.setDate(globalStartDate.getDate())
       const globalStartDay = globalStartDate.toLocaleDateString()
       const endDate = new Date(banner.endAt)
       const endDay = endDate.toLocaleDateString()
