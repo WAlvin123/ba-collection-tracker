@@ -1135,7 +1135,170 @@ const Profiles = [
       outdoorMood: 'B',
       indoorMood: 'S'
     }
-  }
+  },
+
+  {
+    character: {
+      name: "Shiroko (Terror)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Mystic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "Shiroko from another world line who crossed over along with Prenapates. She is the same as Shiroko in this world, though a little more grown up. Shiroko deeply cares for Abydos and will do whatever it takes to rebuild the school and the region, though sometimes she shows her eccentric side."
+    }
+    ,
+    info: {
+      club: 'Foreclosure Task Force',
+      school: 'Abydos'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/d/d8/Lobbyillust_Shiroko%EF%BC%8ATerror.png/180px-Lobbyillust_Shiroko%EF%BC%8ATerror.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'A'
+    }
+  },
+
+  {
+    character: {
+      name: "Hoshino (Battle)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Mystic",
+      position: "Front",
+      role: "Tank / Attacker",
+      squadType: "Striker",
+      weaponType: "SG",
+      profile: "A lazy young girl from Abydos High School, former vice president of the Abydos Student Council, and president of the Foreclosure Task Force. Now equipped with armaments that she had kept in storage, Hoshino appers ready for combat. Not that different from the usual Hoshino, but now that she is armed, a glimpse of resolve can be seen in her eyes."
+    }
+    ,
+    info: {
+      club: 'Foreclosure Task Force',
+      school: 'Abydos'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/4/46/Lobbyillust_Hoshino_%28Battle%29.png/180px-Lobbyillust_Hoshino_%28Battle%29.png'
+    },
+    stat: {
+      streetMood: 'A',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+
+  {
+    character: {
+      name: "Moe (Swimsuit)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Sonic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "An operator of the RABBIT platoon belonging to SRT Special Academy, visiting a fishing village for an infiltration operation. She seems excited to to test her weapons in an unusual environment. Unlike the other platoon members, Moe is wearing a rather revealing swimsuit, which she claims is part of her doom."
+    }
+    ,
+    info: {
+      club: 'RABBIT Squad',
+      school: 'SRT'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/2/24/Lobbyillust_Moe_%28Swimsuit%29.png/180px-Lobbyillust_Moe_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'B',
+      indoorMood: 'S'
+    }
+  },
+
+  {
+    character: {
+      name: "Saori (Swimsuit)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Mystic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "The leader of the Arius Squad, who continues to search for herself. Being somewhat naive, Saori sometimes does eccentric things, but she is sincere in the work she takes on."
+    }
+    ,
+    info: {
+      club: 'Arius Squad',
+      school: 'Arius'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/b/b5/Lobbyillust_Saori_%28Swimsuit%29.png/180px-Lobbyillust_Saori_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+
+  {
+    character: {
+      name: "Hiyori (Swimsuit)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Piercing",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "SR",
+      profile: "A member of the Arius Squad who came to play at the beach. Although she is having high expectations about the beach based on what she learned from a magazine, it seems that Hiyori is having a hard time enjoying it 100% due to her negative personality."
+    }
+    ,
+    info: {
+      club: 'Arius Squad',
+      school: 'Arius'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/c/c7/Lobbyillust_Hiyori_%28Swimsuit%29.png/180px-Lobbyillust_Hiyori_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+
+  {
+    character: {
+      name: "Atsuko (Swimsuit)",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Sonic",
+      position: "Back",
+      role: "Healer",
+      squadType: "Special",
+      weaponType: "SMG",
+      profile: "A member of the Arius Squad who came to play at the beach. This is her first time at the beach and at a festival, so Atsuko seems to be having a lot fun. She plans to capture memories of the beach with a digital camera she bought on the black market."
+    }
+    ,
+    info: {
+      club: 'Arius Squad',
+      school: 'Arius'
+    },
+    image: {
+      lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/7/7a/Lobbyillust_Atsuko_%28Swimsuit%29.png/180px-Lobbyillust_Atsuko_%28Swimsuit%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'B',
+      indoorMood: 'B'
+    }
+  },
+
 ]
 
 export default Profiles

@@ -534,7 +534,55 @@ const newCharacters = [
     photoUrl: 'https://static.miraheze.org/bluearchivewiki/0/0f/Serika_%28Swimsuit%29.png',
     damageType: 'Mystic',
     clicked: false
-  }
+  },
+  {
+    _id: 'j67ih6748h4567g454567',
+    name: 'Moe (Swimsuit)',
+    school: 'SRT',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/7/77/Moe_%28Swimsuit%29.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: 'h764ih76u45h7u6h64u7',
+    name: 'Hiyori (Swimsuit)',
+    school: 'Arius',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/53/Hiyori_%28Swimsuit%29.png',
+    damageType: 'Piercing',
+    clicked: false
+  },
+  {
+    _id: 'm563ue76nw5u6n5wuny65w',
+    name: 'Saori (Swimsuit)',
+    school: 'Arius',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/5/54/Saori_%28Swimsuit%29.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+  {
+    _id: '46n7uun654u4n56nu56',
+    name: 'Atsuko (Swimsuit)',
+    school: 'Arius',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/1/1b/Atsuko_%28Swimsuit%29.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: 'hjmkkhmujhjmkjhgn',
+    name: 'Hoshino (Battle)',
+    school: 'Abydos',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/a/a2/Hoshino_%28Battle%29.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+  {
+    _id: 'k9867j9j756h465h4657',
+    name: 'Shiroko (Terror)',
+    school: 'Abydos',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/f/f9/Shiroko%EF%BC%8ATerror.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
 ]
 
 export default newCharacters

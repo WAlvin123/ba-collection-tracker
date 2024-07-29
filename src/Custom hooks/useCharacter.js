@@ -6,7 +6,6 @@ import newCharacters from "../resources/characters"
 
 export const useCharacter = () => {
   const [characters, setCharacters] = useState([])
-  const [localCharacters, setLocalCharacters] = useState([])
 
   const getCharacters = async () => {
     if (auth.currentUser === null) {

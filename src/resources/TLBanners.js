@@ -2082,6 +2082,86 @@ const TLBanners =
       "rateups": [
         "Fubuki (Swimsuit)"
       ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1720580400000,
+      "endAt": 1721185199000,
+      "rateups": [
+        "Moe (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1720580400000,
+      "endAt": 1721185199000,
+      "rateups": [
+        "Miyako (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1720580400000,
+      "endAt": 1721185199000,
+      "rateups": [
+        "Saki (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1721185200000,
+      "endAt": 1721617199000,
+      "rateups": [
+        "Hina"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1721185200000,
+      "endAt": 1721617199000,
+      "rateups": [
+        "Hoshino"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1721617200000,
+      "endAt": 1722221999000,
+      "rateups": [
+        "Hoshino (Battle)"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1721617200000,
+      "endAt": 1722221999000,
+      "rateups": [
+        "Shiroko (Terror)"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1721617200000,
+      "endAt": 1722221999000,
+      "rateups": [
+        "Mika"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1722222000000,
+      "endAt": 1722999599000,
+      "rateups": [
+        "Saori (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1722222000000,
+      "endAt": 1722999599000,
+      "rateups": [
+        "Hiyori (Swimsuit)"
+      ]
     }
   ]
 }
