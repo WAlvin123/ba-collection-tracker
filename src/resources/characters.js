@@ -640,14 +640,6 @@ const newCharacters = [
     clicked: false
   },
   {
-    _id: '3456ub356un56u ',
-    name: 'Midori (Maid)',
-    school: 'Millennium',
-    photoUrl: 'https://static.miraheze.org/bluearchivewiki/2/29/Midori_%28Maid%29.png',
-    damageType: 'Sonic',
-    clicked: false
-  },
-  {
     _id: '56v56ufv56ub563un ',
     name: 'Kisaki',
     school: 'Shanhaijing',
