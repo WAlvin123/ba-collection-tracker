@@ -583,6 +583,134 @@ const newCharacters = [
     damageType: 'Mystic',
     clicked: false
   },
+  {
+    _id: '45gv456g456g345gv ',
+    name: 'Maki (Camp)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/2/21/Maki_%28Camping%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '56y3b356ygvtf45yv45tyfv ',
+    name: 'Rio',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/4/4a/Rio.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+  {
+    _id: '6yb356ub7ub6u35b ',
+    name: 'Seia',
+    school: 'Trinity',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/4/46/Seia.png',
+    damageType: 'Piercing',
+    clicked: false
+  },
+  {
+    _id: '56ub56ub56yb3356yb ',
+    name: 'Yuuka (Pajama)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/a/ad/Yuuka_%28Pajama%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: 'ygv32456fv256b56b47 ',
+    name: 'Noa (Pajama)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/1/14/Noa_%28Pajama%29.png',
+    damageType: 'Piercing',
+    clicked: false
+  },
+  {
+    _id: '356yb346yvb6yfvf6yv ',
+    name: 'Asuna (School Uniform)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/0/01/Asuna_%28School_Uniform%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '56bu356ub356yub356yuv ',
+    name: 'Neru (School Uniform)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/1/16/Neru_%28School_Uniform%29.png',
+    damageType: 'Piercing',
+    clicked: false
+  },
+  {
+    _id: '3456ub356un56u ',
+    name: 'Midori (Maid)',
+    school: 'Millennium',
+    photoUrl: 'https://static.miraheze.org/bluearchivewiki/2/29/Midori_%28Maid%29.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: '56v56ufv56ub563un ',
+    name: 'Kisaki',
+    school: 'Shanhaijing',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/5/55/Kisaki.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: '56um6un26ugb6yuf ',
+    name: 'Reijo',
+    school: 'Shanhaijing',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/4/4d/Reijo.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
+  {
+    _id: 'n677hb6u56u3hb345yb ',
+    name: 'Karin (School Uniform)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/d/d1/Karin_%28School_Uniform%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '356ybb356y345yv245yv ',
+    name: 'Mari (Idol)',
+    school: 'Millennium',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/f/f6/Mari_%28Idol%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '245qm45qyn5yb4245yv ',
+    name: 'Sakurako (Idol)',
+    school: 'Trinity',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/2/27/Sakurako_%28Idol%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '356yb356ygv345yv45yv ',
+    name: 'Mine  (Idol)',
+    school: 'Trinity',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/2/29/Mine_%28Idol%29.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '4568n567hb56h567yhb',
+    name: 'Chiaki',
+    school: 'Gehenna',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/a/a4/Chiaki.png',
+    damageType: 'Sonic',
+    clicked: false
+  },
+  {
+    _id: 'etbertwbertbwertb',
+    name: 'Satsuki',
+    school: 'Gehenna',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/e/e9/Satsuki.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
 ]
 
 export default newCharacters

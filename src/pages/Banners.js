@@ -20,7 +20,7 @@ export const Banners = () => {
       const startHour = startDate.toLocaleTimeString()
       const globalStartDate = new Date(banner.startAt)
       globalStartDate.setMonth(globalStartDate.getMonth() + 6)
-      globalStartDate.setDate(globalStartDate.getDate())
+      globalStartDate.setDate(globalStartDate.getDate() + 1)
       const globalStartDay = globalStartDate.toLocaleDateString()
       const endDate = new Date(banner.endAt)
       const endDay = endDate.toLocaleDateString()
@@ -72,6 +72,10 @@ export const Banners = () => {
               return 'Haruna (Sportswear)'
             } else if (rateup === 'Kotori (Cheer Squad)') {
               return 'Kotori (Cheerleader)'
+            } else if (rateup === 'Hoshino (Armed)') {
+              return 'Hoshino (Battle)'
+            } else if (rateup === 'Shiroko*Terror') {
+              return 'Shiroko (Terror)'
             } else {
               return rateup
             }

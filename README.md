@@ -7,3 +7,8 @@ A collection tracker application for the gacha game "Blue Archive" bootstrapped 
 * A list of all released JP banners, and the current EN banner to aid EN players in dividing their resources in Banners. Additoinally has the functionality to add a Banner to the "Planned Banners"
 * View the amount of currency needed to pull your desired upcoming characters in Planner
 
+"# ba_collection_tracker_updated" 
+"# ba_collection_tracker_updated" 
+"# ba_collection_tracker_updated" 
+"# ba_collection_tracker_updated" 
+"# ba_collection_tracker_updated" 

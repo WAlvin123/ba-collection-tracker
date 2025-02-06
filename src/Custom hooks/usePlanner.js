@@ -9,7 +9,9 @@ export const usePlanner = () => {
 
   const getPlannedBanners = async () => {
     if (auth.currentUser === null) {
-      setPlannedBanners(JSON.parse(localStorage.getItem('plannedBanners')).sort((a, b) => b.startAt - a.startAt))
+      if (localStorage.getItem('plannedBanners')) {
+        setPlannedBanners(JSON.parse(localStorage.getItem('plannedBanners')).sort((a, b) => b.startAt - a.startAt))
+      }
     } else {
       const docRef = doc(db, `${auth.currentUser.uid}'s collection`, `${auth.currentUser.uid}'s planned banners`)
       const docSnap = await (getDoc(docRef))

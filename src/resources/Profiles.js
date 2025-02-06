@@ -39,7 +39,6 @@ const Profiles = [
     info: {
       club: 'Prefect Team',
       school: 'Gehenna',
-      releaseDate: 'Late July'
     },
     image: {
       lobby: 'https://static.miraheze.org/bluearchivewiki/thumb/5/5f/Lobbyillust_Ako_%28Dress%29.png/180px-Lobbyillust_Ako_%28Dress%29.png'
@@ -1298,7 +1297,371 @@ const Profiles = [
       indoorMood: 'B'
     }
   },
-
+  {
+    character: {
+      name: "Asuna (School Uniform)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Middle",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "An agent of Millennium Science School's secret society 'C&C' who will be a guide for the Millennium EXPO. Although she's changed into a school uniform to serve as a guide, she also fills in as a bodyguard. This, combined with her natural cheerfulness, makes Asuna very popular."
+    }
+    ,
+    info: {
+      club: 'Cleaning & Clearing',
+      school: 'Millenium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/7/76/Lobbyillust_Asuna_%28School_Uniform%29.png/180px-Lobbyillust_Asuna_%28School_Uniform%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Chiaki",
+      baseStar: 3,
+      armorType: "Special",
+      bulletType: "Sonic",
+      position: "Middle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "Chiaki is a member of Gehenna Academy's 'Pandemonium Society' council and its secretary. A girl with a bright and cheerful personality. She publishes the 'Pandemonium Society Weekly' newspaper as a hobby. Chiaki constantly writes articles in an effort spread the word about Ibuki's cuteness to as many students as possible."
+    }
+    ,
+    info: {
+      club: 'Pandemonium Society',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/4/45/Lobbyillust_Chiaki.png/180px-Lobbyillust_Chiaki.png'
+    },
+    stat: {
+      streetMood: 'S',
+      outdoorMood: 'D',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Karin (School Uniform)",
+      baseStar: 1,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Special",
+      weaponType: "SR",
+      profile: "An agent of Millennium Science School's secret society 'C&C', who will be serving as a guide for the Millennium EXPO. She has changed into her school uniform to serve as both a guide for the venue and a guard for important guests. Due to the nature of her club activities, Karin usually wears a maid outfit, so she can't hide her excitement at this rare opportunity. She is calm and friendly, so she seems to be trustworthy as a guide."
+    }
+    ,
+    info: {
+      club: 'Cleaning & Clearing',
+      school: 'Millenium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/1/13/Lobbyillust_Karin_%28School_Uniform%29.png/180px-Lobbyillust_Karin_%28School_Uniform%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'A',
+      indoorMood: 'C'
+    }
+  },
+  {
+    character: {
+      name: "Maki (Camp)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Special",
+      weaponType: "MG",
+      profile: "The member of Veritas changed into warm clothes to suit the cold winter weather. Although she was not enthusiastic about the sudden mountain trek, Maki seems to have enjoyed it to some extent, having been inspired by the new scenery. She remains disappointed about not being able to post about the experiences on the Internet."
+    }
+    ,
+    info: {
+      club: 'Veritas',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/1/12/Lobbyillust_Maki_%28Camping%29.png/180px-Lobbyillust_Maki_%28Camping%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Mari (Idol)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Middle",
+      role: "Healer",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "A member of the Trinity Integrated Academy, Mari is a sister of the Sisterhood and the leader of the idol group 'Antique Seraphim.' She started out by helping people out, but before she knew it, Mari was standing on stage as a splendid idol. Mari's desire to 'make everyone happy' may be a great fit for an idol role."
+    }
+    ,
+    info: {
+      club: 'Sisterhood',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/6/6c/Lobbyillust_Mari_%28Idol%29.png/180px-Lobbyillust_Mari_%28Idol%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Mine (Idol)",
+      baseStar: 1,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Front",
+      role: "Tank",
+      squadType: "Striker",
+      weaponType: "SG",
+      profile: "Mine is a member of the idol group 'Antique Seraphim' and a leader of the Rescue Knights, belonging to Trinity Integrated Academy. She volunteered to take part in an idol event because she wanted to be a 'friendly Rescue Knights commander'. Even after changing into her idol outfit, Mine's serious and stubborn personality remains unchanged, but she seems to have become a little more open about her love of cute things."
+    }
+    ,
+    info: {
+      club: 'Sisterhood',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/a/aa/Lobbyillust_Mine_%28Idol%29.png/180px-Lobbyillust_Mine_%28Idol%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'B',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Neru (School Uniform)",
+      baseStar: 3,
+      armorType: "Elastic",
+      bulletType: "Piercing",
+      position: "Front",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "SMG",
+      profile: "The leader of 'C&C', and a member of the Millennium Science School, Neru has been tasked with being a guide for the Millennium EXPO. Normally she would have refused, but this time Neru was talked into taking over guard and guiding duties. She also seems to be carrying out secret missions behind the scenes...?"
+    }
+    ,
+    info: {
+      club: 'Cleaning & Clearing',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/e/ef/Lobbyillust_Neru_%28School_Uniform%29.png/180px-Lobbyillust_Neru_%28School_Uniform%29.png'
+    },
+    stat: {
+      streetMood: 'S',
+      outdoorMood: 'A',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Reijo",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Mystic",
+      position: "Middle",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "A member of Shanhaijing Senior High School, Reijo is the manager of the main branch of the Genbu Trading Company, Rumi's assistant, and a security guard. She is quite a kung fu fanatic, and often tries to imitate phrases and actions of a certain famous martial artist. Contrary to her cool and detached appearance, she sometimes shows a fiery passion."
+    }
+    ,
+    info: {
+      club: 'Black Tortoise Promenade',
+      school: 'Shanhaijing'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/a/a6/Lobbyillust_Reijo.png/180px-Lobbyillust_Reijo.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Rio",
+      baseStar: 3,
+      armorType: "Elastic",
+      bulletType: "Mystic",
+      position: "Back",
+      role: "Support",
+      squadType: "Special",
+      weaponType: "HG",
+      profile: "President of the 'Seminar' student council at the Millennium Science School. Rio is a rationalist, she will do anything to ensure the safety of the Millennium and the world. As a result, she is known as the 'Big Sister'. She has a peculiar sense of style, as can be seen in 'Avant-Guard-kun'."
+    }
+    ,
+    info: {
+      club: 'Seminar',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/8/87/Lobbyillust_Rio.png/180px-Lobbyillust_Rio.png'
+    },
+    stat: {
+      streetMood: 'A',
+      outdoorMood: 'D',
+      indoorMood: 'S'
+    }
+  },
+  {
+    character: {
+      name: "Sakurako (Idol)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Middle",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "AR",
+      profile: "Sakurako is a sister of the Sisterhood at Trinity Integrated Academy and a member of the idol group 'Antique Seraphim'. To clear up the prejudice and misunderstandings about the Sisterhood, she applied to take part in an idol event. Although Sakurako was initially worried that she wasn't cut out for it, she was well received within the Sisterhood and found a passionate fanbase."
+    }
+    ,
+    info: {
+      club: 'Sisterhood',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/c/c3/Lobbyillust_Sakurako_%28Idol%29.png/180px-Lobbyillust_Sakurako_%28Idol%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Satsuki",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Back",
+      role: "Attacker",
+      squadType: "Special",
+      weaponType: "HG",
+      profile: "Satsuki is a council member of Gehenna Academy's 'Pandemonium Society', and the head of its intelligence department. Although she has mastered various hypnotism techniques, there have only been precious few cases where Satsuki managed to succefully apply them. She is a tough girl who doesn't get discouraged even after repeated failures. She has a laid-back personality and does things at her own pace. Hates bugs and scary things."
+    }
+    ,
+    info: {
+      club: 'Pandemonium Society',
+      school: 'Gehenna'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/c/c3/Lobbyillust_Satsuki.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Yuuka (Pajama)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Explosive",
+      position: "Front",
+      role: "Tank",
+      squadType: "Striker",
+      weaponType: "SMG",
+      profile: "Seminar's treasurer at Millennium Science School changed into her pajamas to get some rest. Although Yuuka performs her job perfectly every day, she can't say she's getting a good night's sleep due to the stress and insomnia caused by the constant troubles. She prepared a fluffy pillow and soft pajamas... but it seems that a good night's sleep in not on the agenda for a while because someone is raising trouble at Millennium day and night."
+    }
+    ,
+    info: {
+      club: 'Seminar',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/e/ea/Lobbyillust_Yuuka_%28Pajama%29.png/180px-Lobbyillust_Yuuka_%28Pajama%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Noa (Pajama)",
+      baseStar: 3,
+      armorType: "Light",
+      bulletType: "Piercing",
+      position: "Midddle",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "Member of the Millennium Science School and secretary of the 'Seminar' student council, Noa has changed into pajamas to enjoy some peaceful rest. The secretary's days off are usually quiet, as she doesn't mingle much with others, but the moments she spends with the seminar members are an exception. Noa just silently watches the scene as her cute junior and affectionate classmate misunderstand and cause a commotion. With a light smile she jots down a few notes."
+    }
+    ,
+    info: {
+      club: 'Seminar',
+      school: 'Millennium'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/7/70/Lobbyillust_Noa_%28Pajama%29.png/180px-Lobbyillust_Noa_%28Pajama%29.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'S',
+      indoorMood: 'D'
+    }
+  },
+  {
+    character: {
+      name: "Seia",
+      baseStar: 3,
+      armorType: "Elastic",
+      bulletType: "Piercing",
+      position: "Middle",
+      role: "Support",
+      squadType: "Striker",
+      weaponType: "HG",
+      profile: "A member of Trinity Integrated Academy, Seia is the leader of the 'Sanctus' student union, one of the Trinity factions. She is pedantic and difficult to please. Being a bookworm, Seia is often found in the Great Library. After recovering from her injuries, she sometimes shows her more childish side."
+    }
+    ,
+    info: {
+      club: 'Tea Party',
+      school: 'Trinity'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/0/06/Lobbyillust_Seia.png/180px-Lobbyillust_Seia.png'
+    },
+    stat: {
+      streetMood: 'B',
+      outdoorMood: 'D',
+      indoorMood: 'S'
+    }
+  },
+  
 ]
 
 export default Profiles

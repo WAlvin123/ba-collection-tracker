@@ -2162,6 +2162,533 @@ const TLBanners =
       "rateups": [
         "Hiyori (Swimsuit)"
       ]
+    }, 
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1722999600000,
+      "endAt": 1723604399000,
+      "rateups": [
+        "Meru",
+        "Momiji"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1722999600000,
+      "endAt": 1723604399000,
+      "rateups": [
+        "Cherino"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1722999600000,
+      "endAt": 1723604399000,
+      "rateups": [
+        "Marina"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1723604400000,
+      "endAt": 1724209199000,
+      "rateups": [
+        "Minori"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1723604400000,
+      "endAt": 1724209199000,
+      "rateups": [
+        "Shigure (Hot Spring)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1724209200000,
+      "endAt": 1725418799000,
+      "rateups": [
+        "Marina (Qipao)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1724209200000,
+      "endAt": 1725418799000,
+      "rateups": [
+        "Tomoe (Qipao)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1725418800000,
+      "endAt": 1726628399000,
+      "rateups": [
+        "Ui (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1725418800000,
+      "endAt": 1726628399000,
+      "rateups": [
+        "Hinata (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1725418800000,
+      "endAt": 1726628399000,
+      "rateups": [
+        "Iroha"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1725418800000,
+      "endAt": 1726628399000,
+      "rateups": [
+        "Miyu"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1726628400000,
+      "endAt": 1727233199000,
+      "rateups": [
+        "Neru (Bunny Girl)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1726628400000,
+      "endAt": 1727233199000,
+      "rateups": [
+        "Karin (Bunny Girl)"
+      ]
+    },    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1726628400000,
+      "endAt": 1727233199000,
+      "rateups": [
+        "Asuna (Bunny Girl)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1726628400000,
+      "endAt": 1727233199000,
+      "rateups": [
+        "Akane (Bunny Girl)"
+      ]
+    },    {
+      "gachaType": "PickupGacha",
+      "startAt": 1727233200000,
+      "endAt": 1728529199000,
+      "rateups": [
+        "Kisaki"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1727233200000,
+      "endAt": 1728529199000,
+      "rateups": [
+        "Reijo"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1727233200000,
+      "endAt": 1728529199000,
+      "rateups": [
+        "Shun (Kid)",
+        "Kirino"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1727233200000,
+      "endAt": 1728529199000,
+      "rateups": [
+        "Saya (Casual)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1728529200000,
+      "endAt": 1729047599000,
+      "rateups": [
+        "Azusa (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1728529200000,
+      "endAt": 1729047599000,
+      "rateups": [
+        "Mashiro (Swimsuit)"
+      ]
+    },    {
+      "gachaType": "PickupGacha",
+      "startAt": 1728529200000,
+      "endAt": 1729047599000,
+      "rateups": [
+        "Hifumi (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1729047600000,
+      "endAt": 1729652399000,
+      "rateups": [
+        "Yukari"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1729047600000,
+      "endAt": 1729652399000,
+      "rateups": [
+        "Renge"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1729047600000,
+      "endAt": 1729652399000,
+      "rateups": [
+        "Kikyou"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1729652400000,
+      "endAt": 1730861999000,
+      "rateups": [
+        "Mari (Idol)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1729652400000,
+      "endAt": 1730861999000,
+      "rateups": [
+        "Sakurako (Idol)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1730862000000,
+      "endAt": 1731466799000,
+      "rateups": [
+        "Hinata"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1730862000000,
+      "endAt": 1731466799000,
+      "rateups": [
+        "Saori"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1731466800000,
+      "endAt": 1732071599000,
+      "rateups": [
+        "Hina (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1731466800000,
+      "endAt": 1732071599000,
+      "rateups": [
+        "Iori (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1731466800000,
+      "endAt": 1732071599000,
+      "rateups": [
+        "Shiroko (Riding)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1732071600000,
+      "endAt": 1733281199000,
+      "rateups": [
+        "Satsuki"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1732071600000,
+      "endAt": 1733281199000,
+      "rateups": [
+        "Chiaki"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1732071600000,
+      "endAt": 1733281199000,
+      "rateups": [
+        "Makoto"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1732071600000,
+      "endAt": 1733281199000,
+      "rateups": [
+        "Ako (Dress)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733281200000,
+      "endAt": 1733885999000,
+      "rateups": [
+        "Kasumi"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733281200000,
+      "endAt": 1733885999000,
+      "rateups": [
+        "Ichika"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733281200000,
+      "endAt": 1733885999000,
+      "rateups": [
+        "Iori"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733281200000,
+      "endAt": 1733885999000,
+      "rateups": [
+        "Megu"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733886000000,
+      "endAt": 1734490799000,
+      "rateups": [
+        "Utaha (Cheerleader)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733886000000,
+      "endAt": 1734490799000,
+      "rateups": [
+        "Kotori (Cheerleader)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1733886000000,
+      "endAt": 1734490799000,
+      "rateups": [
+        "Noa"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1734490800000,
+      "endAt": 1735009199000,
+      "rateups": [
+        "Yuuka (Sportswear)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1734490800000,
+      "endAt": 1735009199000,
+      "rateups": [
+        "Mari (Sportswear)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1734490800000,
+      "endAt": 1735009199000,
+      "rateups": [
+        "Haruna (Sportswear)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1735009200000,
+      "endAt": 1736305199000,
+      "rateups": [
+        "Yuuka (Pajama)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1735009200000,
+      "endAt": 1736305199000,
+      "rateups": [
+        "Noa (Pajama)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1736305200000,
+      "endAt": 1736909999000,
+      "rateups": [
+        "Aru (New Year)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1736305200000,
+      "endAt": 1736909999000,
+      "rateups": [
+        "Mutsuki (New Year)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736305200000,
+      "endAt": 1736909999000,
+      "rateups": [
+        "Kayoko (New Year)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736305200000,
+      "endAt": 1736909999000,
+      "rateups": [
+        "Haruka (New Year)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736910000000,
+      "endAt": 1737341999000,
+      "rateups": [
+        "Arisu (Maid)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736910000000,
+      "endAt": 1737341999000,
+      "rateups": [
+        "Toki (Bunny Girl)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736910000000,
+      "endAt": 1737341999000,
+      "rateups": [
+        "Momoi (Maid)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1736910000000,
+      "endAt": 1737341999000,
+      "rateups": [
+        "Midori (Maid)"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1737342000000,
+      "endAt": 1737946799000,
+      "rateups": [
+        "Seia"
+      ]
+    },
+    {
+      "gachaType": "LimitedGacha",
+      "startAt": 1737342000000,
+      "endAt": 1737946799000,
+      "rateups": [
+        "Asuna (School Uniform)"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1737946800000,
+      "endAt": 1738551599000,
+      "rateups": [
+        "Rio"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1737946800000,
+      "endAt": 1738551599000,
+      "rateups": [
+        "Neru (School Uniform)"
+      ]
+    },
+    {
+      "gachaType": "FesGacha",
+      "startAt": 1737946800000,
+      "endAt": 1738551599000,
+      "rateups": [
+        "Hanako (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1738551600000,
+      "endAt": 1739329199000,
+      "rateups": [
+        "Himari"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1738551600000,
+      "endAt": 1739329199000,
+      "rateups": [
+        "Eimi (Swimsuit)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1739329200000,
+      "endAt": 1740538799000,
+      "rateups": [
+        "Maki (Camp)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1739329200000,
+      "endAt": 1740538799000,
+      "rateups": [
+        "Hare (Camp)"
+      ]
+    },
+    {
+      "gachaType": "PickupGacha",
+      "startAt": 1739329200000,
+      "endAt": 1740538799000,
+      "rateups": [
+        "Kotama (Camp)"
+      ]
     }
   ]
 }

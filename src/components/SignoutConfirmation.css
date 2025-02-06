@@ -25,7 +25,7 @@
 
 .confirmation-button {
   color: rgb(68, 129, 195);
-  font-family: 'Lucida Sans';
+  font-family: sans-serif;
   font-size: x-large;
   height: fit-content;
   border: none;
@@ -36,7 +36,7 @@
 
 .confirmation-button:hover {
   color: rgb(68, 129, 195);
-  font-family: 'Lucida Sans';
+  font-family: sans-serif;
   font-size: x-large;
   height: fit-content;
   border: none;
