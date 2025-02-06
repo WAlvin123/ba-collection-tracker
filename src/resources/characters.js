@@ -703,6 +703,22 @@ const newCharacters = [
     damageType: 'Explosive',
     clicked: false
   },
+  {
+    _id: '456g456gb456g456g',
+    name: 'Marina (Qipao)',
+    school: 'Red Winter',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/e/e9/Satsuki.png',
+    damageType: 'Explosive',
+    clicked: false
+  },
+  {
+    _id: '456gb56eyg56ygb',
+    name: 'Tomoe (Qipao)',
+    school: 'Red Winter',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/2/2d/Tomoe_%28Qipao%29.png',
+    damageType: 'Mystic',
+    clicked: false
+  },
 ]
 
 export default newCharacters

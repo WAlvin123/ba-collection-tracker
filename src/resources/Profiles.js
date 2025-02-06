@@ -1661,7 +1661,59 @@ const Profiles = [
       indoorMood: 'S'
     }
   },
-  
+  {
+    character: {
+      name: "Marina (Qipao)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Piercing",
+      position: "Front",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "SMG",
+      profile: "Marina, chairman of the security committee at Red Winter Federal Academy, changed into a qipao for the exchange meeting with Shanhaijng. She seemed to enjoy the exchange meeting a lot, being enchanted by the cute pandas and impressed by Shanhaijng's hospitality. She is perplexed by the difference of this new costume comapred to Red Winter uniforms, but those around praised the qipao, saying that it suited her."
+    }
+    ,
+    info: {
+      club: 'Red Winter Office',
+      school: 'Red Winter'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/0/06/Lobbyillust_Seia.png/180px-Lobbyillust_Seia.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'S',
+      indoorMood: 'B'
+    }
+  },
+  {
+    character: {
+      name: "Tomoe (Qipao)",
+      baseStar: 3,
+      armorType: "Heavy",
+      bulletType: "Piercing",
+      position: "Front",
+      role: "Attacker",
+      squadType: "Striker",
+      weaponType: "SMG",
+      profile: "Tomoe, secretary general at Red Winter Federal Academy, changed into a qipao for the exchange meeting with Shanhaijng. Bewildered by the different environment from Red Winter, she still seemed to be enjoying the exchange meeting. She is also very enthusiastic about the new outfit. Her public speaking skills and insight appear to be coming useful at this exchange meeting."
+    }
+    ,
+    info: {
+      club: 'Red Winter Office',
+      school: 'Red Winter'
+    },
+    image: {
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/6/65/Lobbyillust_Marina_%28Qipao%29.png/180px-Lobbyillust_Marina_%28Qipao%29.png'
+    },
+    stat: {
+      streetMood: 'D',
+      outdoorMood: 'B',
+      indoorMood: 'S'
+    }
+  },
+
 ]
 
 export default Profiles
