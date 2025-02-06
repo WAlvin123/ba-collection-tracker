@@ -1679,7 +1679,7 @@ const Profiles = [
       school: 'Red Winter'
     },
     image: {
-      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/0/06/Lobbyillust_Seia.png/180px-Lobbyillust_Seia.png'
+      lobby: 'https://static.wikitide.net/bluearchivewiki/thumb/6/65/Lobbyillust_Marina_%28Qipao%29.png/180px-Lobbyillust_Marina_%28Qipao%29.png'
     },
     stat: {
       streetMood: 'D',

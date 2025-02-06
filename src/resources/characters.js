@@ -707,7 +707,7 @@ const newCharacters = [
     _id: '456g456gb456g456g',
     name: 'Marina (Qipao)',
     school: 'Red Winter',
-    photoUrl: 'https://static.wikitide.net/bluearchivewiki/e/e9/Satsuki.png',
+    photoUrl: 'https://static.wikitide.net/bluearchivewiki/6/6a/Marina_%28Qipao%29.png',
     damageType: 'Explosive',
     clicked: false
   },
